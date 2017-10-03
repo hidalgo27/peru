@@ -1,0 +1,40 @@
+
+.header-peru, .header-peru2{
+  display: inline-block;
+  position: relative;
+}
+.header-peru:after{
+
+  background: url("http://peru.nu/images/topography.png");
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  bottom: 0; left: 0;
+  //background: url(http://placehold.it/20x20/1) repeat;
+  opacity: .4;
+}
+.header-peru2:after{
+  background-color: rgba(108, 0, 121, 0.8);
+
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  bottom: 0; left: 0;
+  //background: url(http://placehold.it/20x20/1) repeat;
+}
+.nav-peru-top{
+  z-index: 2;
+}
+.bottom-0{
+  bottom: 0;
+}
+.top-0{
+  top: 0;
+}
+.mt-10-p{
+  margin-top: 10%;
+}
+.logo-goto{
+  z-index: 2;
+}
+.alpha { background: $purple; }

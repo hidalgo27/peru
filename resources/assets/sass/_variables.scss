@@ -1,0 +1,63 @@
+
+// Body
+//$body-bg: #f5f8fa;
+
+// Borders
+//$laravel-border-color: darken($body-bg, 10%);
+//$list-group-border: $laravel-border-color;
+//$navbar-default-border: $laravel-border-color;
+//$panel-default-border: $laravel-border-color;
+//$panel-inner-border: $laravel-border-color;
+
+// Brands
+//$brand-primary: #3097D1;
+//$brand-info: #8eb4cb;
+//$brand-success: #2ab27b;
+//$brand-warning: #cbb956;
+//$brand-danger: #d52b1e;
+
+// Typography
+//$icon-font-path: "~bootstrap/assets/fonts/bootstrap/";
+//$font-family-sans-serif: "Raleway", sans-serif;
+//$font-size-base: 1rem;
+//$line-height-base: 1.6;
+//$text-color: #636b6f;
+
+// Navbar
+//$navbar-default-bg: #fff;
+
+// Buttons
+//$btn-default-color: $text-color;
+
+// Inputs
+//$input-border: lighten($text-color, 40%);
+//$input-border-focus: lighten($brand-primary, 25%);
+//$input-color-placeholder: lighten($text-color, 30%);
+
+// Panels
+//$panel-default-heading-bg: #fff;
+
+//custon
+//$state-success-text:             #008000 !default;
+//$state-success-bg:               #dff0d8 !default;
+//$state-success-border:           darken(adjust-hue($state-success-bg, -10), 5%) !default;
+//
+//$state-info-text:                #3097D1 !default;
+//$state-info-bg:                  #d9edf7 !default;
+//$state-info-border:              darken(adjust-hue($state-info-bg, -10), 7%) !default;
+//
+//$state-warning-text:             #ffa500 !default;
+//$state-warning-bg:               #fcf8e3 !default;
+//$state-warning-border:           darken(adjust-hue($state-warning-bg, -10), 5%) !default;
+//
+//$state-danger-text:              #ff0000 !default;
+//$state-danger-bg:                #f2dede !default;
+//$state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%) !default;
+
+// font montserrat
+.font-montserrat{
+  font-family: 'Montserrat', sans-serif;
+}
+a{
+  text-decoration: none !important;
+}
