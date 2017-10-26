@@ -252,6 +252,11 @@
                         </table>
                     </div>
 
+                    <h3 class="font-weight-bold mt-4">Consultanos</h3>
+                    <h5 class="text-secondary font-pompiere font-weight-bold">Comentarios, dudas, información de paquetes, etc.</h5>
+                    <div class="card mt-4">
+                        <div class="fb-comments" data-href="http://gotoperu.com.pe/" data-width="100%" data-numposts="5" data-mobile="1"></div>
+                    </div>
                 </div>
                 <div class="col">
                     <div class="card-deck owl-carousel owl-theme">
@@ -289,15 +294,17 @@
                         <iframe  src="https://www.youtube.com/embed/HfBo74hJId0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
                     </div>
 
-
-
+                    <div class="mt-4">
+                        <div class="fb-page" data-href="https://www.facebook.com/GOTOPERUcom/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/GOTOPERUcom/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/GOTOPERUcom/">GOTOPERUcom</a></blockquote></div>
+                    </div>
 
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="my-5 py-5 bg-light">
+
+    <section class="my-5 py-5">
         <div class="container">
 
             <div class="row pb-5 justify-content-center">
@@ -384,10 +391,46 @@
             </div>
         </div>
     </section>
-
-
+    
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <img src="{{asset("images/sponsor/logo-facebook.png")}}" alt="" class="img-fluid">
+                </div>
+                <div class="col">
+                    <img src="{{asset("images/sponsor/logo-asta.png")}}" alt="" class="img-fluid">
+                </div>
+                <div class="col">
+                    <img src="{{asset("images/sponsor/logo-newyorktimes.png")}}" alt="" class="img-fluid">
+                </div>
+                <div class="col">
+                    <img src="{{asset("images/sponsor/logo-apotur.png")}}" alt="" class="img-fluid">
+                </div>
+                <div class="col">
+                    <img src="{{asset("images/sponsor/logo-promperu.png")}}" alt="" class="img-fluid">
+                </div>
+                <div class="col">
+                    <img src="{{asset("images/sponsor/logo-meetup.png")}}" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <img src="{{asset("images/footer.jpg")}}" alt="" class="w-100">
+    </footer>
     {{--scripts--}}
     <script src="{{asset("js/app.js")}}"></script>
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.10&appId=1712869952328301';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
 
 </body>
 </html>
