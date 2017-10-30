@@ -19,3 +19,9 @@ Route::get('/', [
     'uses' => 'HomeController@index',
     'as' => 'home_path',
 ]);
+
+//detail promgram
+Route::get('/paquete/{titulo}', [
+    'uses' => 'HomeController@show',
+    'as' => 'home_show_path',
+]);

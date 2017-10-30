@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\TCategoria;
+use App\TPaquete;
+use App\TPaqueteDestino;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +16,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('page.home');
+        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->where('estado', 0)->get();
+        $categoria = TCategoria::get();
+        $paquete_destinos = TPaqueteDestino::with('destinos')->get();
+        return view('page.home', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria]);
     }
 
     /**
@@ -43,9 +49,15 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($titulo)
     {
-        //
+        $title = str_replace('-', ' ', strtoupper($titulo));
+
+        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->where('estado', 0)->get();
+        $paquete_destinos = TPaqueteDestino::with('destinos')->get();
+        $paquete_iti = TPaquete::with('itinerario','paquetes_destinos', 'precio_paquetes')->where('titulo', $title)->get();
+
+        return view('page.itinerary', ['title'=>$title, 'paquete_iti'=>$paquete_iti, 'paquete_destinos'=>$paquete_destinos, 'paquete'=>$paquete]);
     }
 
     /**

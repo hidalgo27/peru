@@ -12610,3 +12610,7 @@ a.text-g-yellow:hover {
   background: #6f42c1;
 }
 
+.clickable {
+  cursor: pointer;
+}
+
