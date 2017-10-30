@@ -155,17 +155,22 @@
                         <div class="col">
                             <div class="card">
                                 <div class="p-3">
-                                    <p class="h5 text-secondary"><b>{{$paquetes->duracion}} days</b></p>
+                                    <p class="h5 text-secondary"><b>{{$paquete_i->duracion}} days</b></p>
                                     <h5 class="h2"><sup class="h6 text-secondary">Desde</sup> <b class="text-g-yellow">
-                                            @foreach($paquetes->precio_paquetes as $precio)
-                                                @if($precio->estrellas == 2)
-                                                    @if($precio->precio == 0)
-                                                        Pida una cotización
-                                                    @else
-                                                        ${{$precio->precio}}
-                                                    @endif
-                                                @endif
-                                            @endforeach
+
+
+                                                @foreach($paquete_iti as $paquetes)
+                                                    @foreach($paquetes->precio_paquetes->sortBy('estrellas') as $precio)
+                                                        @if($precio->estrellas == 2)
+                                                            @if($precio->precio == 0)
+                                                                Pida una cotización
+                                                            @else
+                                                                ${{$precio->precio}}
+                                                            @endif
+                                                        @endif
+                                                    @endforeach
+                                                @endforeach
+
                                         </b> <span class="h6 text-secondary">USD</span></h5>
                                     <p>Trip Code: {{$paquetes->codigo}}</p>
                                     {{--<a href="" class="btn btn-primary btn-lg btn-avalavility margin-top-10">Check Availability</a>--}}
@@ -194,9 +199,10 @@
                                 {{--<caption>Price per person</caption>--}}
                                 <thead>
                                 <tr>
-                                    <th colspan="4">Precios basados en doble acomodación</th>
+                                    <th colspan="5">Precios basados en doble acomodación</th>
                                 </tr>
                                 <tr class="bg-primary text-white">
+                                    <th>Económico  2 <i class="fa fa-star text-warning" aria-hidden="true"></i></th>
                                     <th>Tourista 3 <i class="fa fa-star text-warning" aria-hidden="true"></i></th>
                                     <th>Superior 3 <i class="fa fa-star text-warning" aria-hidden="true"></i></th>
                                     <th>Comfort 4 <i class="fa fa-star text-warning" aria-hidden="true"></i></th>
@@ -209,7 +215,11 @@
                                         @foreach($paquetes->precio_paquetes->sortBy('estrellas') as $precio)
                                             @if($precio->precio == 0)
                                                 <td>Ask for a quote</td>
-                                            @else
+
+                                            @elseif($precio->estrellas == 2)
+                                                    <td>USD ${{$precio->precio}}</td>
+                                                    <td>Pida una cotización</td>
+                                            @elseif($precio->estrellas > 2)
                                                 <td>USD ${{$precio->precio}}</td>
                                             @endif
                                         @endforeach

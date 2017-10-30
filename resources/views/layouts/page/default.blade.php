@@ -25,7 +25,7 @@
                     <div class="col-auto text-right my-2">
                         <a href="" class="btn btn-g-green btn-sm text-white"><i class="fa fa-commenting"></i> Chat</a>
                         <span class="mx-2">|</span>
-                        <a href="" class="btn btn-g-yellow btn-sm text-white">INQUIRE NOW</a>
+                        <a href="" class="btn btn-g-yellow btn-sm text-white">Pregunte ahora</a>
                         <a href="" class="text-white d-inline mx-1"><i class="fa fa-facebook"></i></a>
                         <a href="" class="text-white d-inline mx-1"><i class="fa fa-twitter"></i></a>
                         <a href="" class="text-white d-inline mx-1"><i class="fa fa-instagram"></i></a>
@@ -83,14 +83,97 @@
             <div class="col text-center border border-top-0 border-bottom-0">
                 <h3>Contacte con nosotros</h3>
                 <p>Telefono: <i class="fa fa-phone"></i> 9843585698</p>
-                <a href="" class="btn btn-g-yellow">Contáctenos</a>
-                <a href="" class="btn btn-dark">Nosotros te llamamos</a>
+                {{--<a href="" class="btn btn-g-yellow">Contáctenos</a>--}}
+                <button type="button" class="btn btn-g-yellow" data-toggle="modal" data-target="#contant_m">
+                    Contáctenos
+                </button>
+
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#llamada_m">
+                    Nosotros te llamamos
+                </button>
+                {{--<a href="" class="btn btn-dark">Nosotros te llamamos</a>--}}
             </div>
             <div class="col text-center">
                 <h3>Chatee ahora</h3>
                 <p>Contacte mediante:</p>
                 <a href="" class="btn btn-primary"><i class="fa fa-facebook"></i> Messenger</a>
                 <a href="" class="btn btn-success"><i class="fa fa-whatsapp"></i> Whatsapp</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="contant_m" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Contacte con nosotros</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Envie la informacion requerida y nos pondremos en contacto dentro de las 24 horas garantizado.</p>
+                    <form>
+                        <div class="form-group">
+                            <label for="inputAddress">Nombres</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="Nombre completo">
+                        </div>
+
+                            <div class="form-group">
+                                <label for="inputEmail4">Email</label>
+                                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                            </div>
+
+                        <div class="form-group">
+                            <label for="inputAddress">Dirección</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+                        
+                            <div class="form-group">
+                                <label for="inputCity">Ciudad/País</label>
+                                <input type="text" class="form-control" id="inputCity" placeholder="Lima/Perú">
+                            </div>
+
+                        <div class="form-group">
+                            <label for="inputCity">Ciudad/País</label>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox"> Reciba notificaciones de GotoPeru
+                                </label>
+                            </div>
+                        </div>
+                        {{--<button type="submit" class="btn btn-primary">Sign in</button>--}}
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="llamada_m" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    nosotrs
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
         </div>
     </div>
