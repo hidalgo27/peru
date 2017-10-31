@@ -175,7 +175,7 @@
                                     <p>Trip Code: {{$paquetes->codigo}}</p>
                                     {{--<a href="" class="btn btn-primary btn-lg btn-avalavility margin-top-10">Check Availability</a>--}}
                                 </div>
-                                <a  href="#inquire" type="button" class="btn btn-primary btn-lg btn-avalavility margin-top-10">
+                                <a  href="#book-now" type="button" class="btn btn-primary btn-lg btn-avalavility margin-top-10">
                                     Reservar Ahora
                                 </a>
                             </div>
