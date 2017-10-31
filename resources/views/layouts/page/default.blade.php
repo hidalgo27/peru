@@ -25,11 +25,13 @@
                     <div class="col-auto text-right my-2">
                         <a href="" class="btn btn-g-green btn-sm text-white"><i class="fa fa-commenting"></i> Chat</a>
                         <span class="mx-2">|</span>
-                        <a href="" class="btn btn-g-yellow btn-sm text-white">Pregunte ahora</a>
-                        <a href="" class="text-white d-inline mx-1"><i class="fa fa-facebook"></i></a>
-                        <a href="" class="text-white d-inline mx-1"><i class="fa fa-twitter"></i></a>
-                        <a href="" class="text-white d-inline mx-1"><i class="fa fa-instagram"></i></a>
-                        <a href="" class="text-white d-inline mx-1"><i class="fa fa-youtube-play"></i></a>
+                        <button type="button" class="btn btn-g-yellow btn-sm text-white" data-toggle="modal" data-target="#contant_m">
+                            Pregunte Ahora
+                        </button>
+                        <a href="https://www.facebook.com/GOTOPERUcom/" class="text-white d-inline mx-1" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://twitter.com/GOTOPERUCOM" class="text-white d-inline mx-1" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/gotoperucom/" class="text-white d-inline mx-1" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="text-white d-inline mx-1" target="_blank"><i class="fa fa-youtube-play"></i></a>
                     </div>
                 </div>
                 <div class="row">
@@ -78,7 +80,9 @@
             <div class="col text-center">
                 <h3>Diseñe su viaje</h3>
                 <p>Lorem ipsum dolor sit amet.</p>
-                <a href="" class="btn btn-g-green">Diseñe su viaje ahora</a>
+                <button type="button" class="btn btn-g-green" data-toggle="modal" data-target="#design_m">
+                    Diseñe su viaje ahora
+                </button>
             </div>
             <div class="col text-center border border-top-0 border-bottom-0">
                 <h3>Contacte con nosotros</h3>
@@ -96,8 +100,173 @@
             <div class="col text-center">
                 <h3>Chatee ahora</h3>
                 <p>Contacte mediante:</p>
-                <a href="" class="btn btn-primary"><i class="fa fa-facebook"></i> Messenger</a>
-                <a href="" class="btn btn-success"><i class="fa fa-whatsapp"></i> Whatsapp</a>
+                <a href="https://m.me/GOTOPERUcom/" class="btn btn-primary" target="_blank"><i class="fa fa-facebook"></i> Messenger</a>
+                <a href="https://api.whatsapp.com/send?phone=51992051190" class="btn btn-success" target="_blank"><i class="fa fa-whatsapp"></i> Whatsapp</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="design_m" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Contacte con nosotros</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Envié la información requerida y nos pondremos en contacto dentro de las 24 horas garantizado.</p>
+                    <form id="d_form">
+                        {{csrf_field()}}
+                        <div class="row">
+                            <div class="col-12 col-sm border-secondary border-right-0  m-0">
+
+                                <div class="d-block mb-3">
+                                    <span class="text-secondary align-bottom">Información Personal</span>
+                                    {{--<img src="{{asset('images/icons/subtitle.png')}}" alt="" class="img-fluid mb-1" width="100">--}}
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            {{--<label for="inputEmail4" class="col-form-label"><sup class="text-danger">*</sup>Nome</label>--}}
+                                            <input type="text" class="form-control" id="d_name" placeholder="Nombre Completo">
+                                        </div>
+                                        <div class="form-group">
+                                            {{--<label for="inputEmail4" class="col-form-label"><sup class="text-danger">*</sup>Email</label>--}}
+                                            <input type="email" class="form-control" id="d_email" placeholder="Su email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-sm">
+                                        <div class="form-group">
+                                            {{--<label for="inputEmail4" class="col-form-label"><sup class="text-danger">*</sup>Data</label>--}}
+                                            <input type="text" class="form-control" id="d_date" placeholder="Fecha de viaje">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm">
+                                        <div class="form-group">
+                                            {{--<label for="inputEmail4" class="col-form-label"><sup class="text-danger">*</sup>Telefone</label>--}}
+                                            <input type="tel" class="form-control" id="d_tel" placeholder="N° de Telefono">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6 col-sm-6">
+                                        <div class="form-group">
+                                            {{--<label for="inputEmail4" class="col-form-label"><sup class="text-danger">*</sup>Dias</label>--}}
+                                            <input type="number" class="form-control" id="d_duration" placeholder="N° de Dias">
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-sm-6">
+                                        <div class="form-group">
+                                            {{--<label for="inputEmail4" class="col-form-label"><sup class="text-danger">*</sup>Passageiros</label>--}}
+                                            <input type="number" class="form-control" id="d_numero" placeholder="N° de Pasajeros">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-12 col-sm border-secondary border-right-0 border-left-0 m-0">
+
+                                {{--<h4 class="card-title">Card title</h4>--}}
+                                {{--<label class="d-block">Eu Gostaria de visitar</label>--}}
+                                <div class="d-block mb-3">
+                                    <span class="text-secondary align-bottom">Le gustaria visitar:</span>
+                                    {{--<img src="{{asset('images/icons/subtitle.png')}}" alt="" class="img-fluid mb-1" width="100">--}}
+                                </div>
+                                <div class="">
+                                    <div class="row">
+                                        <div class="col-6 col-sm-6 col-md-6 col-lg mb-2" data-toggle="buttons">
+                                            <label class="btn btn-outline-primary btn-block">
+                                                <input type="checkbox"  autocomplete="off" name="destinations[]" value="Machu Picchu"> Machu Picchu
+                                            </label>
+                                        </div>
+                                        <div class="col-6 col-sm-6 col-md-6 col-lg mb-2" data-toggle="buttons">
+                                            <label class="btn btn-outline-primary btn-block">
+                                                <input type="checkbox" autocomplete="off" name="destinations[]" value="Cusco"> Cusco
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 col-sm-6 col-md-6 col-lg mb-2" data-toggle="buttons">
+                                            <label class="btn btn-outline-primary btn-block">
+                                                <input type="checkbox" autocomplete="off" name="destinations[]" value="Lago Titicaca"> Lago titicaca
+                                            </label>
+                                        </div>
+                                        <div class="col-6 col-sm-6 col-md-6 col-lg mb-2" data-toggle="buttons">
+                                            <label class="btn btn-outline-primary btn-block">
+                                                <input type="checkbox" autocomplete="off" name="destinations[]" value="Puno"> Puno
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 col-sm-6 col-md-6 col-lg mb-2" data-toggle="buttons">
+                                            <label class="btn btn-outline-primary btn-block">
+                                                <input type="checkbox" autocomplete="off" name="destinations[]" value="Lima"> Lima
+                                            </label>
+                                        </div>
+                                        <div class="col-6 col-sm-6 col-md-6 col-lg mb-2" data-toggle="buttons">
+                                            <label class="btn btn-outline-primary btn-block">
+                                                <input type="checkbox" autocomplete="off" name="destinations[]" value="Lineas de Nazca"> Lineas de Nazca
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="">Otros</span>
+                                    <input type="text" class="form-control" id="d_otros" aria-describedby="basic-addon3">
+                                </div>
+
+                            </div>
+                            {{--<div class="col border-secondary border-left-0 m-0 d-none">--}}
+
+                            {{--<div class="form-group">--}}
+                            {{--<div class="d-block mb-3">--}}
+                            {{--<span class="text-secondary align-bottom">Dúvidas?</span>--}}
+                            {{--<img src="{{asset('images/icons/subtitle.png')}}" alt="" class="img-fluid mb-1" width="100">--}}
+                            {{--</div>--}}
+                            {{--<textarea class="form-control" id="d_comment" rows="5" placeholder="Como você imagina uma viagem inesquecivel ao Perú, sugestões especiais, perguntas, comentários"></textarea>--}}
+                            {{--</div>--}}
+                            {{--<div class="my-3">--}}
+                            {{--<button type="submit" class="btn btn-lg btn-block btn-warning">Submit</button>--}}
+
+                            {{--<button class="btn btn-lg btn-block btn-warning" id="d_send" type="button" onclick="design()">Enviar--}}
+                            {{--<i class="fa fa-paper-plane" aria-hidden="true"></i>--}}
+                            {{--</button>--}}
+                            {{--<ul class="fa-ul pull-right d-none" id="loader2">--}}
+                            {{--<li><i class="fa-li fa fa-spinner fa-spin"></i> <i>Enviando...</i></li>--}}
+                            {{--</ul>--}}
+
+                            {{--</div>--}}
+
+                            {{--</div>--}}
+
+                            <div class="alert alert-success alert-dismissible fade d-none" id="d_alert" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <strong>Muchas</strong> por contactar con GOTOPERU, un agente de viajes se pondrá en contacto con usted en las próximas 24 horas para ayudarle con la planificación de su viaje. :)
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col">
+                                {{--<button type="submit" class="btn btn-lg btn-block btn-warning">Submit</button>--}}
+
+                                <button class="btn btn-lg btn-block btn-g-green" id="d_send" type="button" onclick="design()">Enviar
+                                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                </button>
+                                <ul class="fa-ul pull-right d-none" id="loader2">
+                                    <li><i class="fa-li fa fa-spinner fa-spin"></i> <i>Enviando...</i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -113,45 +282,40 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Envie la informacion requerida y nos pondremos en contacto dentro de las 24 horas garantizado.</p>
-                    <form>
+                    <p>Envié la información requerida y nos pondremos en contacto dentro de las 24 horas garantizado.</p>
+                    <form id="c_form">
+                        {{csrf_field()}}
                         <div class="form-group">
-                            <label for="inputAddress">Nombres</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="Nombre completo">
+                            <label for="c_nombre">Nombres</label>
+                            <input type="text" class="form-control" id="c_nombre" placeholder="Nombre completo">
                         </div>
 
-                            <div class="form-group">
-                                <label for="inputEmail4">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                            </div>
+                        <div class="form-group">
+                            <label for="c_email">Email</label>
+                            <input type="email" class="form-control" id="c_email" placeholder="Email">
+                        </div>
 
                         <div class="form-group">
-                            <label for="inputAddress">Dirección</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                            <label for="c_comentario">Comentario</label>
+                            <textarea id="c_comentario" class="form-control" cols="10" rows="3"></textarea>
                         </div>
-                        
-                            <div class="form-group">
-                                <label for="inputCity">Ciudad/País</label>
-                                <input type="text" class="form-control" id="inputCity" placeholder="Lima/Perú">
-                            </div>
 
-                        <div class="form-group">
-                            <label for="inputCity">Ciudad/País</label>
-                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        <div class="alert alert-success alert-dismissible fade d-none" id="c_alert" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong>Muchas</strong> por contactar con GOTOPERU, un agente de viajes se pondrá en contacto con usted en las próximas 24 horas para ayudarle con la planificación de su viaje. :)
                         </div>
-                        
-                        <div class="form-group">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox"> Reciba notificaciones de GotoPeru
-                                </label>
-                            </div>
-                        </div>
-                        {{--<button type="submit" class="btn btn-primary">Sign in</button>--}}
+
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button class="btn btn-lg btn-block btn-g-green" id="c_send" type="button" onclick="contact()">Enviar
+                        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                    </button>
+                    <ul class="fa-ul pull-right d-none" id="loader3">
+                        <li><i class="fa-li fa fa-spinner fa-spin"></i> <i>Enviando...</i></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -162,17 +326,54 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Nosotros te llamamos</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    nosotrs
+                    <p>Ingrese la información requeriada y nosotros te llamamos.</p>
+                    <form id="t_form">
+                        {{csrf_field()}}
+                        <div class="form-group">
+                            <label for="t_name">Nombres</label>
+                            <input type="text" class="form-control" id="t_name" placeholder="Nombre completo">
+                        </div>
+                        <div class="form-group">
+                            <label for="t_email">Email</label>
+                            <input type="email" class="form-control" id="t_email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="t_city">Ciudad/País</label>
+                            <input type="text" class="form-control" id="t_city" placeholder="Lima/Perú">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="t_tel">Telefono</label>
+                            <input type="text" class="form-control" id="t_tel" placeholder="Ej. +51 980385734">
+                        </div>
+
+
+                        <div class="alert alert-success alert-dismissible fade d-none" id="t_alert" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong>Muchas</strong> por contactar con GOTOPERU, un agente de viajes se pondrá en contacto con usted en las próximas 24 horas para ayudarle con la planificación de su viaje. :)
+                        </div>
+
+                        {{--<button type="submit" class="btn btn-primary">Sign in</button>--}}
+                    </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    {{--<button type="submit" class="btn btn-primary">Llámenme ahora mismo</button>--}}
+
+                    <button class="btn btn-lg btn-block btn-g-green" id="t_send" type="button" onclick="tel()">Llámenme ahora mismo
+                        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                    </button>
+                    <ul class="fa-ul pull-right d-none" id="loader4">
+                        <li><i class="fa-li fa fa-spinner fa-spin"></i> <i>Enviando...</i></li>
+                    </ul>
+
                 </div>
             </div>
         </div>
@@ -181,8 +382,18 @@
 
 
 
-
 @yield('content')
+
+
+{{--<section class="my-5 py-5 bg-light">--}}
+    {{--<div class="container">--}}
+        {{--<div class="row justify-content-center">--}}
+            {{--<div class="col-6">--}}
+                {{--sds--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+{{--</section>--}}
 
 
 <section class="my-5 py-5">
@@ -303,7 +514,7 @@
 </footer>
 {{--scripts--}}
 <script src="{{asset("js/app.js")}}"></script>
-
+@stack('scripts')
 <div id="fb-root"></div>
 <script>
 
@@ -320,6 +531,261 @@
     }
 
 </script>
+
+
+    <script>
+        //form
+        function design(){
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('[name="_token"]').val()
+                }
+            });
+
+            $("#d_send").attr("disabled", true);
+
+            var filter=/^[A-Za-z][A-Za-z0-9_.]*@[A-Za-z0-9_]+.[A-Za-z0-9_.]+[A-za-z]$/;
+
+
+            var s_destinations = document.getElementsByName('destinations[]');
+            var $destinations = "";
+            for (var i = 0, l = s_destinations.length; i < l; i++) {
+                if (s_destinations[i].checked) {
+                    $destinations += s_destinations[i].value+' , ';
+                }
+            }
+            s_destinations = $destinations.substring(0,$destinations.length-3);
+
+//                alert(s_destinations);
+
+            var s_name = $('#d_name').val();
+            var s_email = $('#d_email').val();
+            var s_date = $('#d_date').val();
+            var s_tel = $('#d_tel').val();
+            var s_duration = $('#d_duration').val();
+            var s_number = $('#d_numero').val();
+            var s_other = $('#d_otros').val();
+
+
+//                var s_comment = $('#d_comment').val();
+
+
+            if (filter.test(s_email)){
+                sendMail = "true";
+            } else{
+                $('#d_email').css("border-bottom", "2px solid #FF0000");
+                sendMail = "false";
+            }
+            if (s_name.length == 0 ){
+                $('#d_name').css("border-bottom", "2px solid #FF0000");
+                var sendMail = "false";
+            }
+
+            if(sendMail == "true"){
+                var datos = {
+
+                    "txt_destinations" : s_destinations,
+                    "txt_other" : s_other,
+
+                    "txt_name" : s_name,
+                    "txt_email" : s_email,
+                    "txt_date" : s_date,
+                    "txt_tel" : s_tel,
+                    "txt_duration" : s_duration,
+                    "txt_number" : s_number
+
+                };
+                $.ajax({
+                    data:  datos,
+                    url:   "{{route('design_path')}}",
+                    type:  'post',
+
+                    beforeSend: function () {
+
+                        $('#d_send').removeClass('show');
+                        $("#d_send").addClass('d-none');
+
+                        $("#loader2").removeClass('d-none');
+                        $("#loader2").addClass('show');
+                    },
+                    success:  function (response) {
+                        $('#d_form')[0].reset();
+                        $('#d_send').removeClass('d-none');
+                        $('#d_send').addClass('show');
+                        $("#loader2").removeClass('show');
+                        $("#loader2").addClass('d-none');
+                        $('#d_alert').removeClass('d-none');
+                        $("#d_alert").addClass('show');
+                        $("#d_alert b").html(response);
+                        $("#d_alert").fadeIn('slow');
+                        $("#d_send").removeAttr("disabled");
+                    }
+                });
+            } else{
+                $("#d_send").removeAttr("disabled");
+            }
+        }
+
+
+        function contact(){
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('[name="_token"]').val()
+                }
+            });
+
+            $("#c_send").attr("disabled", true);
+
+            var filter=/^[A-Za-z][A-Za-z0-9_.]*@[A-Za-z0-9_]+.[A-Za-z0-9_.]+[A-za-z]$/;
+
+
+//                alert(s_destinations);
+
+            var s_name = $('#c_nombre').val();
+            var s_email = $('#c_email').val();
+            var s_comentario = $('#c_comentario').val();
+
+
+//                var s_comment = $('#d_comment').val();
+
+
+            if (filter.test(s_email)){
+                sendMail = "true";
+            } else{
+                $('#c_email').css("border-bottom", "2px solid #FF0000");
+                sendMail = "false";
+            }
+            if (s_name.length == 0 ){
+                $('#c_nombre').css("border-bottom", "2px solid #FF0000");
+                var sendMail = "false";
+            }
+
+            if(sendMail == "true"){
+                var datos = {
+
+
+                    "txt_name" : s_name,
+                    "txt_email" : s_email,
+                    "txt_comentario" : s_comentario,
+                };
+                $.ajax({
+                    data:  datos,
+                    url:   "{{route('contact_path')}}",
+                    type:  'post',
+
+                    beforeSend: function () {
+
+                        $('#c_send').removeClass('show');
+                        $("#c_send").addClass('d-none');
+
+                        $("#loader3").removeClass('d-none');
+                        $("#loader3").addClass('show');
+                    },
+                    success:  function (response) {
+                        $('#c_form')[0].reset();
+                        $('#c_send').removeClass('d-none');
+                        $('#c_send').addClass('show');
+                        $("#loader3").removeClass('show');
+                        $("#loader3").addClass('d-none');
+                        $('#c_alert').removeClass('d-none');
+                        $("#c_alert").addClass('show');
+                        $("#c_alert b").html(response);
+                        $("#c_alert").fadeIn('slow');
+                        $("#c_send").removeAttr("disabled");
+                    }
+                });
+            } else{
+                $("#c_send").removeAttr("disabled");
+            }
+        }
+
+        function tel(){
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('[name="_token"]').val()
+                }
+            });
+
+            $("#t_send").attr("disabled", true);
+
+            var filter=/^[A-Za-z][A-Za-z0-9_.]*@[A-Za-z0-9_]+.[A-Za-z0-9_.]+[A-za-z]$/;
+//                alert(s_destinations);
+
+            var s_name = $('#t_name').val();
+            var s_email = $('#t_email').val();
+            var s_city = $('#t_city').val();
+            var s_tel = $('#t_tel').val();
+
+
+            if (filter.test(s_email)){
+                sendMail = "true";
+            } else{
+                $('#t_email').css("border-bottom", "2px solid #FF0000");
+                sendMail = "false";
+            }
+
+            if (s_name.length == 0 ){
+                $('#t_name').css("border-bottom", "2px solid #FF0000");
+                var sendMail = "false";
+            }
+
+            if (s_name.length == 0 ){
+                $('#t_city').css("border-bottom", "2px solid #FF0000");
+                var sendMail = "false";
+            }
+            if (s_name.length == 0 ){
+                $('#t_tel').css("border-bottom", "2px solid #FF0000");
+                var sendMail = "false";
+            }
+
+
+            if(sendMail == "true"){
+                var datos = {
+
+                    "txt_email" : s_email,
+                    "txt_name" : s_name,
+                    "txt_city" : s_city,
+                    "txt_tel" : s_tel,
+                };
+                $.ajax({
+                    data:  datos,
+                    url:   "{{route('tel_path')}}",
+                    type:  'post',
+
+                    beforeSend: function () {
+
+                        $('#t_send').removeClass('show');
+                        $("#t_send").addClass('d-none');
+
+                        $("#loader4").removeClass('d-none');
+                        $("#loader4").addClass('show');
+                    },
+                    success:  function (response) {
+                        $('#t_form')[0].reset();
+                        $('#t_send').removeClass('d-none');
+                        $('#t_send').addClass('show');
+                        $("#loader4").removeClass('show');
+                        $("#loader4").addClass('d-none');
+                        $('#t_alert').removeClass('d-none');
+                        $("#t_alert").addClass('show');
+                        $("#t_alert b").html(response);
+                        $("#t_alert").fadeIn('slow');
+                        $("#t_send").removeAttr("disabled");
+                    }
+                });
+            } else{
+                $("#t_send").removeAttr("disabled");
+            }
+        }
+
+
+        $('#d_date').datepicker({
+            dateFormat: 'yy-mm-dd',
+            changeMonth: true,
+            changeYear: true,
+        });
+    </script>
+
 
 </body>
 </html>
