@@ -20,11 +20,23 @@ Route::get('/', [
     'as' => 'home_path',
 ]);
 
+//paquetes
+Route::get('/tours', [
+    'uses' => 'HomeController@tours',
+    'as' => 'tours_path',
+]);
+
 //detail promgram
 Route::get('/paquete/{titulo}', [
     'uses' => 'HomeController@show',
     'as' => 'home_show_path',
 ]);
+//nosotros
+Route::get('/acerca-de-nosotros', [
+    'uses' => 'HomeController@about',
+    'as' => 'about_path',
+]);
+
 //form
 Route::post('/design', [
     'uses' => 'HomeController@design',

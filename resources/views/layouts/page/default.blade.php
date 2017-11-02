@@ -37,9 +37,9 @@
                 <div class="row">
                     <div class="col">
                         <nav class="nav nav-pills nav-fill bg-light rounded-right">
-                            <a class="nav-item nav-link border text-dark" href="#">TOURS</a>
+                            <a class="nav-item nav-link border text-dark" href="{{route('tours_path')}}">TOURS</a>
                             <a class="nav-item nav-link border text-dark" href="#">DESTINOS</a>
-                            <a class="nav-item nav-link border text-dark" href="#">ACERCA DE NOSOTROS</a>
+                            <a class="nav-item nav-link border text-dark" href="{{route("about_path")}}">ACERCA DE NOSOTROS</a>
                             <a class="nav-item nav-link border text-dark disabled" href="#">RESPONSABILIDAD SOCIAL</a>
                         </nav>
                     </div>

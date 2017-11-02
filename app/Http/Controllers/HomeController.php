@@ -23,6 +23,20 @@ class HomeController extends Controller
         return view('page.home', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria]);
     }
 
+    public function tours()
+    {
+        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->where('estado', 0)->get();
+        $categoria = TCategoria::get();
+        $paquete_destinos = TPaqueteDestino::with('destinos')->get();
+        return view('page.packages', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
     /**
      * Show the form for creating a new resource.
      *
@@ -93,6 +107,12 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function about()
+    {
+        return view('page.about');
     }
 
     public function design()
