@@ -26,7 +26,7 @@ class HomeController extends Controller
 
     public function tours()
     {
-        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->where('estado', 0)->get();
+        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->get();
         $categoria = TCategoria::get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
         return view('page.packages', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria]);
