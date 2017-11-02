@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\TCategoria;
+use App\TDestino;
 use App\TPaquete;
 use App\TPaqueteDestino;
 use Illuminate\Http\Request;
@@ -29,6 +30,31 @@ class HomeController extends Controller
         $categoria = TCategoria::get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
         return view('page.packages', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria]);
+    }
+
+    public function destinations()
+    {
+        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->where('estado', 0)->get();
+        $categoria = TCategoria::get();
+        $paquete_destinos = TPaqueteDestino::with('destinos')->get();
+        $destinos = TDestino::get();
+        return view('page.destinations', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria, 'destinos'=>$destinos]);
+    }
+    public function destinations_show($title)
+    {
+        $destinations = str_replace('-', ' ', ucwords(strtolower($title)));
+
+        $destinos = TDestino::get();
+        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->get();
+        $paquete_destinos = TPaqueteDestino::with('destinos')->get();
+        $paquetes_de = TPaqueteDestino::with(['destinos'=>function($query) use ($destinations) { $query->where('nombre', $destinations);}])->get();
+
+
+        $destination = str_replace('-', ' ', $title);
+
+
+//        dd($paquetes_de);
+        return view('page.destinations-show', ['paquetes_de'=>$paquetes_de, 'paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'destinos'=>$destinos, 'title'=>$destinations, 'destination'=>$destination]);
     }
 
     /**

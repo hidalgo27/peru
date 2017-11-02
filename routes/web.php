@@ -26,6 +26,17 @@ Route::get('/tours', [
     'as' => 'tours_path',
 ]);
 
+//paquetes
+Route::get('/destinos-peru', [
+    'uses' => 'HomeController@destinations',
+    'as' => 'destinations_path',
+]);
+
+Route::get('/destinos-peru/{titulo}', [
+    'uses' => 'HomeController@destinations_show',
+    'as' => 'destinations_show_path',
+]);
+
 //detail promgram
 Route::get('/paquete/{titulo}', [
     'uses' => 'HomeController@show',
