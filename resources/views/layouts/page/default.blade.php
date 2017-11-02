@@ -86,7 +86,7 @@
             </div>
             <div class="col text-center border border-top-0 border-bottom-0">
                 <h3>Contacte con nosotros</h3>
-                <p>Telefono: <i class="fa fa-phone"></i> 9843585698</p>
+                <p>Telefono: <i class="fa fa-phone"></i> +51(084) 262-0555  / 8am-6pm</p>
                 {{--<a href="" class="btn btn-g-yellow">Contáctenos</a>--}}
                 <button type="button" class="btn btn-g-yellow" data-toggle="modal" data-target="#contant_m">
                     Contáctenos
