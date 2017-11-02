@@ -69,13 +69,17 @@
                                     @endforeach
                                 </td>
                                 {{--<td>Clasico</td>--}}
-                                <td class="font-montserrat"><sup>$</sup><b>
+                                <td class="font-montserrat"><b>
                                         @foreach($paquetes->precio_paquetes as $precio)
                                             @if($precio->estrellas == 2)
-                                                {{$precio->precio}}
+                                                @if($precio->precio == 0)
+                                                    Pida una cotización
+                                                @else
+                                                    <sup>$</sup>{{$precio->precio}}<small>USD</small>
+                                                @endif
                                             @endif
                                         @endforeach
-                                    </b><small>USD</small></td>
+                                    </b></td>
                             </tr>
                             @endforeach
                             </tbody>
@@ -117,13 +121,17 @@
                                         @endforeach
                                     </td>
                                     {{--<td>Clasico</td>--}}
-                                    <td class="font-montserrat"><sup>$</sup><b>
+                                    <td class="font-montserrat"><b>
                                             @foreach($paquetes->precio_paquetes as $precio)
                                                 @if($precio->estrellas == 2)
-                                                    {{$precio->precio}}
+                                                    @if($precio->precio == 0)
+                                                        Pida una cotización
+                                                    @else
+                                                        <sup>$</sup>{{$precio->precio}}<small>USD</small>
+                                                    @endif
                                                 @endif
                                             @endforeach
-                                        </b><small>USD</small></td>
+                                        </b></td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -165,13 +173,17 @@
                                         @endforeach
                                     </td>
                                     {{--<td>Clasico</td>--}}
-                                    <td class="font-montserrat"><sup>$</sup><b>
+                                    <td class="font-montserrat"><b>
                                             @foreach($paquetes->precio_paquetes as $precio)
                                                 @if($precio->estrellas == 2)
-                                                    {{$precio->precio}}
+                                                    @if($precio->precio == 0)
+                                                        Pida una cotización
+                                                    @else
+                                                        <sup>$</sup>{{$precio->precio}}<small>USD</small>
+                                                    @endif
                                                 @endif
                                             @endforeach
-                                        </b><small>USD</small></td>
+                                        </b></td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -213,13 +225,17 @@
                                         @endforeach
                                     </td>
                                     {{--<td>Clasico</td>--}}
-                                    <td class="font-montserrat"><sup>$</sup><b>
+                                    <td class="font-montserrat"><b>
                                             @foreach($paquetes->precio_paquetes as $precio)
                                                 @if($precio->estrellas == 2)
-                                                    {{$precio->precio}}
+                                                    @if($precio->precio == 0)
+                                                        Pida una cotización
+                                                    @else
+                                                        <sup>$</sup>{{$precio->precio}}<small>USD</small>
+                                                    @endif
                                                 @endif
                                             @endforeach
-                                        </b><small>USD</small></td>
+                                        </b></td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -261,13 +277,17 @@
                                         @endforeach
                                     </td>
                                     {{--<td>Clasico</td>--}}
-                                    <td class="font-montserrat"><sup>$</sup><b>
+                                    <td class="font-montserrat"><b>
                                             @foreach($paquetes->precio_paquetes as $precio)
                                                 @if($precio->estrellas == 2)
-                                                    {{$precio->precio}}
+                                                    @if($precio->precio == 0)
+                                                        Pida una cotización
+                                                    @else
+                                                        <sup>$</sup>{{$precio->precio}}<small>USD</small>
+                                                    @endif
                                                 @endif
                                             @endforeach
-                                        </b><small>USD</small></td>
+                                        </b></td>
                                 </tr>
                             @endforeach
                             </tbody>
