@@ -79,9 +79,9 @@
         <div class="row">
             <div class="col text-center">
                 <h3>Diseñe su viaje</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Sin compromiso.</p>
                 <button type="button" class="btn btn-g-green" data-toggle="modal" data-target="#design_m">
-                    Diseñe su viaje ahora
+                    Mi viaje ideal seria ...
                 </button>
             </div>
             <div class="col text-center border border-top-0 border-bottom-0">
@@ -401,7 +401,7 @@
 
         <div class="row pb-5 justify-content-center">
             <div class="col-12 col-sm-8 col-md-8 col-lg-3">
-                <img src="{{asset('images/logo.png')}}" alt="" class="img-fluid">
+                <img src="{{asset('images/logo-gotoperu.png')}}" alt="" class="img-fluid">
             </div>
         </div>
 
@@ -414,7 +414,7 @@
                 </div>
                 <div class="row text-center">
                     <div class="col">
-                        Grupos pequenos e passeios privados
+                        Grupos de 6 a 14 pasajeros y/o paseos privados.
                     </div>
                 </div>
             </div>
@@ -426,7 +426,7 @@
                 </div>
                 <div class="row text-center">
                     <div class="col">
-                        Moramos no perú, porém oferecemos assistencia 24/7
+                        Vivimos en el Peru, ofreciendo asistencia real las 24horas.
                     </div>
                 </div>
             </div>
@@ -438,7 +438,7 @@
                 </div>
                 <div class="row text-center">
                     <div class="col">
-                        Escolha de programas prontos para comprar ou personalizar suas férias
+                        Elija programas prearmados o personalize vuestras vacaciones
                     </div>
                 </div>
             </div>
@@ -452,7 +452,7 @@
                 </div>
                 <div class="row text-center">
                     <div class="col">
-                        Custos menores, somos uma agencia local
+                        Costos menores al ser una operadora local
                     </div>
                 </div>
             </div>
@@ -464,7 +464,7 @@
                 </div>
                 <div class="row text-center">
                     <div class="col">
-                        Excelentes coméntarios na tripadvisor
+                        Excelentes comentarios en Tripadvisor
                     </div>
                 </div>
             </div>
@@ -476,7 +476,7 @@
                 </div>
                 <div class="row text-center">
                     <div class="col">
-                        Temos passeios todos os dias do ano
+                        Salidas Diarias para todos nuestros tours.
                     </div>
                 </div>
             </div>
@@ -484,7 +484,7 @@
     </div>
 </section>
 
-<section class="py-4 bg-light">
+<section class="py-5 bg-light">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -509,8 +509,16 @@
     </div>
 </section>
 
-<footer>
+<footer class="bg-dark">
     <img src="{{asset("images/footer.jpg")}}" alt="" class="w-100">
+    <div class="container">
+        <div class="row pt-4">
+            <div class="col text-center text-white">
+                <p>LAS MEJORES VACACIONES AL PERÚ CON EL MEJOR OPERADOR DE VIAJES</p>
+                <p>&copy; GOTOPERU COMPANY</p>
+            </div>
+        </div>
+    </div>
 </footer>
 {{--scripts--}}
 <script src="{{asset("js/app.js")}}"></script>
