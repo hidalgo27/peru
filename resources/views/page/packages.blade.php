@@ -47,7 +47,7 @@
                             {{--</tr>--}}
                             </thead>
                             <tbody>
-                            @foreach($paquete as $paquetes)
+                            @foreach($paquete->sortBy('duracion') as $paquetes)
                                 <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
                                     <td class="text-primary">{{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}</td>
                                     <td>
