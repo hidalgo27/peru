@@ -34,7 +34,7 @@ class HomeController extends Controller
 
     public function destinations()
     {
-        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->where('estado', 0)->get();
+        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->get();
         $categoria = TCategoria::get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
         $destinos = TDestino::get();

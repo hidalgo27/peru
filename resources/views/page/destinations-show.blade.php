@@ -98,7 +98,11 @@
                                             <td class="text-right color-orange-2">
                                                 @foreach($paquetes->precio_paquetes as $precio)
                                                     @if($precio->estrellas == 2)
-                                                        ${{$precio->precio}}
+                                                        @if($precio->precio == 0)
+                                                            Pida una cotización
+                                                        @else
+                                                            <sup>$</sup>{{$precio->precio}}<small>USD</small>
+                                                        @endif
                                                     @endif
                                                 @endforeach
                                             </td>
