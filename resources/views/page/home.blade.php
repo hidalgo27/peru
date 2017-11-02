@@ -55,7 +55,7 @@
                             {{--</tr>--}}
                             </thead>
                             <tbody>
-                            @foreach($paquete->where('estado', 1) as $paquetes)
+                            @foreach($paquete->where('estado', 1)->take(5) as $paquetes)
                             <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
                                 <td class="text-primary">{{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}</td>
                                 <td>
@@ -107,7 +107,7 @@
                             {{--</tr>--}}
                             </thead>
                             <tbody>
-                            @foreach($paquete->where('estado', 2) as $paquetes)
+                            @foreach($paquete->where('estado', 2)->take(5) as $paquetes)
                                 <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
                                     <td class="text-primary">{{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}</td>
                                     <td>
@@ -159,7 +159,7 @@
                             {{--</tr>--}}
                             </thead>
                             <tbody>
-                            @foreach($paquete->where('estado', 3) as $paquetes)
+                            @foreach($paquete->where('estado', 3)->take(5) as $paquetes)
                                 <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
                                     <td class="text-primary">{{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}</td>
                                     <td>
@@ -211,7 +211,7 @@
                             {{--</tr>--}}
                             </thead>
                             <tbody>
-                            @foreach($paquete->where('estado', 4) as $paquetes)
+                            @foreach($paquete->where('estado', 4)->take(5) as $paquetes)
                                 <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
                                     <td class="text-primary">{{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}</td>
                                     <td>
@@ -263,7 +263,7 @@
                             {{--</tr>--}}
                             </thead>
                             <tbody>
-                            @foreach($paquete->where('estado', 5) as $paquetes)
+                            @foreach($paquete->where('estado', 5)->take(5) as $paquetes)
                                 <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
                                     <td class="text-primary">{{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}</td>
                                     <td>
