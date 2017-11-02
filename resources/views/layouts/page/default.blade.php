@@ -40,7 +40,7 @@
                             <a class="nav-item nav-link border text-dark" href="{{route('tours_path')}}">TOURS</a>
                             <a class="nav-item nav-link border text-dark" href="{{route('destinations_path')}}">DESTINOS</a>
                             <a class="nav-item nav-link border text-dark" href="{{route("about_path")}}">ACERCA DE NOSOTROS</a>
-                            <a class="nav-item nav-link border text-dark disabled" href="#">RESPONSABILIDAD SOCIAL</a>
+                            <a class="nav-item nav-link border text-dark" href="{{route('social_path')}}">RESPONSABILIDAD SOCIAL</a>
                         </nav>
                     </div>
                 </div>

@@ -48,6 +48,12 @@ Route::get('/acerca-de-nosotros', [
     'as' => 'about_path',
 ]);
 
+//social
+Route::get('/responsabilidad-social', [
+    'uses' => 'HomeController@social',
+    'as' => 'social_path',
+]);
+
 //form
 Route::post('/design', [
     'uses' => 'HomeController@design',

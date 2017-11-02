@@ -141,6 +141,11 @@ class HomeController extends Controller
         return view('page.about');
     }
 
+    public function social()
+    {
+        return view('page.social');
+    }
+
     public function design()
     {
         $from = 'diana@andesviagens.com';
