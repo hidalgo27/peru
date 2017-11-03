@@ -15,17 +15,17 @@
 <section class="bg-dark">
     <div class="container">
         <div class="row">
-            <div class="col-2 position-relative">
+            <div class="col-4 col-sm-2 position-relative">
                 <div class="logo-goto position-absolute w-100 top-0 p-3 border rounded border-dark bg-dark">
                     <a href="/"><img src="{{asset('images/logo-goto-b.png')}}" alt="" class="img-fluid"></a>
                 </div>
             </div>
-            <div class="col">
+            <div class="col col-sm">
                 <div class="row justify-content-end">
                     <div class="col-auto text-right my-2">
-                        <a href="" class="btn btn-g-green btn-sm text-white"><i class="fa fa-commenting"></i> Chat</a>
+                        <a href="" class="btn btn-g-green btn-sm text-white d-none d-sm-inline-block"><i class="fa fa-commenting"></i> Chat</a>
                         <span class="mx-2">|</span>
-                        <button type="button" class="btn btn-g-yellow btn-sm text-white" data-toggle="modal" data-target="#contant_m">
+                        <button type="button" class="btn btn-g-yellow btn-sm text-white d-none d-sm-inline-block" data-toggle="modal" data-target="#contant_m">
                             Pregunte Ahora
                         </button>
                         <a href="https://www.facebook.com/GOTOPERUcom/" class="text-white d-inline mx-1" target="_blank"><i class="fa fa-facebook"></i></a>
@@ -34,13 +34,13 @@
                         <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="text-white d-inline mx-1" target="_blank"><i class="fa fa-youtube-play"></i></a>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row d-none d-sm-block">
                     <div class="col">
-                        <nav class="nav nav-pills nav-fill bg-light rounded-right">
-                            <a class="nav-item nav-link border text-dark" href="{{route('tours_path')}}">TOURS</a>
-                            <a class="nav-item nav-link border text-dark" href="{{route('destinations_path')}}">DESTINOS</a>
-                            <a class="nav-item nav-link border text-dark" href="{{route("about_path")}}">ACERCA DE NOSOTROS</a>
-                            <a class="nav-item nav-link border text-dark" href="{{route('social_path')}}">RESPONSABILIDAD SOCIAL</a>
+                        <nav class="nav nav-pills nav-fill rounded-right bg-light">
+                            <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light" href="{{route('tours_path')}}">TOURS</a>
+                            <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light" href="{{route('destinations_path')}}">DESTINOS</a>
+                            <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light" href="{{route("about_path")}}">ACERCA DE NOSOTROS</a>
+                            <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light" href="{{route('social_path')}}">RESPONSABILIDAD SOCIAL</a>
                         </nav>
                     </div>
                 </div>
@@ -49,11 +49,12 @@
     </div>
 </section>
 <header class="position-relative">
-    <img src="{{asset('images/sliders/slider-1.jpg')}}" alt="" class="img-fluid">
+    <img src="{{asset('images/sliders/slider-1.jpg')}}" alt="" class="img-fluid d-none d-sm-inline">
+    <img src="{{asset('images/sliders/slider-2.jpg')}}" alt="" class="img-fluid d-sm-none">
     <div class="position-absolute bottom-0">
         <img src="{{asset('images/pce.png')}}" alt="" class="img-fluid">
     </div>
-    <div class="position-absolute top-0 w-100">
+    <div class="position-absolute top-0 w-100 d-none d-sm-block">
         <div class="container">
             <div class="row">
                 <div class="col mt-10-p text-white">
@@ -64,40 +65,46 @@
         </div>
     </div>
 </header>
-{{--<section class="bg-dark">--}}
-{{--<div class="container">--}}
-{{--<div class="row">--}}
-{{--<div class="col">hola1</div>--}}
-{{--<div class="col">hola1</div>--}}
-{{--<div class="col">hola1</div>--}}
-{{--<div class="col">hola1</div>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--</section>--}}
+<section class="sticky-top bg-white d-sm-none">
+    <div class="container">
+        <div class="row no-gutters text-center">
+            <div class="col">
+                <a href="{{route('tours_path')}}" class="btn btn-link">Tours</a>
+            </div>
+            <div class="col">
+                <a href="{{route('destinations_path')}}" class="btn btn-link">Destinos</a>
+            </div>
+            <div class="col">
+                <a href="{{route("about_path")}}" class="btn btn-link">Nosotros</a>
+            </div>
+            {{--<div class="col">hola1</div>--}}
+        </div>
+    </div>
+</section>
 <section class="mt-4">
     <div class="container">
         <div class="row">
-            <div class="col text-center">
+            <div class="col-12 col-sm text-center mb-4">
                 <h3>Diseñe su viaje</h3>
                 <p>Sin compromiso.</p>
                 <button type="button" class="btn btn-g-green" data-toggle="modal" data-target="#design_m">
                     Mi viaje ideal seria ...
                 </button>
             </div>
-            <div class="col text-center border border-top-0 border-bottom-0">
+            <div class="col-12 col-sm text-center mb-4 border border-top-0 border-bottom-0">
                 <h3>Contacte con nosotros</h3>
-                <p>Telefono: <i class="fa fa-phone"></i> +51(084) 262-0555  / 8am-6pm</p>
+                <p>Telefono: <i class="fa fa-phone"></i>+51(084) 262-0555</p>
                 {{--<a href="" class="btn btn-g-yellow">Contáctenos</a>--}}
-                <button type="button" class="btn btn-g-yellow" data-toggle="modal" data-target="#contant_m">
+                <button type="button" class="btn btn-g-yellow btn-sm" data-toggle="modal" data-target="#contant_m">
                     Contáctenos
                 </button>
 
-                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#llamada_m">
+                <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#llamada_m">
                     Nosotros te llamamos
                 </button>
                 {{--<a href="" class="btn btn-dark">Nosotros te llamamos</a>--}}
             </div>
-            <div class="col text-center">
+            <div class="col-12 col-sm text-center mb-4">
                 <h3>Chatee ahora</h3>
                 <p>Contacte mediante:</p>
                 <a href="https://m.me/GOTOPERUcom/" class="btn btn-primary" target="_blank"><i class="fa fa-facebook"></i> Messenger</a>
@@ -484,7 +491,7 @@
     </div>
 </section>
 
-<section class="py-5 bg-light">
+<section class="py-5 bg-light d-none d-sm-block">
     <div class="container">
         <div class="row">
             <div class="col">

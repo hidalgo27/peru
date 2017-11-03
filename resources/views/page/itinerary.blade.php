@@ -19,7 +19,7 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-4">
+                <div class="col-4 d-none d-sm-block">
 
                     <h3 class="font-weight-bold" id="ofertas">Perú Ofertas</h3>
                     <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, transporte, guia.</h5>
@@ -149,7 +149,7 @@
                 </div>
                 <div class="col">
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-8 d-none d-sm-block">
                             <img src="{{asset('https://www.machupicchu.biz/imagenes/cusco/machupicchu/machu_picchu.jpg')}}" alt="" class="img-fluid w-100">
                         </div>
                         <div class="col">
@@ -195,7 +195,7 @@
                     <div class="row">
                         <div class="col">
                             <h3 class="font-weight-bold mt-4">Precios:</h3>
-                            <table class="table table-bordered">
+                            <table class="table table-bordered table-responsive">
                                 {{--<caption>Price per person</caption>--}}
                                 <thead>
                                 <tr>

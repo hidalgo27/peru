@@ -9,13 +9,13 @@
                     <h1 class="font-montserrat text-g-green">Tours a Machu Picchu Perú Agencia de Viajes y Turismo</h1>
                     <p class="text-secondary">Oficinas: Lima, Cusco, Arequipa.</p>
                     <p class="h3 my-3 font-weight-bold ">Los mejores testimonios, 10 años de experiencia nos respaldan.</p>
-                    <p class="lead">Desde su llegada al aeropuerto de Lima o Cusco, le demostraremos nuestra pasión por nuestro país, mostrandole lo mejor del Perú con nuestro selecto equipo de guías profesionales de GOTOPERU, siempre con nuestra mejor hospitalidad peruana!</p>
+                    <p class="lead d-none d-sm-block">Desde su llegada al aeropuerto de Lima o Cusco, le demostraremos nuestra pasión por nuestro país, mostrandole lo mejor del Perú con nuestro selecto equipo de guías profesionales de GOTOPERU, siempre con nuestra mejor hospitalidad peruana!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="my-2">
+    <section class="my-2 d-none d-sm-block">
         <div class="container">
             <div class="row justify-content-center alert-secondary no-gutters p-3 rounded">
                 <div class="col-8">
@@ -33,7 +33,7 @@
     <section class="my-4">
         <div class="container">
             <div class="row">
-                <div class="col-8">
+                <div class="col-12 col-sm-8">
                     <h3 class="font-weight-bold" id="ofertas">Perú Ofertas</h3>
                     <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, transporte, guia.</h5>
                     <div class="card">
@@ -296,24 +296,24 @@
 
                     <h3 class="font-weight-bold mt-4">Consultanos</h3>
                     <h5 class="text-secondary font-pompiere font-weight-bold">Comentarios, dudas, información de paquetes, etc.</h5>
-                    <div class="card mt-4">
+                    <div class="card my-4">
                         <div class="fb-comments" data-href="http://gotoperu.com.pe/" data-width="100%" data-numposts="5" data-mobile="1"></div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-12 col-sm">
                     <div class="card-deck owl-carousel owl-theme">
 
                         <div class="card">
                             {{--<div class="card-header">--}}
                             {{--<h4 class="card-title">City tour em cusco</h4>--}}
                             {{--</div>--}}
-                            <a href=""><img class="card-img-top " src="http://www.andesviagens.com/images/packages/AV700.jpg" alt="Card image cap"></a>
+                            <a href="http://gotoperu.com.pe/paquete/peru-magico"><img class="card-img-top " src="http://www.andesviagens.com/images/packages/AV700.jpg" alt="Card image cap"></a>
 
                             <div class="card-body text-center">
-                                <h4 class="card-title"><a href="" class="text-dark">Paquete a machu Picchu</a></h4>
+                                <h4 class="card-title"><a href="http://gotoperu.com.pe/paquete/peru-magico" class="text-dark">Perú Magico</a></h4>
                                 <p class="text-left"><i class="fa fa-clock-o text-primary" aria-hidden="true"></i> 6 Dias</p>
                                 <p class="text-left card-text"><i class="fa fa-map-marker text-primary" aria-hidden="true"></i>
-                                    Lima, Cusco, Machu Picchu, Lago Titicaca
+                                    Lima, Cusco, Sacred Valley, Machu Picchu
                                 </p>
                                 {{--<a href="#" class="btn btn-primary">Go somewhere</a>--}}
                             </div>
@@ -321,7 +321,7 @@
                                 <div class="row">
                                     <div class="col text-left">Desde</div>
                                     <div class="col text-right font-weight-bold text-primary font-montserrat">
-                                        <sup>$</sup> 500 <small>USD</small>
+                                        <sup>$</sup> 898 <small>USD</small>
 
                                     </div>
                                 </div>

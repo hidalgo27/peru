@@ -26,7 +26,7 @@
     <section class="my-5">
         <div class="container">
             <div class="row">
-                <div class="col-4">
+                <div class="col-12 col-sm-4">
                     <h3 class="font-weight-bold text-g-green" id="ofertas">Destinos Perú</h3>
                     <h5 class="text-g-yellow font-pompiere font-weight-bold"><b>Region:</b> Sur</h5>
                     <div class="card p-1">
@@ -49,7 +49,7 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-12 col-sm">
                     <h3 class="font-weight-bold text-g-green" id="ofertas">Paquetes de viajes a Perú</h3>
                     <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, transporte, guia.</h5>
                     <div class="card">
