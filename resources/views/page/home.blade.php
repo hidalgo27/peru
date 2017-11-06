@@ -35,7 +35,7 @@
             <div class="row">
                 <div class="col-12 col-sm-8">
                     <h3 class="font-weight-bold" id="ofertas">Perú Ofertas</h3>
-                    <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, transporte, guia.</h5>
+                    <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, tours, traslados, entradas, desayunos, trenes.</h5>
                     <div class="card">
                         {{--<div class="card-header bg-light">--}}
                             {{--<p class="m-0 text-g-yellow font-weight-bold">Peru Ofertas</p>--}}
@@ -87,7 +87,7 @@
                     </div>
 
                     <h3 class="font-weight-bold mt-4" id="familiar">Familiar</h3>
-                    <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, transporte, guia.</h5>
+                    <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, tours, traslados, entradas, desayunos, trenes.</h5>
                     <div class="card">
                         {{--<div class="card-header bg-light">--}}
                         {{--<p class="m-0 text-g-yellow font-weight-bold">Peru Ofertas</p>--}}
@@ -139,7 +139,7 @@
                     </div>
 
                     <h3 class="font-weight-bold mt-4" id="aventura">Aventura</h3>
-                    <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, transporte, guia.</h5>
+                    <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, tours, traslados, entradas, desayunos, trenes.</h5>
                     <div class="card">
                         {{--<div class="card-header bg-light">--}}
                         {{--<p class="m-0 text-g-yellow font-weight-bold">Peru Ofertas</p>--}}
@@ -191,7 +191,7 @@
                     </div>
 
                     <h3 class="font-weight-bold mt-4" id="clasicos">Clásicos</h3>
-                    <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, transporte, guia.</h5>
+                    <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, tours, traslados, entradas, desayunos, trenes.</h5>
                     <div class="card">
                         {{--<div class="card-header bg-light">--}}
                         {{--<p class="m-0 text-g-yellow font-weight-bold">Peru Ofertas</p>--}}
@@ -243,7 +243,7 @@
                     </div>
 
                     <h3 class="font-weight-bold mt-4" id="trekking">Trekking</h3>
-                    <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, transporte, guia.</h5>
+                    <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, tours, traslados, entradas, desayunos, trenes.</h5>
                     <div class="card">
                         {{--<div class="card-header bg-light">--}}
                         {{--<p class="m-0 text-g-yellow font-weight-bold">Peru Ofertas</p>--}}
