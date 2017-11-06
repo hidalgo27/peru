@@ -19,7 +19,7 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-4 d-none d-sm-block">
+                <div class="col-12 col-sm-4 d-none d-lg-inline-block">
 
                     <h3 class="font-weight-bold" id="ofertas">Perú Ofertas</h3>
                     <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, transporte, guia.</h5>
@@ -147,12 +147,12 @@
                         </table>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-12 col-sm">
                     <div class="row">
-                        <div class="col-8 d-none d-sm-block">
+                        <div class="col-12 col-sm-8 d-none d-sm-block">
                             <img src="{{asset('https://www.machupicchu.biz/imagenes/cusco/machupicchu/machu_picchu.jpg')}}" alt="" class="img-fluid w-100">
                         </div>
-                        <div class="col">
+                        <div class="col-12 col-sm">
                             <div class="card">
                                 <div class="p-3">
                                     <p class="h5 text-secondary"><b>{{$paquete_i->duracion}} days</b></p>

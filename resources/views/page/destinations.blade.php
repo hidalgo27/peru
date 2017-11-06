@@ -26,7 +26,7 @@
     <section class="my-5">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-sm-4">
+                <div class="col-12 col-sm-4 mb-4">
                     <h3 class="font-weight-bold text-g-green" id="ofertas">Destinos Perú</h3>
                     <h5 class="text-g-yellow font-pompiere font-weight-bold"><b>Region:</b> Sur</h5>
                     <div class="card p-1">
@@ -42,7 +42,7 @@
                         @endforeach
                     </div>
 
-                    <h5 class="text-g-yellow font-pompiere font-weight-bold"><b>Region:</b> Norte</h5>
+                    <h5 class="text-g-yellow font-pompiere font-weight-bold mt-3"><b>Region:</b> Norte</h5>
                     <div class="card p-1">
                         @foreach($destinos->where('region', 'norte') as $destino)
                             <a href="{{route('destinations_show_path', str_replace(' ', '-', strtolower($destino->nombre)))}}" class="btn btn-link text-left"><i class="fa fa-chevron-right"></i> {{ucwords(strtolower($destino->nombre))}}</a>

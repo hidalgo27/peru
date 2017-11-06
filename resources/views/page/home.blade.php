@@ -15,7 +15,7 @@
         </div>
     </section>
 
-    <section class="my-2 d-none d-sm-block">
+    <section class="my-2 d-none d-lg-block">
         <div class="container">
             <div class="row justify-content-center alert-secondary no-gutters p-3 rounded">
                 <div class="col-8">

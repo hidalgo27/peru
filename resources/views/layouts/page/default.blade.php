@@ -40,7 +40,7 @@
                             <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light" href="{{route('tours_path')}}">TOURS</a>
                             <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light" href="{{route('destinations_path')}}">DESTINOS</a>
                             <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light" href="{{route("about_path")}}">ACERCA DE NOSOTROS</a>
-                            <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light" href="{{route('social_path')}}">RESPONSABILIDAD SOCIAL</a>
+                            <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light d-none d-lg-inline" href="{{route('social_path')}}">RESPONSABILIDAD SOCIAL</a>
                         </nav>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
     <div class="position-absolute bottom-0">
         <img src="{{asset('images/pce.png')}}" alt="" class="img-fluid">
     </div>
-    <div class="position-absolute top-0 w-100 d-none d-sm-block">
+    <div class="position-absolute top-0 w-100 d-none d-lg-block">
         <div class="container">
             <div class="row">
                 <div class="col mt-10-p text-white">
@@ -83,7 +83,7 @@
 </section>
 <section class="mt-4">
     <div class="container">
-        <div class="row">
+        <div class="row no-gutters">
             <div class="col-12 col-sm text-center mb-4">
                 <h3>Diseñe su viaje</h3>
                 <p>Sin compromiso.</p>
@@ -95,11 +95,11 @@
                 <h3>Contacte con nosotros</h3>
                 <p>Telefono: <i class="fa fa-phone"></i>+51(084) 262-0555</p>
                 {{--<a href="" class="btn btn-g-yellow">Contáctenos</a>--}}
-                <button type="button" class="btn btn-g-yellow btn-sm" data-toggle="modal" data-target="#contant_m">
+                <button type="button" class="btn btn-g-yellow btn-sm mb-2" data-toggle="modal" data-target="#contant_m">
                     Contáctenos
                 </button>
 
-                <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#llamada_m">
+                <button type="button" class="btn btn-dark btn-sm mb-2" data-toggle="modal" data-target="#llamada_m">
                     Nosotros te llamamos
                 </button>
                 {{--<a href="" class="btn btn-dark">Nosotros te llamamos</a>--}}
@@ -107,8 +107,8 @@
             <div class="col-12 col-sm text-center mb-4">
                 <h3>Chatee ahora</h3>
                 <p>Contacte mediante:</p>
-                <a href="https://m.me/GOTOPERUcom/" class="btn btn-primary" target="_blank"><i class="fa fa-facebook"></i> Messenger</a>
-                <a href="https://api.whatsapp.com/send?phone=51992051190" class="btn btn-success" target="_blank"><i class="fa fa-whatsapp"></i> Whatsapp</a>
+                <a href="https://m.me/GOTOPERUcom/" class="btn btn-primary mb-2" target="_blank"><i class="fa fa-facebook"></i> Messenger</a>
+                <a href="https://api.whatsapp.com/send?phone=51992051190" class="btn btn-success mb-2" target="_blank"><i class="fa fa-whatsapp"></i> Whatsapp</a>
             </div>
         </div>
     </div>
