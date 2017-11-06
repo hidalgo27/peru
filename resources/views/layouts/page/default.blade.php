@@ -51,7 +51,7 @@
 <header class="position-relative">
     <img src="{{asset('images/sliders/slider-1.jpg')}}" alt="" class="img-fluid d-none d-sm-inline">
     <img src="{{asset('images/sliders/slider-2.jpg')}}" alt="" class="img-fluid d-sm-none">
-    <div class="position-absolute bottom-0">
+    <div class="position-absolute bottom-n-1">
         <img src="{{asset('images/pce.png')}}" alt="" class="img-fluid">
     </div>
     <div class="position-absolute top-0 w-100 d-none d-lg-block">

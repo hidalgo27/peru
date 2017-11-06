@@ -12590,6 +12590,10 @@ a.text-g-yellow:hover {
   z-index: 2;
 }
 
+.bottom-n-1 {
+  bottom: -1px;
+}
+
 .bottom-0 {
   bottom: 0;
 }
