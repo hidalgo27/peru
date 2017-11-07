@@ -7678,6 +7678,18 @@ a.bg-g-yellow:hover {
   width: 25% !important;
 }
 
+.w-30 {
+  width: 30% !important;
+}
+
+.w-35 {
+  width: 35% !important;
+}
+
+.w-40 {
+  width: 40% !important;
+}
+
 .w-50 {
   width: 50% !important;
 }
@@ -7692,6 +7704,18 @@ a.bg-g-yellow:hover {
 
 .h-25 {
   height: 25% !important;
+}
+
+.h-30 {
+  height: 30% !important;
+}
+
+.h-35 {
+  height: 35% !important;
+}
+
+.h-40 {
+  height: 40% !important;
 }
 
 .h-50 {

@@ -94,7 +94,7 @@ class HomeController extends Controller
     {
         $title = str_replace('-', ' ', strtoupper($titulo));
 
-        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->where('estado', 0)->get();
+        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
         $paquete_iti = TPaquete::with('itinerario','paquetes_destinos', 'precio_paquetes')->where('titulo', $title)->get();
 

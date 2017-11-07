@@ -49,8 +49,8 @@
                             <tbody>
                             @foreach($paquete->sortBy('duracion') as $paquetes)
                                 <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
-                                    <td class="text-primary">{{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}</td>
-                                    <td>
+                                    <td class="text-primary"><b>{{$paquetes->duracion}} Días</b> {{ucwords(strtolower($paquetes->titulo))}}</td>
+                                    <td><i class="fa fa-map-marker text-primary"></i>
                                         @php
                                             $i = 1;
                                             $num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));
@@ -65,7 +65,7 @@
                                             @foreach($paquetes->precio_paquetes as $precio)
                                                 @if($precio->estrellas == 2)
                                                     @if($precio->precio == 0)
-                                                        Pida una cotización
+                                                        <span class="text-danger">Pida una cotización</span>
                                                     @else
                                                         <sup>$</sup>{{$precio->precio}}<small>USD</small>
                                                     @endif

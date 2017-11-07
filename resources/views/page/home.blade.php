@@ -57,8 +57,8 @@
                             <tbody>
                             @foreach($paquete->where('estado', 1)->take(5) as $paquetes)
                             <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
-                                <td class="text-primary">{{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}</td>
-                                <td>
+                                <td class="text-primary w-40"><b>{{$paquetes->duracion}} Días</b> {{ucwords(strtolower($paquetes->titulo))}}</td>
+                                <td class="d-none d-sm-inline-block"><i class="fa fa-map-marker text-primary"></i>
                                     @php
                                         $i = 1;
                                         $num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));
@@ -69,11 +69,11 @@
                                     @endforeach
                                 </td>
                                 {{--<td>Clasico</td>--}}
-                                <td class="font-montserrat"><b>
+                                <td class="font-montserrat text-right"><b class="">
                                         @foreach($paquetes->precio_paquetes as $precio)
                                             @if($precio->estrellas == 2)
                                                 @if($precio->precio == 0)
-                                                    Pida una cotización
+                                                    <span class="text-danger">Pida una cotización</span>
                                                 @else
                                                     <sup>$</sup>{{$precio->precio}}<small>USD</small>
                                                 @endif
@@ -109,8 +109,8 @@
                             <tbody>
                             @foreach($paquete->where('estado', 2)->take(5) as $paquetes)
                                 <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
-                                    <td class="text-primary">{{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}</td>
-                                    <td>
+                                    <td class="text-primary w-40"><b>{{$paquetes->duracion}} Días</b> {{ucwords(strtolower($paquetes->titulo))}}</td>
+                                    <td class="d-none d-sm-inline-block"><i class="fa fa-map-marker text-primary"></i>
                                         @php
                                             $i = 1;
                                             $num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));
@@ -121,11 +121,11 @@
                                         @endforeach
                                     </td>
                                     {{--<td>Clasico</td>--}}
-                                    <td class="font-montserrat"><b>
+                                    <td class="font-montserrat text-right"><b class="">
                                             @foreach($paquetes->precio_paquetes as $precio)
                                                 @if($precio->estrellas == 2)
                                                     @if($precio->precio == 0)
-                                                        Pida una cotización
+                                                        <span class="text-danger">Pida una cotización</span>
                                                     @else
                                                         <sup>$</sup>{{$precio->precio}}<small>USD</small>
                                                     @endif
@@ -161,8 +161,8 @@
                             <tbody>
                             @foreach($paquete->where('estado', 3)->take(5) as $paquetes)
                                 <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
-                                    <td class="text-primary">{{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}</td>
-                                    <td>
+                                    <td class="text-primary w-40"><b>{{$paquetes->duracion}} Días</b> {{ucwords(strtolower($paquetes->titulo))}}</td>
+                                    <td class="d-none d-sm-inline-block"><i class="fa fa-map-marker text-primary"></i>
                                         @php
                                             $i = 1;
                                             $num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));
@@ -173,11 +173,11 @@
                                         @endforeach
                                     </td>
                                     {{--<td>Clasico</td>--}}
-                                    <td class="font-montserrat"><b>
+                                    <td class="font-montserrat text-right"><b class="">
                                             @foreach($paquetes->precio_paquetes as $precio)
                                                 @if($precio->estrellas == 2)
                                                     @if($precio->precio == 0)
-                                                        Pida una cotización
+                                                        <span class="text-danger">Pida una cotización</span>
                                                     @else
                                                         <sup>$</sup>{{$precio->precio}}<small>USD</small>
                                                     @endif
@@ -213,8 +213,8 @@
                             <tbody>
                             @foreach($paquete->where('estado', 4)->take(5) as $paquetes)
                                 <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
-                                    <td class="text-primary">{{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}</td>
-                                    <td>
+                                    <td class="text-primary w-40"><b>{{$paquetes->duracion}} Días</b> {{ucwords(strtolower($paquetes->titulo))}}</td>
+                                    <td class="d-none d-sm-inline-block"><i class="fa fa-map-marker text-primary"></i>
                                         @php
                                             $i = 1;
                                             $num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));
@@ -225,11 +225,11 @@
                                         @endforeach
                                     </td>
                                     {{--<td>Clasico</td>--}}
-                                    <td class="font-montserrat"><b>
+                                    <td class="font-montserrat text-right"><b class="">
                                             @foreach($paquetes->precio_paquetes as $precio)
                                                 @if($precio->estrellas == 2)
                                                     @if($precio->precio == 0)
-                                                        Pida una cotización
+                                                        <span class="text-danger">Pida una cotización</span>
                                                     @else
                                                         <sup>$</sup>{{$precio->precio}}<small>USD</small>
                                                     @endif
@@ -265,8 +265,8 @@
                             <tbody>
                             @foreach($paquete->where('estado', 5)->take(5) as $paquetes)
                                 <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
-                                    <td class="text-primary">{{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}</td>
-                                    <td>
+                                    <td class="text-primary w-40"><b>{{$paquetes->duracion}} Días</b> {{ucwords(strtolower($paquetes->titulo))}}</td>
+                                    <td class="d-none d-sm-inline-block"><i class="fa fa-map-marker text-primary"></i>
                                         @php
                                             $i = 1;
                                             $num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));
@@ -277,11 +277,11 @@
                                         @endforeach
                                     </td>
                                     {{--<td>Clasico</td>--}}
-                                    <td class="font-montserrat"><b>
+                                    <td class="font-montserrat text-right"><b class="">
                                             @foreach($paquetes->precio_paquetes as $precio)
                                                 @if($precio->estrellas == 2)
                                                     @if($precio->precio == 0)
-                                                        Pida una cotización
+                                                        <span class="text-danger">Pida una cotización</span>
                                                     @else
                                                         <sup>$</sup>{{$precio->precio}}<small>USD</small>
                                                     @endif
@@ -311,7 +311,7 @@
 
                             <div class="card-body text-center">
                                 <h4 class="card-title"><a href="http://gotoperu.com.pe/paquete/peru-magico" class="text-dark">Perú Magico</a></h4>
-                                <p class="text-left"><i class="fa fa-clock-o text-primary" aria-hidden="true"></i> 6 Dias</p>
+                                <p class="text-left"><i class="fa fa-clock-o text-primary" aria-hidden="true"></i> 6 Días</p>
                                 <p class="text-left card-text"><i class="fa fa-map-marker text-primary" aria-hidden="true"></i>
                                     Lima, Cusco, Sacred Valley, Machu Picchu
                                 </p>
@@ -330,10 +330,60 @@
 
                     </div>
 
-                    <img src="{{asset('images/banner-restaurante.jpg')}}" alt="" class="img-fluid my-4">
+                    {{--<img src="{{asset('images/banner-restaurante.jpg')}}" alt="" class="img-fluid my-4">--}}
+                    <div class="my-4">
+                        <h3 class="font-weight-bold mt-4">Planes de Pago</h3>
+                        <h5 class="text-secondary font-pompiere font-weight-bold">Para más información<button type="button" class="btn-link mb-2" data-toggle="modal" data-target="#contant_m">
+                                <b>Contáctenos</b>
+                            </button>.</h5>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card text-white bg-g-yellow mb-3 text-center" style="max-width: 20rem;">
+                                    <div class="card-header h3">Plan A</div>
+                                    <div class="card-body">
+                                        <p class="card-title display-3 font-montserrat font-weight-bold m-0">0%</p>
+                                        <p class="m-0">de interés</p>
+                                        <p class="m-0"><b>Dos</b> Cuotas</p>
+                                    </div>
+                                    <div class="card-footer text-muted">
+                                        <span class="text-white">50% | 50%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+
+                                <div class="card text-white bg-g-green mb-3 text-center" style="max-width: 20rem;">
+                                    <div class="card-header h3">Plan B</div>
+                                    <div class="card-body">
+                                        <p class="card-title display-3 font-montserrat font-weight-bold m-0">0%</p>
+                                        <p class="m-0">de interés</p>
+                                        <p class="m-0"><b>Tres</b> Cuotas</p>
+                                    </div>
+                                    <div class="card-footer text-muted">
+                                        <span class="text-white">40% | 30% | 30%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="embed-responsive embed-responsive-16by9">
                         <iframe  src="https://www.youtube.com/embed/HfBo74hJId0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                    </div>
+
+                    <h3 class="font-weight-bold mt-4">Nuestra Promesa</h3>
+                    <h5 class="text-secondary font-pompiere font-weight-bold">Una aventura distinta cada día.</h5>
+
+                    <div class="mt-4">
+                        <img src="{{asset('images/banners/1.jpg')}}" alt="" class="img-fluid rounded">
+                    </div>
+
+                    <div class="mt-4">
+                        <img src="{{asset('images/banners/2.jpg')}}" alt="" class="img-fluid rounded">
+                    </div>
+
+                    <div class="mt-4">
+                        <img src="{{asset('images/banners/3.jpg')}}" alt="" class="img-fluid rounded">
                     </div>
 
                     <div class="mt-4">

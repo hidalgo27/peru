@@ -77,7 +77,7 @@
                                 @if(isset($paquetes_des->destinos))
                                     @foreach($paquete->where('id',$paquetes_des->paquetes->id)->sortBy("duracion") as $paquetes)
                                         <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
-                                            <td class="text-primary">{{$paquetes->duracion}} Days {{ucwords(strtolower($paquetes->titulo))}}</td>
+                                            <td class="text-primary"><b>{{$paquetes->duracion}} Días</b> {{ucwords(strtolower($paquetes->titulo))}}</td>
                                             <td><i class="fa fa-map-marker"></i>
                                                 @php
                                                     $i = 1;
@@ -95,17 +95,17 @@
                                             {{--@endforeach--}}
 
                                             {{--</td>--}}
-                                            <td class="text-right color-orange-2">
-                                                @foreach($paquetes->precio_paquetes as $precio)
-                                                    @if($precio->estrellas == 2)
-                                                        @if($precio->precio == 0)
-                                                            Pida una cotización
-                                                        @else
-                                                            <sup>$</sup>{{$precio->precio}}<small>USD</small>
+                                            <td class="font-montserrat"><b>
+                                                    @foreach($paquetes->precio_paquetes as $precio)
+                                                        @if($precio->estrellas == 2)
+                                                            @if($precio->precio == 0)
+                                                                <span class="text-danger">Pida una cotización</span>
+                                                            @else
+                                                                <sup>$</sup>{{$precio->precio}}<small>USD</small>
+                                                            @endif
                                                         @endif
-                                                    @endif
-                                                @endforeach
-                                            </td>
+                                                    @endforeach
+                                                </b></td>
                                         </tr>
                                     @endforeach
                                 @endif
