@@ -20,10 +20,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-4 d-none d-lg-inline-block">
-
                     <h3 class="font-weight-bold" id="ofertas">Perú Ofertas</h3>
-                    <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, transporte, guia.</h5>
-
+                    <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, tours, traslados, entradas, desayunos, trenes.</h5>
                     <div class="card">
                         {{--<div class="card-header bg-light">--}}
                         {{--<p class="m-0 text-g-yellow font-weight-bold">Peru Ofertas</p>--}}
@@ -43,7 +41,133 @@
                             {{--</tr>--}}
                             </thead>
                             <tbody>
-                            @foreach($paquete as $paquetes)
+                            @foreach($paquete->where('estado', 1)->take(5) as $paquetes)
+                                <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
+                                    <td class="text-primary">
+                                        {{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}. <b>Visite</b>:
+
+                                        @php
+                                            $i = 1;
+                                            $num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));
+                                        @endphp
+                                        @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
+                                            {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@endif
+                                            @php $i++; @endphp
+                                        @endforeach
+
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="font-weight-bold mt-4" id="familiar">Familiar</h3>
+                    <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, tours, traslados, entradas, desayunos, trenes.</h5>
+                    <div class="card">
+                        {{--<div class="card-header bg-light">--}}
+                        {{--<p class="m-0 text-g-yellow font-weight-bold">Peru Ofertas</p>--}}
+                        {{--</div>--}}
+                        {{--<div class="card-body">--}}
+                        {{--<h4 class="card-title">Special title treatment</h4>--}}
+                        {{--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>--}}
+                        {{--<a href="#" class="btn btn-primary">Go somewhere</a>--}}
+                        {{--</div>--}}
+                        <table class="table table-responsive border-0 m-0 table-hover">
+                            <thead class="thead-inverse">
+                            {{--<tr>--}}
+                            {{--<th>Nombre del Paquete</th>--}}
+                            {{--<th>Destinos</th>--}}
+                            {{--<th>Categoria</th>--}}
+                            {{--<th>Precios <i class="fa fa-star text-warning" aria-hidden="true"></i><i class="fa fa-star text-warning" aria-hidden="true"></i></th>--}}
+                            {{--</tr>--}}
+                            </thead>
+                            <tbody>
+                            @foreach($paquete->where('estado', 2)->take(5) as $paquetes)
+                                <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
+                                    <td class="text-primary">
+                                        {{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}. <b>Visite</b>:
+
+                                        @php
+                                            $i = 1;
+                                            $num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));
+                                        @endphp
+                                        @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
+                                            {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@endif
+                                            @php $i++; @endphp
+                                        @endforeach
+
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="font-weight-bold mt-4" id="aventura">Aventura</h3>
+                    <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, tours, traslados, entradas, desayunos, trenes.</h5>
+                    <div class="card">
+                        {{--<div class="card-header bg-light">--}}
+                        {{--<p class="m-0 text-g-yellow font-weight-bold">Peru Ofertas</p>--}}
+                        {{--</div>--}}
+                        {{--<div class="card-body">--}}
+                        {{--<h4 class="card-title">Special title treatment</h4>--}}
+                        {{--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>--}}
+                        {{--<a href="#" class="btn btn-primary">Go somewhere</a>--}}
+                        {{--</div>--}}
+                        <table class="table table-responsive border-0 m-0 table-hover">
+                            <thead class="thead-inverse">
+                            {{--<tr>--}}
+                            {{--<th>Nombre del Paquete</th>--}}
+                            {{--<th>Destinos</th>--}}
+                            {{--<th>Categoria</th>--}}
+                            {{--<th>Precios <i class="fa fa-star text-warning" aria-hidden="true"></i><i class="fa fa-star text-warning" aria-hidden="true"></i></th>--}}
+                            {{--</tr>--}}
+                            </thead>
+                            <tbody>
+                            @foreach($paquete->where('estado', 3)->take(5) as $paquetes)
+                                <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
+                                    <td class="text-primary">
+                                        {{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}. <b>Visite</b>:
+
+                                        @php
+                                            $i = 1;
+                                            $num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));
+                                        @endphp
+                                        @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
+                                            {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@endif
+                                            @php $i++; @endphp
+                                        @endforeach
+
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="font-weight-bold mt-4" id="clasicos">Clásicos</h3>
+                    <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, tours, traslados, entradas, desayunos, trenes.</h5>
+                    <div class="card">
+                        {{--<div class="card-header bg-light">--}}
+                        {{--<p class="m-0 text-g-yellow font-weight-bold">Peru Ofertas</p>--}}
+                        {{--</div>--}}
+                        {{--<div class="card-body">--}}
+                        {{--<h4 class="card-title">Special title treatment</h4>--}}
+                        {{--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>--}}
+                        {{--<a href="#" class="btn btn-primary">Go somewhere</a>--}}
+                        {{--</div>--}}
+                        <table class="table table-responsive border-0 m-0 table-hover">
+                            <thead class="thead-inverse">
+                            {{--<tr>--}}
+                            {{--<th>Nombre del Paquete</th>--}}
+                            {{--<th>Destinos</th>--}}
+                            {{--<th>Categoria</th>--}}
+                            {{--<th>Precios <i class="fa fa-star text-warning" aria-hidden="true"></i><i class="fa fa-star text-warning" aria-hidden="true"></i></th>--}}
+                            {{--</tr>--}}
+                            </thead>
+                            <tbody>
+                            @foreach($paquete->where('estado', 4)->take(5) as $paquetes)
                                 <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
                                     <td class="text-primary">
                                         {{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}. <b>Visite</b>:
@@ -65,7 +189,7 @@
                     </div>
 
                     <h3 class="font-weight-bold mt-4" id="trekking">Trekking</h3>
-                    <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, transporte, guia.</h5>
+                    <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, tours, traslados, entradas, desayunos, trenes.</h5>
                     <div class="card">
                         {{--<div class="card-header bg-light">--}}
                         {{--<p class="m-0 text-g-yellow font-weight-bold">Peru Ofertas</p>--}}
@@ -85,48 +209,7 @@
                             {{--</tr>--}}
                             </thead>
                             <tbody>
-                            @foreach($paquete->take(6) as $paquetes)
-                                <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
-                                    <td class="text-primary">
-                                        {{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}. <b>Visite</b>:
-
-                                        @php
-                                            $i = 1;
-                                            $num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));
-                                        @endphp
-                                        @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
-                                            {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@endif
-                                            @php $i++; @endphp
-                                        @endforeach
-
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                    <h3 class="font-weight-bold mt-4" id="aventura">Aventura</h3>
-                    <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, transporte, guia.</h5>
-                    <div class="card">
-                        {{--<div class="card-header bg-light">--}}
-                        {{--<p class="m-0 text-g-yellow font-weight-bold">Peru Ofertas</p>--}}
-                        {{--</div>--}}
-                        {{--<div class="card-body">--}}
-                        {{--<h4 class="card-title">Special title treatment</h4>--}}
-                        {{--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>--}}
-                        {{--<a href="#" class="btn btn-primary">Go somewhere</a>--}}
-                        {{--</div>--}}
-                        <table class="table table-responsive border-0 m-0 table-hover">
-                            <thead class="thead-inverse">
-                            {{--<tr>--}}
-                            {{--<th>Nombre del Paquete</th>--}}
-                            {{--<th>Destinos</th>--}}
-                            {{--<th>Categoria</th>--}}
-                            {{--<th>Precios <i class="fa fa-star text-warning" aria-hidden="true"></i><i class="fa fa-star text-warning" aria-hidden="true"></i></th>--}}
-                            {{--</tr>--}}
-                            </thead>
-                            <tbody>
-                            @foreach($paquete->take(6) as $paquetes)
+                            @foreach($paquete->where('estado', 5)->take(5) as $paquetes)
                                 <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
                                     <td class="text-primary">
                                         {{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}. <b>Visite</b>:
@@ -155,7 +238,7 @@
                         <div class="col-12 col-sm">
                             <div class="card">
                                 <div class="p-3">
-                                    <p class="h5 text-secondary"><b>{{$paquete_i->duracion}} days</b></p>
+                                    <p class="h5 text-secondary"><b>{{$paquete_i->duracion}} días</b></p>
                                     <h5 class="h2"><sup class="h6 text-secondary">Desde</sup> <b class="text-g-yellow">
 
 
