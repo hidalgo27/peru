@@ -109,7 +109,7 @@
                 <h3>Chatee ahora</h3>
                 <p>Contacte mediante:</p>
                 <a href="https://m.me/GOTOPERUcom/" class="btn btn-primary mb-2" target="_blank"><i class="fa fa-facebook"></i> Messenger</a>
-                <a href="https://api.whatsapp.com/send?phone=51992051190" class="btn btn-success mb-2" target="_blank"><i class="fa fa-whatsapp"></i> Whatsapp</a>
+                <a href="https://api.whatsapp.com/send?phone=51084262555" class="btn btn-success mb-2" target="_blank"><i class="fa fa-whatsapp"></i> Whatsapp</a>
             </div>
         </div>
     </div>
