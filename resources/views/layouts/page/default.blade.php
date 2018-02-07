@@ -94,7 +94,7 @@
             </div>
             <div class="col-12 col-sm text-center mb-4 border border-top-0 border-bottom-0">
                 <h3>Contacte con nosotros</h3>
-                <p>Telefono: <i class="fa fa-phone"></i>51(84)2620555</p>
+                <p>Telefono: <i class="fa fa-phone"></i>51(84)262555</p>
                 {{--<a href="" class="btn btn-g-yellow">Contáctenos</a>--}}
                 <button type="button" class="btn btn-g-yellow btn-sm mb-2" data-toggle="modal" data-target="#contant_m">
                     Contáctenos
