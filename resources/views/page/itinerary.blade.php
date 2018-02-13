@@ -240,7 +240,7 @@
                                 <div class="p-3">
                                     <p class="h5 text-secondary"><b>{{$paquete_i->duracion}} días</b></p>
                                     @if($paquete_i->duracion == 1)
-                                        @php $h_precio = "hide"; @endphp
+                                        @php $h_precio = "d-none"; @endphp
                                     @else
                                         @php $h_precio = ""; @endphp
                                     @endif
