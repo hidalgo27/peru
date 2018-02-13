@@ -239,7 +239,12 @@
                             <div class="card">
                                 <div class="p-3">
                                     <p class="h5 text-secondary"><b>{{$paquete_i->duracion}} días</b></p>
-                                    <h5 class="h2"><sup class="h6 text-secondary">Desde</sup> <b class="text-g-yellow">
+                                    @if($paquete_i->duracion == 1)
+                                        @php $h_precio = "hide"; @endphp
+                                    @else
+                                        @php $h_precio = ""; @endphp
+                                    @endif
+                                    <h5 class="h2"><sup class="h6 text-secondary {{$h_precio}}">Desde</sup> <b class="text-g-yellow">
 
 
                                                 @foreach($paquete_iti as $paquetes)
@@ -275,7 +280,7 @@
                             @endforeach
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row {{$h_precio}}">
                         <div class="col">
                             <h3 class="font-weight-bold mt-4">Precios:</h3>
                             <table class="table table-bordered table-responsive">
