@@ -12,57 +12,127 @@
     <link rel="stylesheet" href="{{mix("css/app.css")}}">
 
 </head>
-<body>
-<section class="bg-dark">
-    <div class="container">
-        <div class="row">
-            <div class="col-4 col-sm-2 position-relative">
-                <div class="logo-goto position-absolute w-100 top-0 p-3 border rounded border-dark bg-dark">
-                    <a href="/"><img src="{{asset('images/logo-goto-b.png')}}" alt="" class="img-fluid"></a>
-                </div>
-            </div>
-            <div class="col col-sm">
-                <div class="row justify-content-end">
-                    <div class="col-auto text-right my-2">
-                        <a href="" class="btn btn-g-green btn-sm text-white d-none d-sm-inline-block"><i class="fa fa-commenting"></i> Chat</a>
-                        <span class="mx-2">|</span>
-                        <button type="button" class="btn btn-g-yellow btn-sm text-white d-none d-sm-inline-block" data-toggle="modal" data-target="#contant_m">
-                            Pregunte Ahora
-                        </button>
-                        <a href="https://www.facebook.com/GOTOPERUcom/" class="text-white d-inline mx-1" target="_blank"><i class="fa fa-facebook"></i></a>
-                        <a href="https://twitter.com/GOTOPERUCOM" class="text-white d-inline mx-1" target="_blank"><i class="fa fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/gotoperucom/" class="text-white d-inline mx-1" target="_blank"><i class="fa fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="text-white d-inline mx-1" target="_blank"><i class="fa fa-youtube-play"></i></a>
+<body data-spy="scroll" data-target="#menu" class="position-relative">
+<header class="header-video position-relative">
+    <section id="title" class="header-menu-g bg-dark">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-4 col-sm-2 position-relative">
+                    <div class="logo-goto position-absolute w-100 top-0 p-3 border rounded border-dark bg-dark">
+                        <a href="/"><img src="{{asset('images/logo-goto-b.png')}}" alt="" class="img-fluid"></a>
                     </div>
                 </div>
-                <div class="row d-none d-sm-block">
-                    <div class="col">
-                        <nav class="nav nav-pills nav-fill rounded-right bg-light">
-                            <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light" href="{{route('tours_path')}}">TOURS</a>
-                            <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light" href="{{route('destinations_path')}}">DESTINOS</a>
-                            <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light" href="{{route("about_path")}}">ACERCA DE NOSOTROS</a>
-                            <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light d-none d-lg-inline" href="{{route('social_path')}}">RESPONSABILIDAD SOCIAL</a>
-                        </nav>
+                <div class="col col-sm">
+                    <div class="row justify-content-end">
+                        <div class="col-auto text-right my-2">
+                            <a href="" class="btn btn-g-green btn-sm text-white d-none d-sm-inline-block"><i class="fa fa-comment"></i> Chat</a>
+                            <span class="mx-2">|</span>
+                            <button type="button" class="btn btn-g-yellow btn-sm text-white d-none d-sm-inline-block" data-toggle="modal" data-target="#contant_m">
+                                Pregunte Ahora
+                            </button>
+                            <a href="https://www.facebook.com/GOTOPERUcom/" class="text-white d-inline mx-1" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://twitter.com/GOTOPERUCOM" class="text-white d-inline mx-1" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/gotoperucom/" class="text-white d-inline mx-1" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="text-white d-inline mx-1" target="_blank"><i class="fa fa-youtube-play"></i></a>
+                            <i class="fa fa-face"></i>
+                        </div>
+                    </div>
+                    <div class="row d-none d-sm-block">
+                        <div class="col">
+                            <nav class="nav nav-pills nav-fill rounded-right bg-light">
+                                <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light" href="{{route('tours_path')}}">TOURS</a>
+                                <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light" href="{{route('destinations_path')}}">DESTINOS</a>
+                                <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light" href="{{route("about_path")}}">ACERCA DE NOSOTROS</a>
+                                <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light d-none d-lg-inline" href="{{route('social_path')}}">RESPONSABILIDAD SOCIAL</a>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+    {{--<img src="{{asset('images/sliders/slider-1.jpg')}}" alt="" class="img-fluid d-none d-sm-inline">--}}
+    {{--<img src="{{asset('images/sliders/slider-2.jpg')}}" alt="" class="img-fluid d-sm-none">--}}
+    <div id="overlay">
+        <video class="" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>
+            <source src="{{asset('media/video6.mp4')}}" />
+            <source src="{{asset('media/video6.m4v')}}" type="video/mp4" />
+            <source src="{{asset('media/video6.webm')}}" type="video/webm" />
+            <source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />
+        </video>
+        {{--<div id="state" class=""><span class="fa fa-pause"></span></div>--}}
+        {{--<img id="hero-pic" class="d-none" src="http://www.markhillard.com/sandbox/media/polina.jpg" alt="">--}}
+        {{----}}
+        <img src="{{asset('images/logos/logo-expedia2.png')}}" alt="" class="header-expedia">
     </div>
-</section>
-<header class="position-relative">
-    <img src="{{asset('images/sliders/slider-1.jpg')}}" alt="" class="img-fluid d-none d-sm-inline">
-    <img src="{{asset('images/sliders/slider-2.jpg')}}" alt="" class="img-fluid d-sm-none">
     <div class="position-absolute bottom-n-1">
         <img src="{{asset('images/pce.png')}}" alt="" class="img-fluid">
     </div>
-    <div class="position-absolute top-0 w-100 d-none d-lg-block">
-        <div class="container">
-            <div class="row">
-                <div class="col mt-10-p text-white">
-                    <p class="display-4 font-weight-normal m-0 mt-1">Visite Peru</p>
-                    <i class="h4 font-weight-light">Tierra de los incas</i>
+    {{--<div class="position-absolute top-0 w-100 d-none d-lg-block">--}}
+        {{--<div class="container">--}}
+            {{--<div class="row">--}}
+                {{--<div class="col mt-10-p text-white">--}}
+                    {{--<p class="display-4 font-weight-normal m-0 mt-1">Visite Peru</p>--}}
+                    {{--<i class="h4 font-weight-light">Tierra de los incas</i>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row content-header-row align-items-center">
+
+                <div class="col">
+                    <div class="row justify-content-center d-none d-sm-flex">
+                        <div class="col-md-8 col-xl-4">
+                            <div class="row no-gutters">
+                                <div class="col">
+                                    <img src="{{asset('images/icons/include/assistances.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Assistances">
+                                    {{--<span>Assistances</span>--}}
+                                </div>
+
+                                <div class="col">
+                                    <img src="{{asset('images/icons/include/entrances.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Entrances">
+                                    {{--<span>Entrances</span>--}}
+                                </div>
+                                <div class="col">
+                                    <img src="{{asset('images/icons/include/transfers.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Transfers">
+                                    {{--<span>Transfers</span>--}}
+                                </div>
+
+                                <div class="col">
+                                    <img src="{{asset('images/icons/include/hotels.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Hotels">
+                                    {{--<span>Hotels</span>--}}
+                                </div>
+                                <div class="col">
+                                    <img src="{{asset('images/icons/include/tours.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Tours">
+                                    {{--<span>Tours</span>--}}
+                                </div>
+                                <div class="col">
+                                    <img src="{{asset('images/icons/include/trains.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Trains">
+                                    {{--<span>Trains</span>--}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{--<div class="row mt-2">--}}
+                    {{--<div class="col text-white text-center">--}}
+                    {{--<h4 class="h5 font-weight-light text-g-yellow">Top recommended Peru Travel Company</h4>--}}
+                    {{--</div>--}}
+                    {{--</div>--}}
+                    <div class="row my-3 justify-content-center text-center d-none d-sm-block">
+                        <p class="text-white font-weight-light d-none d-md-block d-xl-none">1. Share your travel plans <span class="font-weight-bold text-g-yellow">|</span> 2. Receive a customize itinerary and quote   <span class="font-weight-bold text-g-yellow">|</span> 3. Discover the best of Peru with GOTOPERU</p>
+                        <p class="text-white h4 font-weight-light d-md-none d-xl-block">1. Share your travel plans <span class="font-weight-bold text-g-yellow">|</span> 2. Receive a customize itinerary and quote <span class="font-weight-bold text-g-yellow">|</span> 3. Discover the best of Peru with GOTOPERU</p>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-6 text-center">
+                            <a href="#Inquire" class="btn btn-lg btn-g-yellow">GET STARTED NOW</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 </header>
@@ -82,7 +152,7 @@
         </div>
     </div>
 </section>
-<section class="mt-4">
+<section class="pt-4 bg-white">
     <div class="container">
         <div class="row no-gutters">
             <div class="col-12 col-sm text-center mb-4">
@@ -108,8 +178,8 @@
             <div class="col-12 col-sm text-center mb-4">
                 <h3>Chatee ahora</h3>
                 <p>Contacte mediante:</p>
-                <a href="https://m.me/GOTOPERUcom/" class="btn btn-primary mb-2" target="_blank"><i class="fa fa-facebook"></i> Messenger</a>
-                <a href="https://api.whatsapp.com/send?phone=51084262555" class="btn btn-success mb-2" target="_blank"><i class="fa fa-whatsapp"></i> Whatsapp</a>
+                <a href="https://m.me/GOTOPERUcom/" class="btn btn-primary mb-2" target="_blank"><i class="fab fa-facebook-messenger"></i> Messenger</a>
+                <a href="https://api.whatsapp.com/send?phone=5184262555" class="btn btn-success mb-2" target="_blank"><i class="fab fa-whatsapp"></i> Whatsapp</a>
             </div>
         </div>
     </div>
@@ -548,6 +618,32 @@
 
 </script>
 
+<script>
+    $(document).ready(function () {
+        $(window).on('load scroll', function () {
+            var scrolled = $(this).scrollTop();
+            $('#title').css({
+                'transform': 'translate3d(0, ' + -(scrolled * 0.2) + 'px, 0)', // parallax (20% scroll rate)
+                'opacity': 1 - scrolled / 400 // fade out at 400px from top
+            });
+            $('#hero-vid').css('transform', 'translate3d(0, ' + -(scrolled * 0.25) + 'px, 0)'); // parallax (25% scroll rate)
+        });
+
+        // video controls
+        $('#state').on('click', function () {
+            var video = $('#hero-vid').get(0);
+            var icons = $('#state > span');
+            $('#overlay').toggleClass('fade');
+            if (video.paused) {
+                video.play();
+                icons.removeClass('fa-play').addClass('fa-pause');
+            } else {
+                video.pause();
+                icons.removeClass('fa-pause').addClass('fa-play');
+            }
+        });
+    });
+</script>
 
     <script>
         //form
@@ -800,6 +896,7 @@
             changeMonth: true,
             changeYear: true,
         });
+
     </script>
 
     <!-- begin olark code -->

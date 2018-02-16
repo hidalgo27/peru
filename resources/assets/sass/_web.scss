@@ -48,3 +48,79 @@
 .clickable {
   cursor: pointer;
 }
+
+
+
+/* Video Overlay */
+.header-video{
+  width: 100%;
+  height: 85vh;
+}
+#overlay {
+  background-color:rgba(0,0,0,.5);
+  height:85vh;
+  left:0;
+  position:relative;
+  top:0;
+  transition:background-color 300ms ease;
+  width:100%;
+}
+.overlay-img{
+  background-color:rgba(0,0,0,.2) !important;
+}
+#hero-vid {
+  backface-visibility:hidden;
+  background:#fff;
+  background-size:cover;
+  bottom:0;
+  height:auto;
+  min-height:100%;
+  min-width:100%;
+  perspective:1000;
+  position:fixed;
+  right:0;
+  width:auto;
+  z-index:-1;
+}
+
+#hero-pic {
+  display:block;
+  height:auto;
+  width:100%;
+}
+
+#state {
+  bottom:0;
+  cursor:pointer;
+  font-size:2.25rem;
+  left:0;
+  line-height:1;
+  padding:2rem 2.5rem 1.65rem;
+  position:absolute;
+}
+#title {
+  backface-visibility:hidden;
+  left:0;
+  perspective:1000;
+  position:fixed;
+  width:100%;
+  z-index: 1;
+}
+.header-menu-g{
+  z-index: 1;
+}
+
+.content-header{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+}
+.content-header-row{
+  width: 100%;
+  height: 100vh;
+}
+.nav-itinerary .nav-link.active{
+  opacity: 1;
+  border-bottom: 3px solid #000000;
+}

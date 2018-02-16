@@ -55,6 +55,8 @@
 //$state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%) !default;
 
 // font montserrat
+$fa-font-path:   "~font-awesome-5-css/webfonts";
+
 .font-montserrat{
   font-family: 'Montserrat', sans-serif;
 }
