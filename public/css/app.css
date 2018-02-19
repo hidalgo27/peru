@@ -14116,3 +14116,7 @@ readers do not read off random characters that represent icons */
   border-bottom: 3px solid #000000;
 }
 
+.banner-header {
+  background: rgba(0, 0, 0, 0.5);
+}
+

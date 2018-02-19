@@ -1,13 +1,95 @@
 @extends('layouts.page.default')
 
 @section('content')
+    <header class="header-video-default position-relative">
+        <section id="title" class="header-menu-g bg-dark">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-4 col-sm-2 position-relative">
+                        <div class="logo-goto position-absolute w-100 top-0 p-3 border rounded border-dark bg-dark">
+                            <a href="/"><img src="{{asset('images/logo-goto-b.png')}}" alt="" class="img-fluid"></a>
+                        </div>
+                    </div>
+                    <div class="col col-sm">
+                        <div class="row justify-content-end">
+                            <div class="col-auto text-right my-2">
+                                <a href="" class="btn btn-g-green btn-sm text-white d-none d-sm-inline-block"><i class="fa fa-comment"></i> Chat</a>
+                                <span class="mx-2">|</span>
+                                <button type="button" class="btn btn-g-yellow btn-sm text-white d-none d-sm-inline-block" data-toggle="modal" data-target="#contant_m">
+                                    Pregunte Ahora
+                                </button>
+                                <a href="https://www.facebook.com/GOTOPERUcom/" class="text-white d-inline mx-1" target="_blank"><i class="fab fa-facebook"></i></a>
+                                <a href="https://twitter.com/GOTOPERUCOM" class="text-white d-inline mx-1" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.instagram.com/gotoperucom/" class="text-white d-inline mx-1" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="text-white d-inline mx-1" target="_blank"><i class="fa fa-youtube-play"></i></a>
+                                <i class="fa fa-face"></i>
+                            </div>
+                        </div>
+                        <div class="row d-none d-sm-block">
+                            <div class="col">
+                                <nav class="nav nav-pills nav-fill rounded-right bg-light">
+                                    <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light" href="{{route('tours_path')}}">TOURS</a>
+                                    <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light" href="{{route('destinations_path')}}">DESTINOS</a>
+                                    <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light" href="{{route("about_path")}}">ACERCA DE NOSOTROS</a>
+                                    <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light d-none d-lg-inline" href="{{route('social_path')}}">RESPONSABILIDAD SOCIAL</a>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="overlay">
+            <video class="" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>
+                <source src="{{asset('media/video6.mp4')}}" />
+                <source src="{{asset('media/video6.m4v')}}" type="video/mp4" />
+                <source src="{{asset('media/video6.webm')}}" type="video/webm" />
+                <source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />
+            </video>
 
-    <section class="mt-5 mb-3">
+            <img src="{{asset('images/logos/logo-expedia2.png')}}" alt="" class="header-expedia">
+        </div>
+        <div class="position-absolute bottom-n-1">
+            <img src="{{asset('images/pce.png')}}" alt="" class="img-fluid">
+        </div>
+
+        <div class="content-header">
+            <div class="container">
+                <div class="row content-header-row align-items-center">
+                    <div class="col text-center">
+                        <h3 class="text-white text-center h1">{{strtoupper(str_replace('-', ' ', $title))}}</h3>
+                        <i class="fa fa-chevron-down text-white h1"></i>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <section class="sticky-top bg-white d-sm-none">
+        <div class="container">
+            <div class="row no-gutters text-center">
+                <div class="col">
+                    <a href="{{route('tours_path')}}" class="btn btn-link">Tours</a>
+                </div>
+                <div class="col">
+                    <a href="{{route('destinations_path')}}" class="btn btn-link">Destinos</a>
+                </div>
+                <div class="col">
+                    <a href="{{route("about_path")}}" class="btn btn-link">Nosotros</a>
+                </div>
+                {{--<div class="col">hola1</div>--}}
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-3 bg-white">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
                     @foreach($paquete_iti as $paquete_i)
-                        <h1 class="font-montserrat text-g-green">TOURS EN PERU {{$paquete_i->duracion}} DIAS: {{strtoupper(str_replace('-', ' ', $title))}}</h1>
+                        <h1 class="font-montserrat text-g-green font-weight-bold">TOURS EN PERU {{$paquete_i->duracion}} DIAS: {{strtoupper(str_replace('-', ' ', $title))}}</h1>
                     @endforeach
                     {{--<p class="h3 my-3 font-weight-bold ">Lorem elit. Accusamus asperiores commodi</p>--}}
                     {{--<p class="lead">L orem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad assumenda blanditiis consectetur cumque, debitis enim eveniet id <b>labore nam necessitatibus</b> repellat? Consectetur doloremque harum necessitatibus quis repellendus sit veniam.</p>--}}
@@ -16,77 +98,51 @@
         </div>
     </section>
 
-    <section>
+    <section class="bg-white">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-4 d-none d-lg-inline-block">
-                    <h3 class="font-weight-bold" id="ofertas">Perú Ofertas</h3>
-                    <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, tours, traslados, entradas, desayunos, trenes.</h5>
-                    <div class="card">
-                        {{--<div class="card-header bg-light">--}}
-                        {{--<p class="m-0 text-g-yellow font-weight-bold">Peru Ofertas</p>--}}
-                        {{--</div>--}}
-                        {{--<div class="card-body">--}}
-                        {{--<h4 class="card-title">Special title treatment</h4>--}}
-                        {{--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>--}}
-                        {{--<a href="#" class="btn btn-primary">Go somewhere</a>--}}
-                        {{--</div>--}}
-                        <table class="table table-responsive border-0 m-0 table-hover">
-                            <thead class="thead-inverse">
-                            {{--<tr>--}}
-                            {{--<th>Nombre del Paquete</th>--}}
-                            {{--<th>Destinos</th>--}}
-                            {{--<th>Categoria</th>--}}
-                            {{--<th>Precios <i class="fa fa-star text-warning" aria-hidden="true"></i><i class="fa fa-star text-warning" aria-hidden="true"></i></th>--}}
-                            {{--</tr>--}}
-                            </thead>
-                            <tbody>
-                            @foreach($paquete->where('estado', 1)->take(5) as $paquetes)
-                                <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
-                                    <td class="text-primary">
-                                        {{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}. <b>Visite</b>:
+                    <div class="row">
+                        <div class="col">
+                            <div class="d-none d-sm-block">
+                                {{--<h3 class="text-secondary pt-5 pb-4 h4"><strong>Paquetes</strong></h3>--}}
+                                <div class="alert alert-g-green py-2 mb-1" role="alert">
+                                    <h5 class="font-weight-bold m-0">Paquetes</h5>
+                                </div>
+                                <p class="text-secondary"><i class="fa fa-chevron-right"></i> <b>Incluye:</b> hoteles, tours, traslados, entradas, desayunos, trenes.</p>
+                                <div class="list-group">
+                                    @foreach($paquete->where('estado', 1)->sortBy('duracion')->take(6) as $paquetes)
+                                        <a href="{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}" class="list-group-item list-group-item-action text-primary">
+                                            {{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}. <b class="text-g-green">Visite</b>:
 
-                                        @php
-                                            $i = 1;
-                                            $num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));
-                                        @endphp
-                                        @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
-                                            {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@endif
-                                            @php $i++; @endphp
-                                        @endforeach
+                                            @php
+                                                $i = 1;
+                                                $num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));
+                                            @endphp
+                                            @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
+                                                {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@endif
+                                                @php $i++; @endphp
+                                            @endforeach
+                                        </a>
+                                    @endforeach
+                                </div>
 
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
+                            </div>
+                        </div>
                     </div>
 
-                    <h3 class="font-weight-bold mt-4" id="familiar">Familiar</h3>
-                    <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, tours, traslados, entradas, desayunos, trenes.</h5>
-                    <div class="card">
-                        {{--<div class="card-header bg-light">--}}
-                        {{--<p class="m-0 text-g-yellow font-weight-bold">Peru Ofertas</p>--}}
-                        {{--</div>--}}
-                        {{--<div class="card-body">--}}
-                        {{--<h4 class="card-title">Special title treatment</h4>--}}
-                        {{--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>--}}
-                        {{--<a href="#" class="btn btn-primary">Go somewhere</a>--}}
-                        {{--</div>--}}
-                        <table class="table table-responsive border-0 m-0 table-hover">
-                            <thead class="thead-inverse">
-                            {{--<tr>--}}
-                            {{--<th>Nombre del Paquete</th>--}}
-                            {{--<th>Destinos</th>--}}
-                            {{--<th>Categoria</th>--}}
-                            {{--<th>Precios <i class="fa fa-star text-warning" aria-hidden="true"></i><i class="fa fa-star text-warning" aria-hidden="true"></i></th>--}}
-                            {{--</tr>--}}
-                            </thead>
-                            <tbody>
-                            @foreach($paquete->where('estado', 2)->take(5) as $paquetes)
-                                <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
-                                    <td class="text-primary">
-                                        {{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}. <b>Visite</b>:
+                    <div class="row">
+                        <div class="col">
+                            <div class="d-none d-sm-block pt-5">
+                                {{--<h3 class="text-secondary pt-5 pb-4 h4"><strong>Paquetes</strong></h3>--}}
+                                <div class="alert alert-danger py-2 mb-1" role="alert">
+                                    <h5 class="font-weight-bold m-0">Paquetes sin Hotel</h5>
+                                </div>
+                                <p class="text-secondary"><i class="fa fa-chevron-right"></i> <b>Incluye:</b> hoteles, tours, traslados, entradas, desayunos, trenes.</p>
+
+                                @foreach($paquete->where('estado', 1)->sortBy('duracion')->take(6) as $paquetes)
+                                    <a href="{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}" class="list-group-item list-group-item-action text-primary">
+                                        {{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}. <b class="text-danger">Visite</b>:
 
                                         @php
                                             $i = 1;
@@ -96,39 +152,24 @@
                                             {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@endif
                                             @php $i++; @endphp
                                         @endforeach
+                                    </a>
+                                @endforeach
 
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
+                            </div>
+                        </div>
                     </div>
 
-                    <h3 class="font-weight-bold mt-4" id="aventura">Aventura</h3>
-                    <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, tours, traslados, entradas, desayunos, trenes.</h5>
-                    <div class="card">
-                        {{--<div class="card-header bg-light">--}}
-                        {{--<p class="m-0 text-g-yellow font-weight-bold">Peru Ofertas</p>--}}
-                        {{--</div>--}}
-                        {{--<div class="card-body">--}}
-                        {{--<h4 class="card-title">Special title treatment</h4>--}}
-                        {{--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>--}}
-                        {{--<a href="#" class="btn btn-primary">Go somewhere</a>--}}
-                        {{--</div>--}}
-                        <table class="table table-responsive border-0 m-0 table-hover">
-                            <thead class="thead-inverse">
-                            {{--<tr>--}}
-                            {{--<th>Nombre del Paquete</th>--}}
-                            {{--<th>Destinos</th>--}}
-                            {{--<th>Categoria</th>--}}
-                            {{--<th>Precios <i class="fa fa-star text-warning" aria-hidden="true"></i><i class="fa fa-star text-warning" aria-hidden="true"></i></th>--}}
-                            {{--</tr>--}}
-                            </thead>
-                            <tbody>
-                            @foreach($paquete->where('estado', 3)->take(5) as $paquetes)
-                                <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
-                                    <td class="text-primary">
-                                        {{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}. <b>Visite</b>:
+                    <div class="row">
+                        <div class="col">
+                            <div class="d-none d-sm-block pt-5">
+                                <div class="alert alert-info py-2 mb-1" role="alert">
+                                    <h5 class="font-weight-bold m-0">Solo Tours</h5>
+                                </div>
+                                <p class="text-secondary"><i class="fa fa-chevron-right"></i> <b>Incluye:</b> hoteles, tours, traslados, entradas, desayunos, trenes.</p>
+
+                                @foreach($paquete->where('estado', 1)->sortBy('duracion')->take(6) as $paquetes)
+                                    <a href="{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}" class="list-group-item list-group-item-action text-primary">
+                                        {{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}. <b class="text-info">Visite</b>:
 
                                         @php
                                             $i = 1;
@@ -138,39 +179,25 @@
                                             {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@endif
                                             @php $i++; @endphp
                                         @endforeach
+                                    </a>
+                                @endforeach
 
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
+                            </div>
+                        </div>
                     </div>
 
-                    <h3 class="font-weight-bold mt-4" id="clasicos">Clásicos</h3>
-                    <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, tours, traslados, entradas, desayunos, trenes.</h5>
-                    <div class="card">
-                        {{--<div class="card-header bg-light">--}}
-                        {{--<p class="m-0 text-g-yellow font-weight-bold">Peru Ofertas</p>--}}
-                        {{--</div>--}}
-                        {{--<div class="card-body">--}}
-                        {{--<h4 class="card-title">Special title treatment</h4>--}}
-                        {{--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>--}}
-                        {{--<a href="#" class="btn btn-primary">Go somewhere</a>--}}
-                        {{--</div>--}}
-                        <table class="table table-responsive border-0 m-0 table-hover">
-                            <thead class="thead-inverse">
-                            {{--<tr>--}}
-                            {{--<th>Nombre del Paquete</th>--}}
-                            {{--<th>Destinos</th>--}}
-                            {{--<th>Categoria</th>--}}
-                            {{--<th>Precios <i class="fa fa-star text-warning" aria-hidden="true"></i><i class="fa fa-star text-warning" aria-hidden="true"></i></th>--}}
-                            {{--</tr>--}}
-                            </thead>
-                            <tbody>
-                            @foreach($paquete->where('estado', 4)->take(5) as $paquetes)
-                                <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
-                                    <td class="text-primary">
-                                        {{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}. <b>Visite</b>:
+                    <div class="row">
+                        <div class="col">
+                            <div class="d-none d-sm-block pt-5">
+                                {{--<h3 class="text-secondary pt-5 pb-4 h4"><strong>Paquetes</strong></h3>--}}
+                                <div class="alert alert-g-yellow py-2 mb-1" role="alert">
+                                    <h5 class="font-weight-bold m-0">Solo Traslados</h5>
+                                </div>
+                                <p class="text-secondary"><i class="fa fa-chevron-right"></i> <b>Incluye:</b> hoteles, tours, traslados, entradas, desayunos, trenes.</p>
+
+                                @foreach($paquete->where('estado', 1)->sortBy('duracion')->take(6) as $paquetes)
+                                    <a href="{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}" class="list-group-item list-group-item-action text-primary">
+                                        {{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}. <b class="text-g-yellow">Visite</b>:
 
                                         @php
                                             $i = 1;
@@ -180,71 +207,28 @@
                                             {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@endif
                                             @php $i++; @endphp
                                         @endforeach
+                                    </a>
+                                @endforeach
 
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h3 class="font-weight-bold mt-4" id="trekking">Trekking</h3>
-                    <h5 class="text-secondary font-pompiere font-weight-bold">Incluye: hoteles, tours, traslados, entradas, desayunos, trenes.</h5>
-                    <div class="card">
-                        {{--<div class="card-header bg-light">--}}
-                        {{--<p class="m-0 text-g-yellow font-weight-bold">Peru Ofertas</p>--}}
-                        {{--</div>--}}
-                        {{--<div class="card-body">--}}
-                        {{--<h4 class="card-title">Special title treatment</h4>--}}
-                        {{--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>--}}
-                        {{--<a href="#" class="btn btn-primary">Go somewhere</a>--}}
-                        {{--</div>--}}
-                        <table class="table table-responsive border-0 m-0 table-hover">
-                            <thead class="thead-inverse">
-                            {{--<tr>--}}
-                            {{--<th>Nombre del Paquete</th>--}}
-                            {{--<th>Destinos</th>--}}
-                            {{--<th>Categoria</th>--}}
-                            {{--<th>Precios <i class="fa fa-star text-warning" aria-hidden="true"></i><i class="fa fa-star text-warning" aria-hidden="true"></i></th>--}}
-                            {{--</tr>--}}
-                            </thead>
-                            <tbody>
-                            @foreach($paquete->where('estado', 5)->take(5) as $paquetes)
-                                <tr onClick="CrearEnlace('{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}');" class="clickable">
-                                    <td class="text-primary">
-                                        {{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}. <b>Visite</b>:
-
-                                        @php
-                                            $i = 1;
-                                            $num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));
-                                        @endphp
-                                        @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
-                                            {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@endif
-                                            @php $i++; @endphp
-                                        @endforeach
-
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-12 col-sm">
                     <div class="row">
-                        <div class="col-12 col-sm-8 d-none d-sm-block">
-                            <img src="{{asset('https://www.machupicchu.biz/imagenes/cusco/machupicchu/machu_picchu.jpg')}}" alt="" class="img-fluid w-100">
+                        <div class="col-12 col-sm-7 d-none d-sm-block">
+                            <img src="{{asset('images/machu-picchu.jpg')}}" alt="" class="img-fluid w-100 rounded">
                         </div>
                         <div class="col-12 col-sm">
                             <div class="card">
                                 <div class="p-3">
-                                    <p class="h5 text-secondary"><b>{{$paquete_i->duracion}} días</b></p>
+                                    <p class="h1 text-secondary"><b>{{$paquete_i->duracion}} <small>días</small></b></p>
                                     @if($paquete_i->duracion == 1)
                                         @php $h_precio = "d-none"; @endphp
                                     @else
                                         @php $h_precio = ""; @endphp
                                     @endif
-                                    <h5 class="h2"><sup class="h6 text-secondary {{$h_precio}}">Desde</sup> <b class="text-g-yellow">
+                                    <h5 class="h1 text-center"><sup class="h3 text-secondary {{$h_precio}}">Desde</sup> <b class="text-g-yellow">
 
 
                                                 @foreach($paquete_iti as $paquetes)
@@ -260,11 +244,11 @@
                                                 @endforeach
 
                                         </b> <span class="h6 text-secondary">USD</span></h5>
-                                    <p>Trip Code: {{$paquetes->codigo}}</p>
+                                    <p class="m-0"><b>Trip Code: {{$paquetes->codigo}}</b></p>
                                     {{--<a href="" class="btn btn-primary btn-lg btn-avalavility margin-top-10">Check Availability</a>--}}
                                 </div>
                                 <a  href="#book-now" type="button" class="btn btn-primary btn-lg btn-avalavility margin-top-10">
-                                    Reservar Ahora
+                                    Consultas
                                 </a>
                             </div>
                         </div>
