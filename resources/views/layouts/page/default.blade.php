@@ -31,12 +31,59 @@
     {{--</div>--}}
 {{--</section>--}}
 
+<section class="bg-light mt-5">
+    <div class="container-fluid">
+        <div class="row align-items-center no-gutters">
+            <div class="col d-none d-xl-block">
+                <img src="{{asset('images/social/we-care.jpg')}}" alt="" class="img-fluid">
+            </div>
+            <div class="col">
+                <div class="px-4">
+                    <h3 class="h1 font-weight-light">PORQUE NOS IMPORTA <i class="fa fa-heart text-danger"></i></h3>
+                    <p class="">Retribuimos a nuestras comunidades</p>
+                    <hr>
+                    <p class="text-primary"><i>Chaullacota se ubica a 15,000 alimentaciones (4500 mts) 2 horas al noroeste de Cusco.</i></p>
+                    <p class="text-justify font-weight-light">En GOTOPERU estamos comprometidos a hacer negocios de una manera que realmente le devuelva a nuestras comunidades parte de nuestras ganancias especialmente a comunidades ubicadas en lugares remotos. Nuestra planificación y ejecución de uno de nuestros viajes implica una larga cadena de suministro: desde guías y operadores locales hasta proveedores de transporte, hoteles y restaurantes, interactuamos con muchas organizaciones en diferentes lugares, pero también sabemos que algunas comunidades especialmente ubicadas arriba de los Andes a más de 15,000 pies que debido al difícil acceso, no reciben la asistencia que merecen, es por eso que organizamos periódicamente viajes a comunidades tan lejanas para traerles especialmente suéteres y juguetes para niños.</p>
+                </div>
 
-<section class="my-5 py-5">
+                <div class="row">
+                    <div class="col">
+                        <img src="{{asset('images/social/ninos.jpg')}}" alt="" class="img-fluid pl-4" data-toggle="modal" data-target="#social-1">
+                        <!-- Modal -->
+                        <div class="modal fade" id="social-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body p-0">
+                                        <img src="{{asset('images/social/ninos.jpg')}}" alt="" class="img-fluid rounded">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <img src="{{asset('images/social/social.jpg')}}" alt="" class="img-fluid pr-4" data-toggle="modal" data-target="#social-2">
+                        <!-- Modal -->
+                        <div class="modal fade" id="social-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body p-0">
+                                        <img src="{{asset('images/social/social.jpg')}}" alt="" class="img-fluid rounded">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
     <div class="container">
 
-        <div class="row pb-5 justify-content-center">
-            <div class="col-12 col-sm-8 col-md-8 col-lg-3">
+        <div class="row py-5 justify-content-center">
+            <div class="col-12 col-sm-8 col-md-8 col-lg-5">
                 <img src="{{asset('images/logo-gotoperu.png')}}" alt="" class="img-fluid">
             </div>
         </div>
