@@ -6,6 +6,7 @@
 /.idea
 /.vagrant
 node_modules.zip
+vendor.zip
 Homestead.json
 Homestead.yaml
 npm-debug.log

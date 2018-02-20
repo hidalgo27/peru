@@ -14,6 +14,10 @@
 </head>
 <body data-spy="scroll" data-target="#menu" class="position-relative">
 
+
+
+
+
 @yield('content')
 
 
@@ -173,10 +177,6 @@
 </script>
 
 <script>
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    });
-    
     $(document).ready(function () {
         $(window).on('load scroll', function () {
             var scrolled = $(this).scrollTop();

@@ -27,6 +27,7 @@
     "bootstrap": "^4.0.0",
     "font-awesome-5-css": "^1.0.0",
     "font-awesome-sass": "^4.7.0",
-    "fontawesome-scss": "^2.0.4"
+    "fontawesome-scss": "^2.0.4",
+    "fontawesome5-webfont": "^5.0.4"
   }
 }
