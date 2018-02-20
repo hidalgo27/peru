@@ -724,33 +724,44 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card-deck owl-carousel owl-theme">
+                    {{--<div class="card-deck owl-carousel owl-theme">--}}
 
-                        <div class="card">
+                        {{--<div class="card">--}}
                             {{--<div class="card-header">--}}
                             {{--<h4 class="card-title">City tour em cusco</h4>--}}
                             {{--</div>--}}
-                            <a href="http://gotoperu.com.pe/paquete/peru-magico"><img class="card-img-top " src="http://www.andesviagens.com/images/packages/AV700.jpg" alt="Card image cap"></a>
+                            {{--<a href="http://gotoperu.com.pe/paquete/peru-magico"><img class="card-img-top " src="http://www.andesviagens.com/images/packages/AV700.jpg" alt="Card image cap"></a>--}}
 
-                            <div class="card-body text-center">
-                                <h4 class="card-title"><a href="http://gotoperu.com.pe/paquete/peru-magico" class="text-dark">Perú Magico</a></h4>
-                                <p class="text-left"><i class="fa fa-clock-o text-primary" aria-hidden="true"></i> 6 Días</p>
-                                <p class="text-left card-text"><i class="fa fa-map-marker text-primary" aria-hidden="true"></i>
-                                    Lima, Cusco, Sacred Valley, Machu Picchu
-                                </p>
+                            {{--<div class="card-body text-center">--}}
+                                {{--<h4 class="card-title"><a href="http://gotoperu.com.pe/paquete/peru-magico" class="text-dark">Perú Magico</a></h4>--}}
+                                {{--<p class="text-left"><i class="fa fa-clock-o text-primary" aria-hidden="true"></i> 6 Días</p>--}}
+                                {{--<p class="text-left card-text"><i class="fa fa-map-marker text-primary" aria-hidden="true"></i>--}}
+                                    {{--Lima, Cusco, Sacred Valley, Machu Picchu--}}
+                                {{--</p>--}}
                                 {{--<a href="#" class="btn btn-primary">Go somewhere</a>--}}
-                            </div>
-                            <div class="card-footer text-muted">
-                                <div class="row">
-                                    <div class="col text-left">Desde</div>
-                                    <div class="col text-right font-weight-bold text-primary font-montserrat">
-                                        <sup>$</sup> 898 <small>USD</small>
+                            {{--</div>--}}
+                            {{--<div class="card-footer text-muted">--}}
+                                {{--<div class="row">--}}
+                                    {{--<div class="col text-left">Desde</div>--}}
+                                    {{--<div class="col text-right font-weight-bold text-primary font-montserrat">--}}
+                                        {{--<sup>$</sup> 898 <small>USD</small>--}}
 
-                                    </div>
-                                </div>
-                            </div>
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+
+                    {{--</div>--}}
+
+                    <div class="row">
+                        <div class="col">
+                            <img src="{{asset('images/grupos.jpg')}}" alt="" class="img-fluid rounded">
                         </div>
-
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <a href="paquete/machu-picchu-todo-el-dia"><img src="{{asset('images/oferta.jpg')}}" alt="" class="img-fluid rounded"></a>
+                        </div>
                     </div>
 
                     {{--<img src="{{asset('images/banner-restaurante.jpg')}}" alt="" class="img-fluid my-4">--}}
@@ -790,27 +801,42 @@
                         {{--</div>--}}
                     {{--</div>--}}
 
-                    <div class="embed-responsive embed-responsive-16by9 mt-4">
-                        <iframe  src="https://www.youtube.com/embed/HfBo74hJId0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <h3 class="font-weight-bold">Nuestra Promesa</h3>
+                            <h5 class="text-secondary font-pompiere font-weight-bold">Una aventura distinta cada día.</h5>
+                        </div>
                     </div>
 
-                    <h3 class="font-weight-bold mt-4">Nuestra Promesa</h3>
-                    <h5 class="text-secondary font-pompiere font-weight-bold">Una aventura distinta cada día.</h5>
-
-                    <div class="mt-4">
-                        <img src="{{asset('images/banners/1.jpg')}}" alt="" class="img-fluid rounded">
+                    <div class="row mt-4">
+                        <div class="col">
+                            <img src="{{asset('images/banners/1.jpg')}}" alt="" class="img-fluid rounded">
+                        </div>
                     </div>
 
-                    <div class="mt-4">
-                        <img src="{{asset('images/banners/2.jpg')}}" alt="" class="img-fluid rounded">
+                    <div class="row mt-4">
+                        <div class="col">
+                            <img src="{{asset('images/banners/2.jpg')}}" alt="" class="img-fluid rounded">
+                        </div>
                     </div>
 
-                    <div class="mt-4">
-                        <img src="{{asset('images/banners/3.jpg')}}" alt="" class="img-fluid rounded">
+                    <div class="row mt-4">
+                        <div class="col">
+                            <img src="{{asset('images/banners/3.jpg')}}" alt="" class="img-fluid rounded">
+                        </div>
                     </div>
 
-                    <div class="mt-4">
-                        <div class="fb-page" data-href="https://www.facebook.com/GOTOPERUcom/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/GOTOPERUcom/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/GOTOPERUcom/">GOTOPERUcom</a></blockquote></div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe  src="https://www.youtube.com/embed/HfBo74hJId0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <div class="fb-page" data-href="https://www.facebook.com/GOTOPERUcom/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/GOTOPERUcom/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/GOTOPERUcom/">GOTOPERUcom</a></blockquote></div>
+                        </div>
                     </div>
                 </div>
             </div>
