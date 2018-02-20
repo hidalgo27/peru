@@ -70,7 +70,7 @@
         <div class="content-header">
             <div class="container">
                 <div class="row content-header-row align-items-center">
-                    <div class="col-7">
+                    <div class="col col-sm-7">
                         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
@@ -105,7 +105,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col d-none d-sm-block">
                         <div class="row justify-content-center d-none d-sm-flex">
                             <div class="col">
                                 <div class="row no-gutters">
@@ -146,8 +146,8 @@
                         <div class="row my-3 justify-content-center">
                             <div class="col">
                                 <p class="text-white mb-3 h5"><span class="bg-g-green p-1 rounded-circle px-3 text-white">1</span> <b>Los mejores precios:</b> <small>Somos operadores locales.</small></p>
-                                <p class="text-white mb-3 h5"><span class="bg-g-yellow p-1 rounded-circle px-3 text-white">2</span> <b>Flexibles:</b> <small>Paquetes completos o solo transportes</small></p>
-                                <p class="text-white mb-3 h5"><span class="bg-g-dark p-1 rounded-circle px-3 text-white">3</span> <b>Calidad:</b> <small>Cientos de testimonios lo comprueban</small></p>
+                                <p class="text-white mb-3 h5"><span class="bg-g-yellow p-1 rounded-circle px-3 text-white">2</span> <b>Flexibles:</b> <small>Paquetes completos o solo transportes.</small></p>
+                                <p class="text-white mb-3 h5"><span class="bg-g-dark p-1 rounded-circle px-3 text-white">3</span> <b>Calidad:</b> <small>Cientos de testimonios lo comprueban.</small></p>
                             </div>
                         </div>
                         {{--<div class="row justify-content-center">--}}
@@ -182,7 +182,7 @@
 
     <div class="bg-white">
 
-        <ul id="menu" class="nav nav-pills nav-fill bg-light rounded  d-sm-flex sticky-top nav-itinerary">
+        <ul id="menu" class="nav nav-pills nav-fill bg-light rounded d-none  d-sm-flex sticky-top nav-itinerary">
             <li class="nav-item d-none d-sm-block">
                 <a class="nav-link text-white rounded-0 bg-g-green" href="#paquetes">Paquetes</a>
             </li>
@@ -521,10 +521,10 @@
 
         <section class="container bg-white">
             <div class="row">
-                <div class="col-8">
+                <div class="col col-sm-12 col-md-8">
                     <div class="row">
                         <div class="col">
-                            <div id="paquetes" class="d-none d-sm-block">
+                            <div id="paquetes" class="d-sm-block">
                                 {{--<h3 class="text-secondary pt-5 pb-4 h4"><strong>Paquetes</strong></h3>--}}
                                 <div class="alert alert-g-green py-2 mb-1" role="alert">
                                     <h5 class="font-weight-bold m-0">Paquetes</h5>
@@ -572,7 +572,7 @@
 
                     <div class="row">
                         <div class="col">
-                            <div id="hotel" class="d-none d-sm-block pt-5">
+                            <div id="hotel" class="d-sm-block pt-5">
                                 {{--<h3 class="text-secondary pt-5 pb-4 h4"><strong>Paquetes</strong></h3>--}}
                                 <div class="alert alert-danger py-2 mb-1" role="alert">
                                     <h5 class="font-weight-bold m-0">Paquetes sin Hotel</h5>
@@ -619,13 +619,13 @@
 
                     <div class="row">
                         <div class="col">
-                            <div id="tours" class="d-none d-sm-block pt-5">
+                            <div id="tours" class="d-sm-block pt-5">
                                 <div class="alert alert-info py-2 mb-1" role="alert">
                                     <h5 class="font-weight-bold m-0">Solo Tours</h5>
                                 </div>
                                 <h5 class="text-secondary py-2"><i class="fa fa-chevron-right"></i> <b>Incluye:</b> hoteles, tours, traslados, entradas, desayunos, trenes.</h5>
 
-                                @foreach($paquete->where('estado', 1)->sortBy('duracion')->take(6) as $paquetes)
+                                @foreach($paquete->where('estado', 3)->sortBy('duracion')->take(6) as $paquetes)
                                     <a href="{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}" class="list-group-item list-group-item-action">
                                         <div class="row no-gutters">
                                             <div class="col-5 text-primary">
@@ -644,15 +644,11 @@
                                             </div>
                                             <div class="col-2 text-right">
                                                 <b>
-                                                    @foreach($paquetes->precio_paquetes as $precio)
-                                                        @if($precio->estrellas == 2)
-                                                            @if($precio->precio == 0)
-                                                                <span class="text-danger">Pida una cotización</span>
-                                                            @else
-                                                                <sup>$</sup>{{$precio->precio}}<small>USD</small>
-                                                            @endif
-                                                        @endif
-                                                    @endforeach
+                                                    @if($paquetes->precio < 0)
+                                                        <span class="text-danger">Pida una cotización</span>
+                                                    @else
+                                                        <sup>$</sup>{{$paquetes->precio}}<small>USD</small>
+                                                    @endif
                                                 </b>
                                             </div>
                                         </div>
@@ -665,41 +661,27 @@
 
                     <div class="row">
                         <div class="col">
-                            <div id="traslados" class="d-none d-sm-block pt-5">
+                            <div id="traslados" class="d-sm-block pt-5">
                                 {{--<h3 class="text-secondary pt-5 pb-4 h4"><strong>Paquetes</strong></h3>--}}
                                 <div class="alert alert-g-yellow py-2 mb-1" role="alert">
                                     <h5 class="font-weight-bold m-0">Solo Traslados</h5>
                                 </div>
                                 <h5 class="text-secondary py-2"><i class="fa fa-chevron-right"></i> <b>Incluye:</b> hoteles, tours, traslados, entradas, desayunos, trenes.</h5>
 
-                                @foreach($paquete->where('estado', 1)->sortBy('duracion')->take(6) as $paquetes)
+                                @foreach($paquete->where('estado', 4)->sortBy('duracion')->take(6) as $paquetes)
                                     <a href="{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}" class="list-group-item list-group-item-action">
                                         <div class="row no-gutters">
                                             <div class="col-5 text-primary">
-                                                <b>{{$paquetes->duracion}} Días</b> {{ucwords(strtolower($paquetes->titulo))}}
+                                                <b>{{ucwords(strtolower($paquetes->titulo))}}</b>
                                             </div>
-                                            <div class="col">
-                                                <i class="fa fa-map-marker-alt pl-2 pr-1 text-g-yellow"></i>
-                                                @php
-                                                    $i = 1;
-                                                    $num_des = count($paquete_destinos->where('idpaquetes',$paquetes->id));
-                                                @endphp
-                                                @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
-                                                    {{ucwords(strtolower($paquete_destino->destinos->nombre))}}@if($i < $num_des),@endif
-                                                    @php $i++; @endphp
-                                                @endforeach
-                                            </div>
+
                                             <div class="col-2 text-right">
                                                 <b>
-                                                    @foreach($paquetes->precio_paquetes as $precio)
-                                                        @if($precio->estrellas == 2)
-                                                            @if($precio->precio == 0)
-                                                                <span class="text-danger">Pida una cotización</span>
-                                                            @else
-                                                                <sup>$</sup>{{$precio->precio}}<small>USD</small>
-                                                            @endif
-                                                        @endif
-                                                    @endforeach
+                                                    @if($paquetes->precio < 0)
+                                                        <span class="text-danger">Pida una cotización</span>
+                                                    @else
+                                                        <sup>$</sup>{{$paquetes->precio}}<small>USD</small>
+                                                    @endif
                                                 </b>
                                             </div>
                                         </div>
@@ -723,7 +705,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col col-sm-12 col-md-4">
                     {{--<div class="card-deck owl-carousel owl-theme">--}}
 
                         {{--<div class="card">--}}

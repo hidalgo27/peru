@@ -222,12 +222,12 @@
                         <div class="col-12 col-sm">
                             <div class="card">
                                 <div class="p-3">
-                                    <p class="h1 text-secondary"><b>{{$paquete_i->duracion}} <small>días</small></b></p>
-                                    @if($paquete_i->duracion == 1)
+                                    @if($paquete_i->duracion == 1 or $paquete_i->duracion == 0)
                                         @php $h_precio = "d-none"; @endphp
                                     @else
                                         @php $h_precio = ""; @endphp
                                     @endif
+                                    <p class="h1 text-secondary "><b>{{$paquete_i->duracion}} <small>días</small></b></p>
                                     <h5 class="h1 text-center"><sup class="h3 text-secondary {{$h_precio}}">Desde</sup> <b class="text-g-yellow">
 
 
