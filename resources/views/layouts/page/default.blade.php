@@ -31,7 +31,7 @@
     {{--</div>--}}
 {{--</section>--}}
 
-<section class="bg-light mt-5">
+<section class="bg-light pt-5">
     <div class="container-fluid">
         <div class="row align-items-center no-gutters">
             <div class="col d-none d-xl-block">
@@ -79,7 +79,7 @@
     </div>
 </section>
 
-<section class="py-5">
+<section class="bg-white py-5">
     <div class="container">
 
         <div class="row py-5 justify-content-center">

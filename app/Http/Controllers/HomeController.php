@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use App\TCategoria;
 use App\TDestino;
+use App\THotel;
 use App\TPaquete;
 use App\TPaqueteDestino;
+use App\TTour;
+use App\TTourDestino;
+use App\TTraslado;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -21,10 +25,23 @@ class HomeController extends Controller
         $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->get();
         $categoria = TCategoria::get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
-        return view('page.home', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria]);
+
+        $tours = TTour::with('tours_destinos')->get();
+        $tours_destinos = TTourDestino::with('destinos')->get();
+
+        $traslado = TTraslado::all();
+
+        return view('page.home', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria, 'tours'=>$tours, 'tours_destinos'=>$tours_destinos, 'traslado'=>$traslado]);
     }
 
     public function tours()
+    {
+        $tours = TTour::with('tours_destinos')->get();
+        $tours_destinos = TTourDestino::with('destinos')->get();
+        return view('page.tours', ['tours'=>$tours, 'tours_destinos'=>$tours_destinos]);
+    }
+
+    public function paquetes()
     {
         $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->get();
         $categoria = TCategoria::get();
@@ -101,6 +118,17 @@ class HomeController extends Controller
         return view('page.itinerary', ['title'=>$title, 'paquete_iti'=>$paquete_iti, 'paquete_destinos'=>$paquete_destinos, 'paquete'=>$paquete]);
     }
 
+    public function itinerario_tours($titulo)
+    {
+        $title = str_replace('-', ' ', strtoupper($titulo));
+
+        $tours_a = TTour::with('tours_destinos')->get();
+        $tours = TTour::with('tours_destinos')->where('titulo', $title)->get();
+        $tours_destinos = TTourDestino::with('destinos')->get();
+
+        return view('page.itinerary-tours', ['title'=>$title, 'tours'=>$tours, 'tours_destinos'=>$tours_destinos, 'tours_a'=>$tours_a]);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -144,6 +172,17 @@ class HomeController extends Controller
     public function social()
     {
         return view('page.social');
+    }
+    public function hoteles()
+    {
+        $hoteles = THotel::all();
+        return view('page.hotels', ['hoteles'=>$hoteles]);
+    }
+    public function transfer($titulo)
+    {
+        $title = str_replace('-', ' ', strtoupper($titulo));
+        $transfer = TTraslado::where('titulo', $title)->get();
+        return view('page.transfer', ['transfer'=>$transfer, 'title'=>$title]);
     }
 
     public function design()

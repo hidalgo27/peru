@@ -20,13 +20,19 @@ Route::get('/', [
     'as' => 'home_path',
 ]);
 
-//paquetes
-Route::get('/tours', [
+//tours
+Route::get('/peru-tours', [
     'uses' => 'HomeController@tours',
     'as' => 'tours_path',
 ]);
 
 //paquetes
+Route::get('/paquetes-de-viaje-peru', [
+    'uses' => 'HomeController@paquetes',
+    'as' => 'paquetes_path',
+]);
+
+//destios
 Route::get('/destinos-peru', [
     'uses' => 'HomeController@destinations',
     'as' => 'destinations_path',
@@ -38,9 +44,15 @@ Route::get('/destinos-peru/{titulo}', [
 ]);
 
 //detail promgram
-Route::get('/paquete/{titulo}', [
+Route::get('/paquetes-de-viaje-peru/{titulo}', [
     'uses' => 'HomeController@show',
     'as' => 'home_show_path',
+]);
+
+//detail tours
+Route::get('/peru-tours/{titulo}', [
+    'uses' => 'HomeController@itinerario_tours',
+    'as' => 'itinerario_tours_show_path',
 ]);
 //nosotros
 Route::get('/acerca-de-nosotros', [
@@ -52,6 +64,17 @@ Route::get('/acerca-de-nosotros', [
 Route::get('/responsabilidad-social', [
     'uses' => 'HomeController@social',
     'as' => 'social_path',
+]);
+
+//hoteles
+Route::get('/hoteles', [
+    'uses' => 'HomeController@hoteles',
+    'as' => 'hoteles_path',
+]);
+//traslados
+Route::get('/traslados/{titulo}', [
+    'uses' => 'HomeController@transfer',
+    'as' => 'transfer_path',
 ]);
 
 //form
