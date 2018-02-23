@@ -68,26 +68,16 @@
                     <p class="align-middle">No dejar escapar la oportunidad de que nuestros turistas descubran los encantos de Perú y vivir una aventura inolvidable.</p>
                 </div>
 
-
-                <div class="col-12 col-md-auto d-sm-none d-md-none d-lg-inline">
-                    <img src="{{asset('images/about/about12.jpg')}}" alt="" class="img-fluid">
+                <div class="col-12 col-md p-4">
+                    <h3 class="align-middle">MISIÓN</h3>
+                    <p class="align-middle">Ofrecer a nuestros clientes los mejores recursos peruanos para una aventura inolvidable.</p>
                 </div>
             </div>
             <div class="row w-100 no-gutters align-items-center bg-light">
-                <div class="col-12 col-md-auto d-none d-sm-inline">
-                    <img src="{{asset('images/about/about28.jpg')}}" alt="" class="img-fluid d-sm-none d-md-none d-lg-inline">
-                </div>
 
-
-                <div class="col-12 col-md-auto">
-                    <img src="{{asset('images/about/about6.jpg')}}" alt="" class="img-fluid">
-                </div>
 
                 <div class="col-12 col-md">
-                    <div class="border-0 p-2 text-center">
-                        <h3 class="text-primary">MISIÓN</h3>
-                        <p>Ofrecer a nuestros clientes los mejores recursos peruanos para una aventura inolvidable.</p>
-                    </div>
+                    <img src="{{asset('images/about/about-l.jpg')}}" alt="" class="img-fluid">
                 </div>
             </div>
             <div class="row w-100 no-gutters align-items-center bg-dark">
