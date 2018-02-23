@@ -670,7 +670,7 @@
                     </div>
                     <div class="row mt-4">
                         <div class="col">
-                            <a href="paquete/machu-picchu-todo-el-dia"><img src="{{asset('images/oferta.jpg')}}" alt="" class="img-fluid rounded"></a>
+                            <a href="http://beta.gotoperu.travel/peru-tours/machu-picchu-todo-el-dia"><img src="{{asset('images/oferta.jpg')}}" alt="" class="img-fluid rounded"></a>
                         </div>
                     </div>
 
