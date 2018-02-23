@@ -147,32 +147,32 @@
                         </div>
                         <p class="text-secondary"><i class="fa fa-chevron-right"></i> <b>Incluye:</b> hoteles, tours, traslados, entradas, desayunos, trenes.</p>
 
-                        @foreach($tours_a as $tour)
-                            <a href="{{route('home_show_path', str_replace(' ','-',strtolower($tour->titulo)))}}" class="list-group-item list-group-item-action">
+                        @foreach($tours_a as $tour2)
+                            <a href="{{route('home_show_path', str_replace(' ','-',strtolower($tour2->titulo)))}}" class="list-group-item list-group-item-action">
                                 <div class="row no-gutters">
                                     <div class="col-5 text-primary">
-                                        <b>{{ucwords(strtolower($tour->titulo))}}</b>
+                                        <b>{{ucwords(strtolower($tour2->titulo))}}</b>
                                     </div>
                                     <div class="col">
-                                    <i class="fa fa-clock pl-2 pr-1 text-info"></i> {{$tour->duracion}}
+                                    <i class="fa fa-clock pl-2 pr-1 text-info"></i> {{$tour2->duracion}}
                                     </div>
                                     <div class="col">
                                         <i class="fa fa-map-marker-alt pl-2 pr-1 text-info"></i>
                                         @php
                                             $i = 1;
-                                            $num_des = count($tours_destinos->where('idtours',$tour->id));
+                                            $num_des = count($tours_destinos->where('idtours',$tour2->id));
                                         @endphp
-                                        @foreach($tours_destinos->where('idtours',$tour->id) as $tour_destino)
+                                        @foreach($tours_destinos->where('idtours',$tour2->id) as $tour_destino)
                                             {{ucwords(strtolower($tour_destino->destinos->nombre))}}@if($i < $num_des),@endif
                                             @php $i++; @endphp
                                         @endforeach
                                     </div>
                                     <div class="col-2 text-right">
                                         <b>
-                                            @if($tour->precio < 0)
+                                            @if($tour2->precio < 0)
                                                 <span class="text-danger">Pida una cotización</span>
                                             @else
-                                                <sup>$</sup>{{$tour->precio_g}}<small>USD</small>
+                                                <sup>$</sup>{{$tour2->precio_g}}<small>USD</small>
                                             @endif
                                             {{--@if($paquetes->precio == 0 OR $paquetes->precio == NULL)--}}
                                             {{--@foreach($paquetes->precio_paquetes as $precio)--}}
