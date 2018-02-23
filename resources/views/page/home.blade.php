@@ -40,7 +40,7 @@
                                 <div class="carousel-item active">
                                     <div class="row justify-content-center">
                                         <div class="col-9">
-                                            <a href="http://beta.gotoperu.travel/peru-tours/machu-picchu-todo-el-dia">
+                                            <a href="peru-tours/machu-picchu-todo-el-dia">
                                                 <div class="banner-header rounded text-white py-2 px-4">
                                                     <h2 class="text-center h1 text-g-yellow m-0">Machu Picchu</h2>
                                                     <p class="m-0 h4 font-weight-normal text-center">Tours a Machu Picchu de 1 dia</p>
@@ -670,7 +670,7 @@
                     </div>
                     <div class="row mt-4">
                         <div class="col">
-                            <a href="http://beta.gotoperu.travel/peru-tours/machu-picchu-todo-el-dia"><img src="{{asset('images/oferta.jpg')}}" alt="" class="img-fluid rounded"></a>
+                            <a href="peru-tours/machu-picchu-todo-el-dia"><img src="{{asset('images/oferta.jpg')}}" alt="" class="img-fluid rounded"></a>
                         </div>
                     </div>
 
