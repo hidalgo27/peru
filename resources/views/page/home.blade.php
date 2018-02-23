@@ -40,11 +40,11 @@
                                 <div class="carousel-item active">
                                     <div class="row justify-content-center">
                                         <div class="col-9">
-                                            <a href="">
+                                            <a href="http://beta.gotoperu.travel/peru-tours/machu-picchu-todo-el-dia">
                                                 <div class="banner-header rounded text-white py-2 px-4">
                                                     <h2 class="text-center h1 text-g-yellow m-0">Machu Picchu</h2>
                                                     <p class="m-0 h4 font-weight-normal text-center">Tours a Machu Picchu de 1 dia</p>
-                                                    <p class="m-0 text-center">desde solo <span class="h1 text-info"><sup>$</sup>289</span> p.p</p>
+                                                    <p class="m-0 text-center">desde solo <span class="h1 text-info"><sup>$</sup>290</span> p.p</p>
                                                     <hr class="my-1">
                                                     <small class="m-0">Incluye: Traslados, trenes, entradas, buses, guiado, asistencias.</small>
                                                 </div>
