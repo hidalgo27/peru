@@ -49,6 +49,12 @@ Route::get('/paquetes-de-viaje-peru/{titulo}', [
     'as' => 'home_show_path',
 ]);
 
+//detail promgram
+Route::get('/paquetes-de-viaje-peru/{titulo}/sin-hotel', [
+    'uses' => 'HomeController@sin_hotel',
+    'as' => 'sin_hotel_show_path',
+]);
+
 //detail tours
 Route::get('/peru-tours/{titulo}', [
     'uses' => 'HomeController@itinerario_tours',

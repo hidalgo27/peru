@@ -2,15 +2,18 @@
 @section('content')
     <header class="header-video-default position-relative">
         @include('layouts.page.menu')
-        <div id="overlay">
-            <video class="" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>
-                <source src="{{asset('media/video6.mp4')}}" />
-                <source src="{{asset('media/video6.m4v')}}" type="video/mp4" />
-                <source src="{{asset('media/video6.webm')}}" type="video/webm" />
-                <source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />
-            </video>
+        {{--<div id="overlay">--}}
+            {{--<video class="" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>--}}
+                {{--<source src="{{asset('media/video6.mp4')}}" />--}}
+                {{--<source src="{{asset('media/video6.m4v')}}" type="video/mp4" />--}}
+                {{--<source src="{{asset('media/video6.webm')}}" type="video/webm" />--}}
+                {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
+            {{--</video>--}}
 
-            <img src="{{asset('images/logos/logo-expedia2.png')}}" alt="" class="header-expedia">
+            {{--<img src="{{asset('images/logos/logo-expedia2.png')}}" alt="" class="header-expedia">--}}
+        {{--</div>--}}
+        <div id="overlay" class="overlay-img">
+            <img src="{{asset('images/sliders/cusco.jpg')}}" alt="" id="hero-vid">
         </div>
         <div class="position-absolute bottom-n-1">
             <img src="{{asset('images/pce.png')}}" alt="" class="img-fluid">
@@ -72,7 +75,7 @@
                     <div class="alert alert-primary py-2 mb-1" role="alert">
                         <h5 class="font-weight-bold m-0">Todos nuestros paquetes y tours a Perú</h5>
                     </div>
-                    <h5 class="text-secondary py-2"><i class="fa fa-chevron-right"></i> <b>Incluye:</b> ---.</h5>
+                    {{--<h5 class="text-secondary py-2"><i class="fa fa-chevron-right"></i> <b>Incluye:</b> ---.</h5>--}}
 
                     @foreach($paquete->sortBy('duracion') as $paquetes)
                         <a href="{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}" class="list-group-item list-group-item-action">

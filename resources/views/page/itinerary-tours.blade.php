@@ -216,9 +216,9 @@
                 <div class="col-12 col-sm-9 col-md-9 col-lg-8">
                     <form id="i_form" role="form">
                         {{csrf_field()}}
-                        <h3 class="text-secondary mt-4">Acomodación</h3>
+                        <h3 class="text-secondary mt-4 d-none">Acomodación</h3>
 
-                        <div class="row">
+                        <div class="row d-none">
                             <div class="col-6 col-sm" data-toggle="buttons">
                                 <label class="btn btn-outline-primary btn-block">
                                     <input type="checkbox" autocomplete="off" name="accommodation[]" value="Econômico"> Económico

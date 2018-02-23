@@ -105,9 +105,9 @@
                                         <td><i class="text-danger">Pida Cotización</i></td>
                                     </tr>
                                 </table>
-                                <a  href="#book-now" type="button" class="btn btn-primary btn-lg btn-avalavility btn-block">
-                                    Consultas
-                                </a>
+                                {{--<a  href="#book-now" type="button" class="btn btn-primary btn-lg btn-avalavility btn-block">--}}
+                                    {{--Consultas--}}
+                                {{--</a>--}}
                             </div>
                         </div>
                     </div>

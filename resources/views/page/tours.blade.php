@@ -2,15 +2,8 @@
 @section('content')
     <header class="header-video-default position-relative">
         @include('layouts.page.menu')
-        <div id="overlay">
-            <video class="" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>
-                <source src="{{asset('media/video6.mp4')}}" />
-                <source src="{{asset('media/video6.m4v')}}" type="video/mp4" />
-                <source src="{{asset('media/video6.webm')}}" type="video/webm" />
-                <source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />
-            </video>
-
-            <img src="{{asset('images/logos/logo-expedia2.png')}}" alt="" class="header-expedia">
+        <div id="overlay" class="overlay-img">
+            <img src="{{asset('images/destinations/machu-picchu.jpg')}}" alt="" id="hero-vid">
         </div>
         <div class="position-absolute bottom-n-1">
             <img src="{{asset('images/pce.png')}}" alt="" class="img-fluid">
@@ -73,7 +66,7 @@
                         <div class="alert alert-info py-2 mb-1" role="alert">
                             <h5 class="font-weight-bold m-0">Solo Tours</h5>
                         </div>
-                        <h5 class="text-secondary py-2"><i class="fa fa-chevron-right"></i> <b>Incluye:</b> hoteles, tours, traslados, entradas, desayunos, trenes.</h5>
+                        {{--<h5 class="text-secondary py-2"><i class="fa fa-chevron-right"></i> <b>Incluye:</b> hoteles, tours, traslados, entradas, desayunos, trenes.</h5>--}}
 
                         @foreach($tours as $tour)
                             <a href="{{route('itinerario_tours_show_path', str_replace(' ','-',strtolower($tour->titulo)))}}" class="list-group-item list-group-item-action">

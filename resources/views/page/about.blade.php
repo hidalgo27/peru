@@ -3,15 +3,8 @@
 
     <header class="header-video-default position-relative">
         @include('layouts.page.menu')
-        <div id="overlay">
-            <video class="" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>
-                <source src="{{asset('media/video6.mp4')}}" />
-                <source src="{{asset('media/video6.m4v')}}" type="video/mp4" />
-                <source src="{{asset('media/video6.webm')}}" type="video/webm" />
-                <source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />
-            </video>
-
-            <img src="{{asset('images/logos/logo-expedia2.png')}}" alt="" class="header-expedia">
+        <div id="overlay" class="overlay-img">
+            <img src="{{asset('images/about.jpg')}}" alt="" id="hero-vid">
         </div>
         <div class="position-absolute bottom-n-1">
             <img src="{{asset('images/pce.png')}}" alt="" class="img-fluid">
@@ -30,8 +23,6 @@
             </div>
         </div>
     </header>
-    <p>Visitaremos la Plaza de Armas, una de las más bellas del Perú, la Iglesia jesuita de la Compañía, que en su bella fachada anuncia la denominada arquitectura mestiza, sus claustros y cúpula, la casona Tristan del Pozo y para tener una muestra más del pasado colonial, visitaremos los tambos de bronce y la Cabezona, lugares donde se desarrolló diversas actividades comerciales, el famoso trueque de los productos venidos de la costa, de la sierra o de ultramar para ser ofrecidos en la ciudad, se ubicaron también los artesanos, sastres. Los Tambos con el tiempo se convirtieron en viviendas, surgiendo un nuevo episodio histórico; visitar los tambos será encontrarse con experiencias, sensaciones y un modo particular de vida de la historia de Arequipa.</p>
-    <p>Se Visita el monasterio de Santa Catalina, la Plaza de Armas, la iglesia jesuita de La Compañía, sus claustros y cúpula, la casona Tristán del Pozo.</p>
     <section class="sticky-top bg-white d-sm-none">
         <div class="container">
             <div class="row no-gutters text-center">

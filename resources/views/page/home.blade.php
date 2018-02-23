@@ -360,55 +360,7 @@
                 </div>
             </div>
 
-            <!-- Modal -->
-            <div class="modal fade" id="contant_m" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Contacte con nosotros</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Envié la información requerida y nos pondremos en contacto dentro de las 24 horas garantizado.</p>
-                            <form id="c_form">
-                                {{csrf_field()}}
-                                <div class="form-group">
-                                    <label for="c_nombre">Nombres</label>
-                                    <input type="text" class="form-control" id="c_nombre" placeholder="Nombre completo">
-                                </div>
 
-                                <div class="form-group">
-                                    <label for="c_email">Email</label>
-                                    <input type="email" class="form-control" id="c_email" placeholder="Email">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="c_comentario">Comentario</label>
-                                    <textarea id="c_comentario" class="form-control" cols="10" rows="3"></textarea>
-                                </div>
-
-                                <div class="alert alert-success alert-dismissible fade d-none" id="c_alert" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    <strong>Muchas</strong> por contactar con GOTOPERU, un agente de viajes se pondrá en contacto con usted en las próximas 24 horas para ayudarle con la planificación de su viaje. :)
-                                </div>
-
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-lg btn-block btn-g-green" id="c_send" type="button" onclick="contact()">Enviar
-                                <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                            </button>
-                            <ul class="fa-ul pull-right d-none" id="loader3">
-                                <li><i class="fa-li fa fa-spinner fa-spin"></i> <i>Enviando...</i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <!-- Modal -->
             <div class="modal fade" id="llamada_m" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -543,8 +495,8 @@
                                 </div>
                                 <h5 class="text-secondary py-2"><i class="fa fa-chevron-right"></i> <b>Incluye:</b> hoteles, tours, traslados, entradas, desayunos, trenes.</h5>
 
-                                @foreach($paquete->where('estado', 1)->sortBy('duracion')->take(6) as $paquetes)
-                                    <a href="{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}" class="list-group-item list-group-item-action">
+                                @foreach($paquete->where('s_precio', 1)->sortBy('duracion')->take(6) as $paquetes)
+                                    <a href="{{route('sin_hotel_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}" class="list-group-item list-group-item-action">
                                         <div class="row no-gutters">
                                             <div class="col-5 text-primary">
                                                 <b>{{$paquetes->duracion}} Días</b> {{ucwords(strtolower($paquetes->titulo))}}
@@ -562,15 +514,7 @@
                                             </div>
                                             <div class="col-2 text-right">
                                                 <b>
-                                                    @foreach($paquetes->precio_paquetes as $precio)
-                                                        @if($precio->estrellas == 2)
-                                                            @if($precio->precio == 0)
-                                                                <span class="text-danger">Pida una cotización</span>
-                                                            @else
-                                                                <sup>$</sup>{{$precio->precio}}<small>USD</small>
-                                                            @endif
-                                                        @endif
-                                                    @endforeach
+                                                    <sup>$</sup>{{$paquetes->precio}}<small>USD</small>
                                                 </b>
                                             </div>
                                         </div>
@@ -802,6 +746,55 @@
                     <div class="row mt-4">
                         <div class="col">
                             <div class="fb-page" data-href="https://www.facebook.com/GOTOPERUcom/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/GOTOPERUcom/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/GOTOPERUcom/">GOTOPERUcom</a></blockquote></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="bg-light">
+            <div class="container-fluid">
+                <div class="row align-items-center no-gutters">
+                    <div class="col d-none d-xl-block">
+                        <img src="{{asset('images/social/we-care.jpg')}}" alt="" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <div class="px-4">
+                            <h3 class="h1 font-weight-light">PORQUE NOS IMPORTA <i class="fa fa-heart text-danger"></i></h3>
+                            <p class="">Retribuimos a nuestras comunidades</p>
+                            <hr>
+                            <p class="text-primary"><i>Chaullacota se ubica a 15,000 alimentaciones (4500 mts) 2 horas al noroeste de Cusco.</i></p>
+                            <p class="text-justify font-weight-light">En GOTOPERU estamos comprometidos a hacer negocios de una manera que realmente le devuelva a nuestras comunidades parte de nuestras ganancias especialmente a comunidades ubicadas en lugares remotos. Nuestra planificación y ejecución de uno de nuestros viajes implica una larga cadena de suministro: desde guías y operadores locales hasta proveedores de transporte, hoteles y restaurantes, interactuamos con muchas organizaciones en diferentes lugares, pero también sabemos que algunas comunidades especialmente ubicadas arriba de los Andes a más de 15,000 pies que debido al difícil acceso, no reciben la asistencia que merecen, es por eso que organizamos periódicamente viajes a comunidades tan lejanas para traerles especialmente suéteres y juguetes para niños.</p>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <img src="{{asset('images/social/ninos.jpg')}}" alt="" class="img-fluid pl-4" data-toggle="modal" data-target="#social-1">
+                                <!-- Modal -->
+                                <div class="modal fade" id="social-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-0">
+                                                <img src="{{asset('images/social/ninos.jpg')}}" alt="" class="img-fluid rounded">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <img src="{{asset('images/social/social.jpg')}}" alt="" class="img-fluid pr-4" data-toggle="modal" data-target="#social-2">
+                                <!-- Modal -->
+                                <div class="modal fade" id="social-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-0">
+                                                <img src="{{asset('images/social/social.jpg')}}" alt="" class="img-fluid rounded">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -55,7 +55,11 @@ class HomeController extends Controller
         $categoria = TCategoria::get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
         $destinos = TDestino::get();
-        return view('page.destinations', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria, 'destinos'=>$destinos]);
+
+        $tours = TTour::with('tours_destinos')->get();
+        $tours_destinos = TTourDestino::with('destinos')->get();
+
+        return view('page.destinations', ['paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'categoria'=>$categoria, 'destinos'=>$destinos, 'tours'=>$tours, 'tours_destinos'=>$tours_destinos]);
     }
     public function destinations_show($title)
     {
@@ -69,9 +73,12 @@ class HomeController extends Controller
 
         $destination = str_replace('-', ' ', $title);
 
+        $tours = TTour::with('tours_destinos')->get();
+        $tours_destinos = TTourDestino::with(['destinos'=>function($query) use ($destinations) { $query->where('nombre', $destinations);}])->get();
+
 
 //        dd($paquetes_de);
-        return view('page.destinations-show', ['paquetes_de'=>$paquetes_de, 'paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'destinos'=>$destinos, 'title'=>$destinations, 'destination'=>$destination]);
+        return view('page.destinations-show', ['paquetes_de'=>$paquetes_de, 'paquete'=>$paquete, 'paquete_destinos'=>$paquete_destinos, 'destinos'=>$destinos, 'title'=>$destinations, 'destination'=>$destination, 'tours'=>$tours, 'tours_destinos'=>$tours_destinos]);
     }
 
     /**
@@ -116,6 +123,17 @@ class HomeController extends Controller
         $paquete_iti = TPaquete::with('itinerario','paquetes_destinos', 'precio_paquetes')->where('titulo', $title)->get();
 
         return view('page.itinerary', ['title'=>$title, 'paquete_iti'=>$paquete_iti, 'paquete_destinos'=>$paquete_destinos, 'paquete'=>$paquete]);
+    }
+
+    public function sin_hotel($titulo)
+    {
+        $title = str_replace('-', ' ', strtoupper($titulo));
+
+        $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->get();
+        $paquete_destinos = TPaqueteDestino::with('destinos')->get();
+        $paquete_iti = TPaquete::with('itinerario','paquetes_destinos', 'precio_paquetes')->where('titulo', $title)->get();
+
+        return view('page.itinerary-sin-hotel', ['title'=>$title, 'paquete_iti'=>$paquete_iti, 'paquete_destinos'=>$paquete_destinos, 'paquete'=>$paquete]);
     }
 
     public function itinerario_tours($titulo)

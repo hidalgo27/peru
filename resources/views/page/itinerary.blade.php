@@ -110,7 +110,7 @@
                                 </div>
                                 <p class="text-secondary"><i class="fa fa-chevron-right"></i> <b>Incluye:</b> hoteles, tours, traslados, entradas, desayunos, trenes.</p>
 
-                                @foreach($paquete->where('estado', 1)->sortBy('duracion')->take(6) as $paquetes)
+                                @foreach($paquete->where('s_precio', 1)->sortBy('duracion')->take(6) as $paquetes)
                                     <a href="{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}" class="list-group-item list-group-item-action text-primary">
                                         {{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}. <b class="text-danger">Visite</b>:
 
@@ -128,7 +128,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="col-12 col-sm">
                     <div class="row">
@@ -138,17 +138,7 @@
                         <div class="col-12 col-sm">
                             <div class="card">
                                 <div class="p-3">
-                                    @if($paquete_i->duracion == 1)
-                                        <p class="h1 text-secondary "><b>{{$paquete_i->duracion}} <small>día</small></b></p>
-                                        <h5 class="h1 text-center"><b class="text-g-yellow">
-                                                @if($paquete_i->precio < 0)
-                                                    <span class="text-danger">Pida una cotización</span>
-                                                @else
-                                                    <sup>$</sup>{{$paquete_i->precio}}<small>USD</small>
-                                                @endif
-                                            </b> <span class="h6 text-secondary">USD</span></h5>
-                                        <p class="m-0"><b>Trip Code: {{$paquete_i->codigo}}</b></p>
-                                    @else
+
                                         <p class="h1 text-secondary "><b>{{$paquete_i->duracion}} <small>días</small></b></p>
                                         <h5 class="h1 text-center"><sup class="h3 text-secondary">Desde</sup> <b class="text-g-yellow">
                                                 @foreach($paquete_iti as $paquetes)
@@ -163,8 +153,8 @@
                                                     @endforeach
                                                 @endforeach
                                             </b> <span class="h6 text-secondary">USD</span></h5>
-                                                        <p class="m-0"><b>Trip Code: {{$paquete_i->codigo}}</b></p>
-                                    @endif
+                                    <p class="m-0"><b>Trip Code: {{$paquete_i->codigo}}</b></p>
+
 
                                     {{--<a href="" class="btn btn-primary btn-lg btn-avalavility margin-top-10">Check Availability</a>--}}
                                 </div>
