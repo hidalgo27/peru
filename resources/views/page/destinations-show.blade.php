@@ -3,7 +3,7 @@
     <header class="header-video-default position-relative">
         @include('layouts.page.menu')
         <div id="overlay" class="overlay-img">
-            <img src="{{asset('images/destinations/'.str_replace(' ','-', $title).'.jpg')}}" alt="" id="hero-vid">
+            <img src="{{asset('images/destinations/'.str_replace(' ','-', strtolower($title)).'.jpg')}}" alt="" id="hero-vid">
         </div>
         <div class="position-absolute bottom-n-1">
             <img src="{{asset('images/pce.png')}}" alt="" class="img-fluid">
