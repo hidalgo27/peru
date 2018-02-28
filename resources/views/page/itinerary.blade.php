@@ -19,12 +19,56 @@
 
         <div class="content-header">
             <div class="container">
-                <div class="row content-header-row align-items-center">
+                <div class="row content-header-row align-items-center no-gutters">
                     <div class="col text-center">
                         <h3 class="text-white text-center h1">{{strtoupper(str_replace('-', ' ', $title))}}</h3>
-                        <i class="fa fa-chevron-down text-white h1"></i>
+                        {{--<i class="fa fa-chevron-down text-white h1"></i>--}}
                     </div>
+                    <div class="col col-md-6 col-lg-4 col-xl-3 bg-rgba-white rounded">
+                        <h4 class="text-g-yellow pt-2 pl-2 m-0"><i class="fa fa-map-marker-alt"></i> Resumen</h4>
 
+                        <div class="pb-4 position-relative">
+                            @foreach($paquete_iti as $paquete_itinerary)
+                                @foreach($paquete_itinerary->itinerario->sortBy('dia')->take(6) as $itinerario)
+                                    <p class="m-0 p-2">
+                                        <b class="font-weight-bold">Day {{$itinerario->dia}}: </b> {{ucwords(strtolower($itinerario->titulo))}}
+                                    </p>
+                                @endforeach
+                            @endforeach
+
+                            @if($paquete_itinerary->duracion > 6)
+                                <div class="gradient-destinations"></div>
+                                <a href="#" class="btn-link font-weight-normal b-routes p-2" data-toggle="modal" data-target="#route-modal">Full Outline <i class="fa fa-chevron-right"></i></a>
+                            @endif
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="route-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Resumen</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col box-route-ininerary p-4">
+
+                                                @foreach($paquete_itinerary->itinerario as $itinerario)
+                                                    <p class="m-0 p-2">
+                                                        <b class="font-weight-bold">Day {{$itinerario->dia}}: </b> {{ucwords(strtolower($itinerario->titulo))}}
+                                                    </p>
+                                                @endforeach
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -47,6 +91,15 @@
         </div>
     </section>
 
+    <section class="bg-white m-0">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    {{Breadcrumbs::render('paquetes-show', $title)}}
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="py-3 bg-white">
         <div class="container">
@@ -231,6 +284,43 @@
                             @php echo $paquetes->opcional; @endphp
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <h3 class="font-weight-bold mt-4"><strong>Hotels</strong></h3>
+                            {{--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at distinctio eos error minus, perspiciatis praesentium sint suscipit ullam voluptatum. Ab, aliquid architecto atque consequuntur expedita hic inventore non repudiandae!</p>--}}
+                            <div class="alert alert-primary text-center mt-3" role="alert">|
+                                @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
+                                    <a href="#{{$paquete_destino->destinos->id}}-hotel" class="font-weight-bold">{{$paquete_destino->destinos->nombre}} HOTEL</a> |
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destino)
+                        <h5 class="text-g-yellow pt-4 m-0" id="{{$paquete_destino->destinos->id}}-hotel"><i class="fa fa-check"></i> {{$paquete_destino->destinos->nombre}} HOTEL</h5>
+                        @foreach($hoteles_destinos->where('iddestinos', $paquete_destino->destinos->id) as $hoteles_destino)
+                            <div class="row pt-3 pb-4">
+                                <div class="col-auto d-none d-sm-block">
+                                    <img src="{{$hoteles_destino->hotel->imagen}}" alt="" class=" rounded-circle" width="100" height="100">
+                                </div>
+                                <div class="col">
+                                    <h3>{{$hoteles_destino->hotel->nombre}}</h3>
+                                    @for($i=0; $i < $hoteles_destino->hotel->estrellas; $i++)
+                                        <i class="fa fa-star text-g-yellow"></i>
+                                    @endfor
+                                    <p class="pt-2"><i class="fa fa-map-marker-alt"></i> {{$hoteles_destino->hotel->direccion}}</p>
+                                    @php $services = explode(',', $hoteles_destino->hotel->servicios); @endphp
+                                    <p class="lead"><b>Services:</b>
+                                        @foreach($services as $service)
+                                            <i class="fa fa-check text-secondary"></i> {{$service}}
+                                        @endforeach
+                                    </p>
+                                    <a href="{{$hoteles_destino->hotel->url}}" class="btn btn-outline-secondary" target="_blank">{{$hoteles_destino->hotel->nombre}}</a>
+                                </div>
+                            </div>
+                            <hr>
+                        @endforeach
+                    @endforeach
 
                 </div>
             </div>

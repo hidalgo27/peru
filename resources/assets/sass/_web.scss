@@ -22,6 +22,9 @@
   bottom: 0; left: 0;
   //background: url(http://placehold.it/20x20/1) repeat;
 }
+.bg-rgba-white {
+  background: hsla(0,0%,100%,.8);
+}
 .nav-peru-top{
   z-index: 2;
 }
@@ -49,7 +52,35 @@
   cursor: pointer;
 }
 
-
+.box-route-ininerary {
+  column-count: 2;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  -o-column-count: 2;
+  column-gap: 1.5em;
+  -webkit-column-gap: 1.5em;
+  -moz-column-gap: 1.5em;
+  -o-column-gap: 1.5em;
+  padding: 15px 0 15px 60px;
+}
+.gradient-destinations{
+  background: -moz-linear-gradient(top,rgba(255,255,255,0) 0,rgba(255,255,255,1) 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0,rgba(255,255,255,0)),color-stop(100%,rgba(255,255,255,1)));
+  background: -webkit-linear-gradient(top,rgba(255,255,255,0) 0,rgba(255,255,255,1) 100%);
+  background: -o-linear-gradient(top,rgba(255,255,255,0) 0,rgba(255,255,255,1) 100%);
+  background: -ms-linear-gradient(top,rgba(255,255,255,0) 0,rgba(255,255,255,1) 100%);
+  background: linear-gradient(to bottom,rgba(255,255,255,0) 0,rgba(255,255,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff', GradientType=0 );
+  bottom: -1px;
+  height: 8em;
+  position: absolute;
+  width: 100%;
+}
+.b-routes{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
 
 /* Video Overlay */
 .header-video{

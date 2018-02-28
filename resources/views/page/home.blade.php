@@ -6,7 +6,7 @@
         {{--<img src="{{asset('images/sliders/slider-1.jpg')}}" alt="" class="img-fluid d-none d-sm-inline">--}}
         {{--<img src="{{asset('images/sliders/slider-2.jpg')}}" alt="" class="img-fluid d-sm-none">--}}
         <div id="overlay">
-            <video class="" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>
+            <video class="" id="hero-vid" poster="{{asset('images/sliders/cusco.jpg')}}" autoplay loop muted>
                 <source src="{{asset('media/video6.mp4')}}" />
                 <source src="{{asset('media/video6.m4v')}}" type="video/mp4" />
                 <source src="{{asset('media/video6.webm')}}" type="video/webm" />
@@ -485,6 +485,11 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row mt-2">
+                        <div class="col text-right">
+                            <a href="{{route('paquetes_path')}}" class="btn-link font-weight-normal">Ver todos los paquetes <i class="fa fa-chevron-right"></i></a>
+                        </div>
+                    </div>
 
                     <div class="row">
                         <div class="col">
@@ -496,7 +501,7 @@
                                 <h5 class="text-secondary py-2"><i class="fa fa-chevron-right"></i> <b>Incluye:</b> hoteles, tours, traslados, entradas, desayunos, trenes.</h5>
 
                                 @foreach($paquete->where('s_precio', 1)->sortBy('duracion')->take(6) as $paquetes)
-                                    <a href="{{route('sin_hotel_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}" class="list-group-item list-group-item-action">
+                                        <a href="{{route('sin_hotel_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}" class="list-group-item list-group-item-action">
                                         <div class="row no-gutters">
                                             <div class="col-5 text-primary">
                                                 <b>{{$paquetes->duracion}} Días</b> {{ucwords(strtolower($paquetes->titulo))}}
@@ -522,6 +527,11 @@
                                 @endforeach
 
                             </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col text-right">
+                            <a href="{{route('paquetes_path')}}" class="btn-link font-weight-normal">Ver todos los paquetes <i class="fa fa-chevron-right"></i></a>
                         </div>
                     </div>
 
@@ -586,7 +596,11 @@
                             </div>
                         </div>
                     </div>
-
+                    <div class="row mt-2">
+                        <div class="col text-right">
+                            <a href="{{route('tours_path')}}" class="btn-link font-weight-normal">Ver todos los tours <i class="fa fa-chevron-right"></i></a>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col">
                             <div id="traslados" class="d-sm-block pt-5">
@@ -665,7 +679,7 @@
 
                     <div class="row">
                         <div class="col">
-                            <img src="{{asset('images/grupos.jpg')}}" alt="" class="img-fluid rounded">
+                            <a href="mailto:grupos@gotoperu.com.pe"><img src="{{asset('images/grupos.jpg')}}" alt="" class="img-fluid rounded"></a>
                         </div>
                     </div>
                     <div class="row mt-4">
@@ -754,23 +768,17 @@
 
 
         <section class="bg-light">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row align-items-center no-gutters">
                     <div class="col d-none d-xl-block">
-                        <img src="{{asset('images/social/we-care.jpg')}}" alt="" class="img-fluid">
-                    </div>
-                    <div class="col">
-                        <div class="px-4">
-                            <h3 class="h1 font-weight-light">PORQUE NOS IMPORTA <i class="fa fa-heart text-danger"></i></h3>
-                            <p class="">Retribuimos a nuestras comunidades</p>
-                            <hr>
-                            <p class="text-primary"><i>Chaullacota se ubica a 15,000 alimentaciones (4500 mts) 2 horas al noroeste de Cusco.</i></p>
-                            <p class="text-justify font-weight-light">En GOTOPERU estamos comprometidos a hacer negocios de una manera que realmente le devuelva a nuestras comunidades parte de nuestras ganancias especialmente a comunidades ubicadas en lugares remotos. Nuestra planificación y ejecución de uno de nuestros viajes implica una larga cadena de suministro: desde guías y operadores locales hasta proveedores de transporte, hoteles y restaurantes, interactuamos con muchas organizaciones en diferentes lugares, pero también sabemos que algunas comunidades especialmente ubicadas arriba de los Andes a más de 15,000 pies que debido al difícil acceso, no reciben la asistencia que merecen, es por eso que organizamos periódicamente viajes a comunidades tan lejanas para traerles especialmente suéteres y juguetes para niños.</p>
-                        </div>
-
                         <div class="row">
                             <div class="col">
-                                <img src="{{asset('images/social/ninos.jpg')}}" alt="" class="img-fluid pl-4" data-toggle="modal" data-target="#social-1">
+                                <img src="{{asset('images/social/we-care.jpg')}}" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="row no-gutters">
+                            <div class="col">
+                                <img src="{{asset('images/social/ninos.jpg')}}" alt="" class="img-fluid clickable" data-toggle="modal" data-target="#social-1">
                                 <!-- Modal -->
                                 <div class="modal fade" id="social-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg" role="document">
@@ -783,7 +791,7 @@
                                 </div>
                             </div>
                             <div class="col">
-                                <img src="{{asset('images/social/social.jpg')}}" alt="" class="img-fluid pr-4" data-toggle="modal" data-target="#social-2">
+                                <img src="{{asset('images/social/social.jpg')}}" alt="" class="img-fluid clickable" data-toggle="modal" data-target="#social-2">
                                 <!-- Modal -->
                                 <div class="modal fade" id="social-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg" role="document">
@@ -795,6 +803,15 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="px-4">
+                            <h3 class="h1 font-weight-light">PORQUE NOS IMPORTA <i class="fa fa-heart text-danger"></i></h3>
+                            <p class="">Retribuimos a nuestras comunidades</p>
+                            <hr>
+                            <p class="text-primary"><i>Chaullacota se ubica a 15,000 alimentaciones (4500 mts) 2 horas al noroeste de Cusco.</i></p>
+                            <p class="text-justify font-weight-light">En GOTOPERU estamos comprometidos a hacer negocios de una manera que realmente le devuelva a nuestras comunidades parte de nuestras ganancias especialmente a comunidades ubicadas en lugares remotos. Nuestra planificación y ejecución de uno de nuestros viajes implica una larga cadena de suministro: desde guías y operadores locales hasta proveedores de transporte, hoteles y restaurantes, interactuamos con muchas organizaciones en diferentes lugares, pero también sabemos que algunas comunidades especialmente ubicadas arriba de los Andes a más de 15,000 pies que debido al difícil acceso, no reciben la asistencia que merecen, es por eso que organizamos periódicamente viajes a comunidades tan lejanas para traerles especialmente suéteres y juguetes para niños.</p>
                         </div>
                     </div>
                 </div>

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class THotelDestino extends Model
 {
+    protected $table = "thoteldestino";
     public function hotel()
     {
         return $this->belongsTo(THotel::class, 'idhotel');

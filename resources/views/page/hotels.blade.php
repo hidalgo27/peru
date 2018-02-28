@@ -38,7 +38,15 @@
             </div>
         </div>
     </section>
-
+    <section class="bg-white m-0">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    {{Breadcrumbs::render('hotel')}}
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="bg-white py-5">
         <div class="container">

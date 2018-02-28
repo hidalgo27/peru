@@ -4,7 +4,7 @@
     <header class="header-video-default position-relative">
         @include('layouts.page.menu')
         <div id="overlay">
-            <video class="" id="hero-vid" poster="{{asset('images/slider/package-1.jpg')}}" autoplay loop muted>
+            <video class="" id="hero-vid" poster="{{asset('images/sliders/cusco.jpg')}}" autoplay loop muted>
                 <source src="{{asset('media/video6.mp4')}}" />
                 <source src="{{asset('media/video6.m4v')}}" type="video/mp4" />
                 <source src="{{asset('media/video6.webm')}}" type="video/webm" />
@@ -46,7 +46,15 @@
             </div>
         </div>
     </section>
-
+    <section class="bg-white m-0">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    {{Breadcrumbs::render('tours-show', $title)}}
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="py-5 bg-white">
         <div class="container">

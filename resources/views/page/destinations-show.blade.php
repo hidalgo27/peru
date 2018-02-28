@@ -39,7 +39,15 @@
         </div>
     </section>
 
-
+    <section class="bg-white m-0">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    {{Breadcrumbs::render('destino-show', $title)}}
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <section class="py-3 bg-white">
@@ -73,7 +81,7 @@
                     @endif
                 @endforeach
                 <div class="col-12 mt-3 mb-5 sticky-top text-center bg-white">
-                    @foreach($destinos->sortBy('nombre') as $destino)
+                    @foreach($destinos->where('estado', 1)->sortBy('nombre') as $destino)
                         <a href="{{route('destinations_show_path', str_replace(' ', '-', strtolower($destino->nombre)))}}"><img src="{{asset('images/destinations/destinations/'.str_replace(' ','-', strtolower($destino->nombre)).'')}}.jpg" alt="" width="60" height="60" class="rounded-circle" data-toggle="tooltip" data-placement="top" title="{{ucwords(strtolower($destino->nombre))}}"></a>
                     @endforeach
                 </div>

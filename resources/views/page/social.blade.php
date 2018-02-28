@@ -40,6 +40,16 @@
         </div>
     </section>
 
+    <section class="bg-white m-0">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    {{Breadcrumbs::render('social')}}
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="py-3 bg-white">
         <div class="container">
             <div class="row">
