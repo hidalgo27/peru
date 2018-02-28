@@ -86,7 +86,6 @@
 
     <section class="pb-5 bg-white">
         <div class="container">
-            
             <div class="row">
                 <div class="col">
                     <div id="tours" class="d-sm-block pt-5">
