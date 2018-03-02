@@ -73,7 +73,7 @@ Route::get('/responsabilidad-social', [
 ]);
 
 //hoteles
-Route::get('/hoteles', [
+Route::get('/hoteles-peru', [
     'uses' => 'HomeController@hoteles',
     'as' => 'hoteles_path',
 ]);
