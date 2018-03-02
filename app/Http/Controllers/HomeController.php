@@ -109,12 +109,12 @@ class HomeController extends Controller
     {
         SEOMeta::setTitle('Destinos Turísticos en Perú | Perú Destinos');
         SEOMeta::setDescription('Destinos turísticos en Perú organizado con un auténtico operador peruano, con viajes en Lima, Cusco, Arequipa y Puno. Ofrecemos salidas diarias a Machu Picchu.');
-        SEOMeta::setCanonical('http://gotoperu.com.pe/');
+//        SEOMeta::setCanonical('http://gotoperu.com.pe/');
         SEOMeta::addKeyword(['detinos de viaje a peru', 'turismo en  peru', 'destinos de viaje en peru', 'viajes a machu picchu', 'vacaiones en peru']);
 
         OpenGraph::setDescription('Destinos turísticos en Perú organizado con un auténtico operador peruano, con viajes en Lima, Cusco, Arequipa y Puno. Ofrecemos salidas diarias a Machu Picchu.');
         OpenGraph::setTitle('Destinos Turísticos en Perú | Perú Destinos');
-//        OpenGraph::setUrl('http://gotoperu.com.pe/');
+        OpenGraph::setUrl('http://gotoperu.com.pe/destinos-peru');
         OpenGraph::addImages(['url'=>'http://gotoperu.com.pe/images/destinations/puno.jpg']);
         OpenGraph::setSiteName('destinos de viaje en perú');
         OpenGraph::addProperty('type', 'website');
