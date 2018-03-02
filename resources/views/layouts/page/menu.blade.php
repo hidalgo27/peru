@@ -9,7 +9,7 @@
             <div class="col col-sm">
                 <div class="row justify-content-end">
                     <div class="col-auto text-right my-2">
-                        <a href="" class="btn btn-g-green btn-sm text-white d-none d-sm-inline-block"><i class="fa fa-comment"></i> Chat</a>
+                        <a href="#" class="btn btn-g-green btn-sm text-white d-none d-sm-inline-block" onclick="startOlark()"><i class="fa fa-comment"></i> Chat</a>
                         <span class="mx-2">|</span>
                         <button type="button" class="btn btn-g-yellow btn-sm text-white d-none d-sm-inline-block" data-toggle="modal" data-target="#contant_m">
                             Pregunte Ahora
