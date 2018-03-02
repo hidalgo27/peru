@@ -156,7 +156,7 @@
                         <p class="text-secondary"><i class="fa fa-chevron-right"></i> <b>Incluye:</b> hoteles, tours, traslados, entradas, desayunos, trenes.</p>
 
                         @foreach($tours_a as $tour2)
-                            <a href="{{route('home_show_path', str_replace(' ','-',strtolower($tour2->titulo)))}}" class="list-group-item list-group-item-action">
+                            <a href="{{route('itinerario_tours_show_path', str_replace(' ','-',strtolower($tour2->titulo)))}}" class="list-group-item list-group-item-action">
                                 <div class="row no-gutters">
                                     <div class="col-5 text-primary">
                                         <b>{{ucwords(strtolower($tour2->titulo))}}</b>
