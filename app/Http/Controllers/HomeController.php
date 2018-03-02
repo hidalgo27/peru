@@ -237,11 +237,30 @@ class HomeController extends Controller
 
     public function sin_hotel($titulo)
     {
-        $title = str_replace('-', ' ', strtoupper($titulo));
+        SEOMeta::setTitle('Paquete de Viaje: '.str_replace('-',' ', ucwords(strtolower($titulo))).' | GotoPeru');
+        SEOMeta::setDescription('Nuestro paquete de viaje '.str_replace('-',' ', ucwords(strtolower($titulo))).' organizado con un auténtico operador peruano.');
+        SEOMeta::setCanonical('http://gotoperu.com.pe/paquetes-de-viaje-peru');
+        SEOMeta::addKeyword(['detinos de viaje a peru', 'turismo en  peru', 'destinos de viaje en peru', 'viajes a machu picchu', 'vacaiones en peru']);
 
+        OpenGraph::setDescription('Nuestro paquete de viaje '.str_replace('-',' ', ucwords(strtolower($titulo))).' organizado con un auténtico operador peruano.');
+        OpenGraph::setTitle('Paquete de Viaje: '.str_replace('-',' ', ucwords(strtolower($titulo))).' | GotoPeru');
+//        OpenGraph::setUrl('http://gotoperu.com.pe/');
+        OpenGraph::addImages(['url'=>'http://gotoperu.com.pe/images/sliders/cusco.jpg']);
+        OpenGraph::setSiteName('destino perú: '.str_replace('-',' ', ucwords(strtolower($titulo))).'');
+        OpenGraph::addProperty('type', 'website');
+
+        \Twitter::setType('summary');
+        \Twitter::setTitle('Paquetes y Tours en '.str_replace('-',' ', ucwords(strtolower($titulo))).' | Perú Destinos');
+        \Twitter::setSite('@GOTOPERUCOM');
+        \Twitter::addImage('http://gotoperu.com.pe/images/sliders/cusco.jpg');
+
+        $title = str_replace('-', ' ', strtoupper($titulo));
         $paquete = TPaquete::with('paquetes_destinos', 'precio_paquetes')->get();
         $paquete_destinos = TPaqueteDestino::with('destinos')->get();
         $paquete_iti = TPaquete::with('itinerario','paquetes_destinos', 'precio_paquetes')->where('titulo', $title)->get();
+
+
+
 
         return view('page.itinerary-sin-hotel', ['title'=>$title, 'paquete_iti'=>$paquete_iti, 'paquete_destinos'=>$paquete_destinos, 'paquete'=>$paquete]);
     }
@@ -253,6 +272,23 @@ class HomeController extends Controller
         $tours_a = TTour::with('tours_destinos')->get();
         $tours = TTour::with('tours_destinos')->where('titulo', $title)->get();
         $tours_destinos = TTourDestino::with('destinos')->get();
+
+        SEOMeta::setTitle('Tours en Perú: '.str_replace('-',' ', ucwords(strtolower($titulo))).' | GotoPeru');
+        SEOMeta::setDescription('Nuestro tours '.str_replace('-',' ', ucwords(strtolower($titulo))).' organizado con un auténtico operador peruano.');
+        SEOMeta::setCanonical('http://gotoperu.com.pe/paquetes-de-viaje-peru');
+        SEOMeta::addKeyword(['detinos de viaje a peru', 'turismo en  peru', 'destinos de viaje en peru', 'viajes a machu picchu', 'vacaiones en peru']);
+
+        OpenGraph::setDescription('Nuestro tours '.str_replace('-',' ', ucwords(strtolower($titulo))).' organizado con un auténtico operador peruano.');
+        OpenGraph::setTitle('Paquete de Viaje: '.str_replace('-',' ', ucwords(strtolower($titulo))).' | GotoPeru');
+//        OpenGraph::setUrl('http://gotoperu.com.pe/');
+        OpenGraph::addImages(['url'=>'http://gotoperu.com.pe/images/sliders/cusco.jpg']);
+        OpenGraph::setSiteName('Tours en Perú: '.str_replace('-',' ', ucwords(strtolower($titulo))).'');
+        OpenGraph::addProperty('type', 'website');
+
+        \Twitter::setType('summary');
+        \Twitter::setTitle('Tours en '.str_replace('-',' ', ucwords(strtolower($titulo))).' | Perú Destinos');
+        \Twitter::setSite('@GOTOPERUCOM');
+        \Twitter::addImage('http://gotoperu.com.pe/images/sliders/cusco.jpg');
 
         return view('page.itinerary-tours', ['title'=>$title, 'tours'=>$tours, 'tours_destinos'=>$tours_destinos, 'tours_a'=>$tours_a]);
     }
@@ -294,15 +330,66 @@ class HomeController extends Controller
 
     public function about()
     {
+        SEOMeta::setTitle('Acerca de Nosotros | GotoPeru');
+        SEOMeta::setDescription('Somos especialistas en viajes y tours en Perú, creemos que la calidad de servicio y nuestra experiencia hará de su viaje a Perú una experiencia inolvidable.');
+        SEOMeta::setCanonical('http://gotoperu.com.pe/');
+        SEOMeta::addKeyword(['hoteles en peru', 'reserva de hoteles en peru', 'hoteles baratos en peru', 'hoteles en machu pichu', 'hoteles en cusco']);
+
+        OpenGraph::setDescription('Somos especialistas en viajes y tours en Perú, creemos que la calidad de servicio y nuestra experiencia hará de su viaje a Perú una experiencia inolvidable.');
+        OpenGraph::setTitle('Acerca de Nosotros | GotoPeru');
+//        OpenGraph::setUrl('http://gotoperu.com.pe/');
+        OpenGraph::addImages(['url'=>'http://gotoperu.com.pe/images/about.jpg']);
+        OpenGraph::setSiteName('Acerca de Nosotros');
+        OpenGraph::addProperty('type', 'website');
+
+        \Twitter::setType('summary');
+        \Twitter::setTitle('Acerca de Nosotros | GotoPeru');
+        \Twitter::setSite('@GOTOPERUCOM');
+        \Twitter::addImage('http://gotoperu.com.pe/images/about.jpg');
+
         return view('page.about');
     }
 
     public function social()
     {
+        SEOMeta::setTitle('Responsabilidad Social | GotoPeru');
+        SEOMeta::setDescription('Nos hacemos cargo de personas y comunidades alejadas en Perú, el apoyo social es organizado por nuestro equipo, destinando parte de nuestras ganancias para los que más lo necesitan.');
+        SEOMeta::setCanonical('http://gotoperu.com.pe/');
+//        SEOMeta::addKeyword(['hoteles en peru', 'reserva de hoteles en peru', 'hoteles baratos en peru', 'hoteles en machu pichu', 'hoteles en cusco']);
+
+        OpenGraph::setDescription('Nos hacemos cargo de personas y comunidades alejadas en Perú, el apoyo social es organizado por nuestro equipo, destinando parte de nuestras ganancias para los que más lo necesitan.');
+        OpenGraph::setTitle('Responsabilidad Social | GotoPeru');
+//        OpenGraph::setUrl('http://gotoperu.com.pe/');
+        OpenGraph::addImages(['url'=>'http://gotoperu.com.pe/images/social.jpg']);
+        OpenGraph::setSiteName('Responsabilidad Social | GotoPeru');
+        OpenGraph::addProperty('type', 'website');
+
+        \Twitter::setType('summary');
+        \Twitter::setTitle('Responsabilidad Social | GotoPeru');
+        \Twitter::setSite('@GOTOPERUCOM');
+        \Twitter::addImage('http://gotoperu.com.pe/images/social.jpg');
+
         return view('page.social');
     }
     public function hoteles()
     {
+        SEOMeta::setTitle('Hoteles en Perú | GotoPeru');
+        SEOMeta::setDescription('Nuestro equipo puede reservar cualquier hotel en Perú. Explore nuestras mejores opciones de alojamiento en Machu Picchu, Cusco, Arequipa, Lago Titicaca y más.');
+        SEOMeta::setCanonical('http://gotoperu.com.pe/');
+        SEOMeta::addKeyword(['hoteles en peru', 'reserva de hoteles en peru', 'hoteles baratos en peru', 'hoteles en machu pichu', 'hoteles en cusco']);
+
+        OpenGraph::setDescription('Nuestro equipo puede reservar cualquier hotel en Perú. Explore nuestras mejores opciones de alojamiento en Machu Picchu, Cusco, Arequipa, Lago Titicaca y más.');
+        OpenGraph::setTitle('Hoteles en Perú | GotoPeru');
+//        OpenGraph::setUrl('http://gotoperu.com.pe/');
+        OpenGraph::addImages(['url'=>'http://gotoperu.com.pe/images/hotels.jpg']);
+        OpenGraph::setSiteName('Hoteles en Perú | GotoPeru');
+        OpenGraph::addProperty('type', 'website');
+
+        \Twitter::setType('summary');
+        \Twitter::setTitle('Hoteles en Perú | GotoPeru');
+        \Twitter::setSite('@GOTOPERUCOM');
+        \Twitter::addImage('http://gotoperu.com.pe/images/hotels.jpg');
+
         $hoteles = THotel::all();
         return view('page.hotels', ['hoteles'=>$hoteles]);
     }
