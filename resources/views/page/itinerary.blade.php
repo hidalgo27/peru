@@ -217,17 +217,40 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col">
                             <h3 class="font-weight-bold mt-4">Itinerario:</h3>
-                            @foreach($paquete_iti as $paquete_itinerary)
-                                @foreach($paquete_itinerary->itinerario as $itinerario)
-                                    <h4 class="font-weight-bold mt-4 text-g-yellow"><b>Day {{$itinerario->dia}}: </b> {{ucwords(strtolower($itinerario->titulo))}}</h4>
-                                    @php echo $itinerario->descripcion; @endphp
-                                @endforeach
-                            @endforeach
+                            <ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#resumen" role="tab" aria-controls="resumen" aria-selected="true">Resumen</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#detalle" role="tab" aria-controls="detalle" aria-selected="false">Detallado</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="resumen" role="tabpanel" aria-labelledby="home-tab">
+                                    @foreach($paquete_iti as $paquete_itinerary)
+                                        @foreach($paquete_itinerary->itinerario as $itinerario)
+                                            <h4 class="font-weight-bold mt-4 text-g-yellow"><b>Day {{$itinerario->dia}}: </b> {{ucwords(strtolower($itinerario->titulo))}}</h4>
+                                            @php echo $itinerario->resumen; @endphp
+                                        @endforeach
+                                    @endforeach
+                                </div>
+                                <div class="tab-pane fade" id="detalle" role="tabpanel" aria-labelledby="profile-tab">
+                                    @foreach($paquete_iti as $paquete_itinerary)
+                                        @foreach($paquete_itinerary->itinerario as $itinerario)
+                                            <h4 class="font-weight-bold mt-4 text-g-yellow"><b>Day {{$itinerario->dia}}: </b> {{ucwords(strtolower($itinerario->titulo))}}</h4>
+                                            @php echo $itinerario->descripcion; @endphp
+                                        @endforeach
+                                    @endforeach
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+
                     <div class="row {{$s_none}}">
                         <div class="col">
                             <h3 class="font-weight-bold mt-4">Precios:</h3>
@@ -250,7 +273,7 @@
                                     @foreach($paquete_iti as $paquetes)
                                         @foreach($paquetes->precio_paquetes->sortBy('estrellas') as $precio)
                                             @if($precio->precio == 0)
-                                                <td>Ask for a quote</td>
+                                                <td>Pida una cotización</td>
 
                                             @elseif($precio->estrellas == 2)
                                                     <td>USD ${{$precio->precio}}</td>
