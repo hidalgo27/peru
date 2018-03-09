@@ -13,6 +13,15 @@
     <meta name="description" content="Paquetes de viaje a Perú con un auténtico operador peruano, oficinas en Lima, Cusco, Arequipa y Puno. Ofrecemos salidas diarias a Machu Picchu.">
     <link href="{{asset('images/icons/favicon/favicon.ico')}}" rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="{{mix("css/app.css")}}">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115475686-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-115475686-1');
+    </script>
 
 </head>
 <body data-spy="scroll" data-target="#menu" class="position-relative">
