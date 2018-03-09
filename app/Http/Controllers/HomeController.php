@@ -7,6 +7,7 @@ use App\TDestino;
 use App\THotel;
 use App\THotelDestino;
 use App\TPaquete;
+use App\TPaqueteCategoria;
 use App\TPaqueteDestino;
 use App\TTour;
 use App\TTourDestino;
@@ -231,8 +232,9 @@ class HomeController extends Controller
 
         $hoteles = THotel::all();
         $hoteles_destinos = THotelDestino::all();
+        $paquete_categoria = TPaqueteCategoria::all();
 
-        return view('page.itinerary', ['title'=>$title, 'paquete_iti'=>$paquete_iti, 'paquete_destinos'=>$paquete_destinos, 'paquete'=>$paquete,'hoteles'=>$hoteles, 'hoteles_destinos'=>$hoteles_destinos]);
+        return view('page.itinerary', ['title'=>$title, 'paquete_iti'=>$paquete_iti, 'paquete_destinos'=>$paquete_destinos, 'paquete'=>$paquete,'hoteles'=>$hoteles, 'hoteles_destinos'=>$hoteles_destinos, 'paquete_categoria'=>$paquete_categoria]);
     }
 
     public function sin_hotel($titulo)
