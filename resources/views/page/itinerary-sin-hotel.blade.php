@@ -161,7 +161,7 @@
                                 <div class="alert alert-danger py-2 mb-1" role="alert">
                                     <h5 class="font-weight-bold m-0">Paquetes sin Hotel</h5>
                                 </div>
-                                <p class="text-secondary"><i class="fa fa-chevron-right"></i> <b>Incluye:</b> hoteles, tours, traslados, entradas, desayunos, trenes.</p>
+                                <p class="text-secondary"><i class="fa fa-chevron-right"></i> <b>Incluye:</b> Tours, traslados, entradas, desayunos, trenes.</p>
 
                                 @foreach($paquete->where('s_precio', 1)->sortBy('duracion')->take(6) as $paquetes)
                                     <a href="{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}" class="list-group-item list-group-item-action text-primary">
@@ -213,15 +213,36 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col">
                             <h3 class="font-weight-bold mt-4">Itinerario:</h3>
-                            @foreach($paquete_iti as $paquete_itinerary)
-                                @foreach($paquete_itinerary->itinerario as $itinerario)
-                                    <h4 class="font-weight-bold mt-4 text-g-yellow"><b>Day {{$itinerario->dia}}: </b> {{ucwords(strtolower($itinerario->titulo))}}</h4>
-                                    @php echo $itinerario->descripcion; @endphp
-                                @endforeach
-                            @endforeach
+                            <ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#resumen" role="tab" aria-controls="resumen" aria-selected="true">Resumen</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#detalle" role="tab" aria-controls="detalle" aria-selected="false">Detallado</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="resumen" role="tabpanel" aria-labelledby="home-tab">
+                                    @foreach($paquete_iti as $paquete_itinerary)
+                                        @foreach($paquete_itinerary->itinerario as $itinerario)
+                                            <h4 class="font-weight-bold mt-4 text-g-yellow"><b>Day {{$itinerario->dia}}: </b> {{ucwords(strtolower($itinerario->titulo))}}</h4>
+                                            @php echo $itinerario->resumen; @endphp
+                                        @endforeach
+                                    @endforeach
+                                </div>
+                                <div class="tab-pane fade" id="detalle" role="tabpanel" aria-labelledby="profile-tab">
+                                    @foreach($paquete_iti as $paquete_itinerary)
+                                        @foreach($paquete_itinerary->itinerario as $itinerario)
+                                            <h4 class="font-weight-bold mt-4 text-g-yellow"><b>Day {{$itinerario->dia}}: </b> {{ucwords(strtolower($itinerario->titulo))}}</h4>
+                                            @php echo $itinerario->descripcion; @endphp
+                                        @endforeach
+                                    @endforeach
+                                </div>
+                            </div>
                         </div>
                     </div>
 

@@ -169,7 +169,7 @@
                                 <div class="alert alert-danger py-2 mb-1" role="alert">
                                     <h5 class="font-weight-bold m-0">Paquetes sin Hotel</h5>
                                 </div>
-                                <p class="text-secondary"><i class="fa fa-chevron-right"></i> <b>Incluye:</b> hoteles, tours, traslados, entradas, desayunos, trenes.</p>
+                                <p class="text-secondary"><i class="fa fa-chevron-right"></i> <b>Incluye:</b> Tours, traslados, entradas, desayunos, trenes.</p>
 
                                 @foreach($paquete->where('s_precio', 1)->sortBy('duracion')->take(6) as $paquetes)
                                     <a href="{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}" class="list-group-item list-group-item-action text-primary">
