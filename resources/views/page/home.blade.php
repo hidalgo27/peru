@@ -126,22 +126,7 @@
             </div>
         </div>
     </header>
-    <section class="sticky-top bg-white d-sm-none">
-        <div class="container">
-            <div class="row no-gutters text-center">
-                <div class="col">
-                    <a href="{{route('tours_path')}}" class="btn btn-link">Tours</a>
-                </div>
-                <div class="col">
-                    <a href="{{route('destinations_path')}}" class="btn btn-link">Destinos</a>
-                </div>
-                <div class="col">
-                    <a href="{{route("about_path")}}" class="btn btn-link">Nosotros</a>
-                </div>
-                {{--<div class="col">hola1</div>--}}
-            </div>
-        </div>
-    </section>
+    @include('layouts.page.menu-mobil')
 
 
     <div class="bg-white">
@@ -437,7 +422,7 @@
 
         <section class="container bg-white">
             <div class="row">
-                <div class="col col-sm-12 col-md-8">
+                <div class="col-12 col-sm-12 col-md-8">
                     <div class="row">
                         <div class="col">
                             <div id="paquetes" class="d-sm-block">
@@ -450,10 +435,10 @@
                                     @foreach($paquete->where('estado', 1)->sortBy('duracion') as $paquetes)
                                     <a href="{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}" class="list-group-item list-group-item-action">
                                         <div class="row no-gutters">
-                                            <div class="col-5 text-primary">
+                                            <div class="col-8 col-sm-5 text-primary">
                                                 <b>{{$paquetes->duracion}} Días</b> {{ucwords(strtolower($paquetes->titulo))}}
                                             </div>
-                                            <div class="col">
+                                            <div class="col d-none d-sm-inline">
                                                 <i class="fa fa-map-marker-alt pl-2 pr-1 text-g-green"></i>
                                                 @php
                                                     $i = 1;
@@ -464,7 +449,7 @@
                                                     @php $i++; @endphp
                                                 @endforeach
                                             </div>
-                                            <div class="col-2 text-right">
+                                            <div class="col col-sm-2 text-right">
                                                 <b>
                                                 @foreach($paquetes->precio_paquetes as $precio)
                                                     @if($precio->estrellas == 2)
@@ -503,10 +488,10 @@
                                 @foreach($paquete->where('s_precio', 1)->sortBy('duracion')->take(6) as $paquetes)
                                         <a href="{{route('sin_hotel_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}" class="list-group-item list-group-item-action">
                                         <div class="row no-gutters">
-                                            <div class="col-5 text-primary">
+                                            <div class="col-8 col-sm-5 text-primary">
                                                 <b>{{$paquetes->duracion}} Días</b> {{ucwords(strtolower($paquetes->titulo))}}
                                             </div>
-                                            <div class="col">
+                                            <div class="col d-none d-sm-inline">
                                                 <i class="fa fa-map-marker-alt pl-2 pr-1 text-danger"></i>
                                                 @php
                                                     $i = 1;
@@ -517,7 +502,7 @@
                                                     @php $i++; @endphp
                                                 @endforeach
                                             </div>
-                                            <div class="col-2 text-right">
+                                            <div class="col col-sm-2 text-right">
                                                 <b>
                                                     <sup>$</sup>{{$paquetes->precio}}<small>USD</small>
                                                 </b>
@@ -546,13 +531,13 @@
                                 @foreach($tours as $tour)
                                     <a href="{{route('itinerario_tours_show_path', str_replace(' ','-',strtolower($tour->titulo)))}}" class="list-group-item list-group-item-action">
                                         <div class="row no-gutters">
-                                            <div class="col-5 text-primary">
+                                            <div class="col-8 col-sm-5 text-primary">
                                                 <b>{{ucwords(strtolower($tour->titulo))}}</b>
                                             </div>
                                             {{--<div class="col">--}}
                                                 {{--<i class="fa fa-clock pl-2 pr-1 text-info"></i> {{$tour->duracion}}--}}
                                             {{--</div>--}}
-                                            <div class="col">
+                                            <div class="col d-none d-sm-inline">
                                                 <i class="fa fa-map-marker-alt pl-2 pr-1 text-info"></i>
                                                 @php
                                                     $i = 1;
@@ -563,7 +548,7 @@
                                                     @php $i++; @endphp
                                                 @endforeach
                                             </div>
-                                            <div class="col-2 text-right">
+                                            <div class="col col-sm-2 text-right">
                                                 <b>
                                                     @if($tour->precio < 0)
                                                         <span class="text-danger">Pida una cotización</span>
@@ -647,7 +632,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col col-sm-12 col-md-4">
+                <div class="col-12 col-sm-12 col-md-4">
                     {{--<div class="card-deck owl-carousel owl-theme">--}}
 
                         {{--<div class="card">--}}

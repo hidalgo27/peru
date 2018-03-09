@@ -23,22 +23,8 @@
             </div>
         </div>
     </header>
-    <section class="sticky-top bg-white d-sm-none">
-        <div class="container">
-            <div class="row no-gutters text-center">
-                <div class="col">
-                    <a href="{{route('tours_path')}}" class="btn btn-link">Tours</a>
-                </div>
-                <div class="col">
-                    <a href="{{route('destinations_path')}}" class="btn btn-link">Destinos</a>
-                </div>
-                <div class="col">
-                    <a href="{{route("about_path")}}" class="btn btn-link">Nosotros</a>
-                </div>
-                {{--<div class="col">hola1</div>--}}
-            </div>
-        </div>
-    </section>
+
+    @include('layouts.page.menu-mobil')
 
     <section class="bg-white m-0">
         <div class="container">
