@@ -146,6 +146,11 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row mt-2">
+                        <div class="col text-right">
+                            <a href="{{route('paquetes_path')}}" class="btn-link font-weight-normal">Ver todos los paquetes <i class="fa fa-chevron-right"></i></a>
+                        </div>
+                    </div>
 
                     <div class="row">
                         <div class="col">
@@ -157,7 +162,7 @@
                                 <p class="text-secondary"><i class="fa fa-chevron-right"></i> <b>Incluye:</b> Tours, traslados, entradas, desayunos, trenes.</p>
 
                                 @foreach($paquete->where('s_precio', 1)->sortBy('duracion')->take(6) as $paquetes)
-                                    <a href="{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}" class="list-group-item list-group-item-action text-primary">
+                                    <a href="{{route('sin_hotel_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}" class="list-group-item list-group-item-action text-primary">
                                         {{$paquetes->duracion}} Dias {{ucwords(strtolower($paquetes->titulo))}}. <b class="text-danger">Visite</b>:
 
                                         @php
@@ -172,6 +177,11 @@
                                 @endforeach
 
                             </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col text-right">
+                            <a href="{{route('paquetes_path')}}" class="btn-link font-weight-normal">Ver todos los paquetes <i class="fa fa-chevron-right"></i></a>
                         </div>
                     </div>
 
