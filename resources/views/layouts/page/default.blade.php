@@ -14,13 +14,13 @@
     <link href="{{asset('images/icons/favicon/favicon.ico')}}" rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="{{mix("css/app.css")}}">
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115475686-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57960909-3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', 'UA-115475686-1');
+        gtag('config', 'UA-57960909-3');
     </script>
 
 </head>
