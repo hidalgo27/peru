@@ -324,7 +324,16 @@
                             @php echo $paquetes->noincluye; @endphp
                         </div>
                     </div>
-                    <div class="row">
+                    @if(isset($paquetes->opcional))
+                        @php
+                            $hide_op = '';
+                        @endphp
+                        @else
+                        @php
+                            $hide_op = 'd-none';
+                        @endphp
+                    @endif
+                    <div class="row {{$hide_op}}">
                         <div class="col">
                             <h3 class="font-weight-bold mt-4">Opcional:</h3>
                             @php echo $paquetes->opcional; @endphp

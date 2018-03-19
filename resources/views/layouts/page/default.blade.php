@@ -173,6 +173,7 @@
 {{--scripts--}}
 <script src="{{asset("js/app.js")}}"></script>
 @stack('scripts')
+
 <div id="fb-root"></div>
 <script>
 
@@ -493,5 +494,8 @@
         / Add configuration calls below this comment /
         olark.identify('8407-174-10-8084');</script>
     <!-- end olark code -->
+
+
+
 </body>
 </html>

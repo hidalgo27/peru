@@ -433,7 +433,12 @@
                                 <h5 class="text-secondary py-2"><i class="fa fa-chevron-right"></i> <b>Incluye:</b> hoteles, tours, traslados, entradas, desayunos, trenes.</h5>
                                 <div class="list-group">
                                     @foreach($paquete->where('estado', 1)->sortBy('duracion') as $paquetes)
-                                    <a href="{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}" class="list-group-item list-group-item-action">
+                                        @if($paquetes->duracion==8)
+                                            @php $new = "list-group-item-secondary"; $bad = "position-absolute top-0 right-0 badge badge-danger"; @endphp
+                                        @else
+                                            @php $new = ""; $bad = "d-none"; @endphp
+                                        @endif
+                                    <a href="{{route('home_show_path', str_replace(' ','-',strtolower($paquetes->titulo)))}}" class="list-group-item list-group-item-action {{$new}} position-relative">
                                         <div class="row no-gutters">
                                             <div class="col-8 col-sm-5 text-primary">
                                                 <b>{{$paquetes->duracion}} Días</b> {{ucwords(strtolower($paquetes->titulo))}}
@@ -463,6 +468,7 @@
                                                 </b>
                                             </div>
                                         </div>
+                                        <span class="{{$bad}}">new</span>
                                     </a>
                                     @endforeach
                                 </div>

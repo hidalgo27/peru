@@ -68,6 +68,9 @@
         </div>
     </section>
 
+
+
+
     <section class="py-5 bg-white" id="con-hoteles">
         <div class="container">
             <div class="row">
@@ -144,15 +147,7 @@
                                 </div>
                                 <div class="col-2 text-right">
                                     <b>
-                                        @foreach($paquetes->precio_paquetes as $precio)
-                                            @if($precio->estrellas == 2)
-                                                @if($precio->precio == 0)
-                                                    <span class="text-danger">Pida una cotización</span>
-                                                @else
-                                                    <sup>$</sup>{{$precio->precio}}<small>USD</small>
-                                                @endif
-                                            @endif
-                                        @endforeach
+                                        <sup>$</sup>{{$paquetes->precio}}<small>USD</small>
                                     </b>
                                 </div>
                             </div>
