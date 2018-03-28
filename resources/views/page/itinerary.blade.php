@@ -311,6 +311,11 @@
                                 <a href="#book-now">Pregunte aquí.</a></small>
                         </div>
                     </div>
+                    <div class="row pt-3">
+                        <div class="col text-right">
+                            <a href="{{route('hoteles_path')}}" class="btn-link font-weight-normal">Ver más Hoteles <i class="fa fa-chevron-right"></i></a>
+                        </div>
+                    </div>
 
                     <div class="row">
                         <div class="col">
@@ -318,27 +323,27 @@
                             @php echo $paquetes->incluye; @endphp
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row pb-4">
                         <div class="col">
                             <h3 class="font-weight-bold mt-4">No Incluye:</h3>
                             @php echo $paquetes->noincluye; @endphp
                         </div>
                     </div>
-                    @if(isset($paquetes->opcional))
-                        @php
-                            $hide_op = '';
-                        @endphp
-                        @else
-                        @php
-                            $hide_op = 'd-none';
-                        @endphp
-                    @endif
-                    <div class="row {{$hide_op}}">
-                        <div class="col">
-                            <h3 class="font-weight-bold mt-4">Opcional:</h3>
-                            @php echo $paquetes->opcional; @endphp
-                        </div>
-                    </div>
+                    {{--@if(isset($paquetes->opcional))--}}
+                        {{--@php--}}
+                            {{--$hide_op = '';--}}
+                        {{--@endphp--}}
+                        {{--@else--}}
+                        {{--@php--}}
+                            {{--$hide_op = 'd-none';--}}
+                        {{--@endphp--}}
+                    {{--@endif--}}
+                    {{--<div class="row {{$hide_op}}">--}}
+                        {{--<div class="col">--}}
+                            {{--<h3 class="font-weight-bold mt-4">Opcional:</h3>--}}
+                            {{--@php echo $paquetes->opcional; @endphp--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
 
                     {{--<div class="row">--}}
                         {{--<div class="col">--}}

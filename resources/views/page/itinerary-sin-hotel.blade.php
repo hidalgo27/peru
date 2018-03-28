@@ -247,18 +247,18 @@
                             @php echo $paquetes->incluye; @endphp
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row pb-4">
                         <div class="col">
                             <h3 class="font-weight-bold mt-4">No Incluye:</h3>
                             @php echo $paquetes->noincluye; @endphp
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="font-weight-bold mt-4">Opcional:</h3>
-                            @php echo $paquetes->opcional; @endphp
-                        </div>
-                    </div>
+                    {{--<div class="row">--}}
+                        {{--<div class="col">--}}
+                            {{--<h3 class="font-weight-bold mt-4">Opcional:</h3>--}}
+                            {{--@php echo $paquetes->opcional; @endphp--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
 
                 </div>
             </div>
