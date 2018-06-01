@@ -20,6 +20,10 @@ ErrorDocument 404 /404
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 
+    # Force SSL
+        RewriteCond %{SERVER_PORT} 80
+        RewriteRule ^(.*)$ https://gotoperu.com.pe/ [R=301,L]
+
 </IfModule>
 
 <IfModule mod_expires.c>
