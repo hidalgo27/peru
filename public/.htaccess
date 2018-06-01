@@ -21,7 +21,7 @@ ErrorDocument 404 /404
     RewriteRule ^ index.php [L]
 
     # Force SSL
-        RewriteCond %{SERVER_PORT} 80
+        RewriteCond %{HTTPS} !=on
         RewriteRule ^(.*)$ https://gotoperu.com.pe/ [R=301,L]
 
 </IfModule>
