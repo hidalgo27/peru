@@ -1,5 +1,5 @@
 <section id="title" class="header-menu-g bg-dark">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-4 col-sm-2 position-relative">
                 <div class="logo-goto position-absolute w-100 top-0 p-3 border rounded border-dark bg-dark">
@@ -29,7 +29,7 @@
                             <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light" href="{{route('destinations_path')}}">DESTINOS</a>
                             <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light d-sm-none  d-md-inline" href="{{route('hoteles_path')}}">HOTELES</a>
                             <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light d-sm-none  d-xl-inline" href="{{route("about_path")}}">ACERCA DE NOSOTROS</a>
-                            <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light d-none d-lg-inline" href="{{route('social_path')}}">RESPONSABILIDAD SOCIAL</a>
+                            {{--<a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light d-none d-lg-inline" href="{{route('social_path')}}">RESPONSABILIDAD SOCIAL</a>--}}
                         </nav>
                     </div>
                 </div>

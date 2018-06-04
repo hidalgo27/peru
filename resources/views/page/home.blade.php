@@ -1,22 +1,22 @@
 @extends('layouts.page.default')
 
 @section('content')
-    <header class="header-video position-relative">
-        @include('layouts.page.menu')
+    {{--<header class="header-video position-relative">--}}
+        {{--@include('layouts.page.menu')--}}
         {{--<img src="{{asset('images/sliders/slider-1.jpg')}}" alt="" class="img-fluid d-none d-sm-inline">--}}
         {{--<img src="{{asset('images/sliders/slider-2.jpg')}}" alt="" class="img-fluid d-sm-none">--}}
-        <div id="overlay">
-            <video class="" id="hero-vid" poster="{{asset('images/sliders/cusco.jpg')}}" autoplay loop muted>
-                <source src="{{asset('media/video6.mp4')}}" />
-                <source src="{{asset('media/video6.m4v')}}" type="video/mp4" />
-                <source src="{{asset('media/video6.webm')}}" type="video/webm" />
-                <source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />
-            </video>
+        {{--<div id="overlay">--}}
+            {{--<video class="" id="hero-vid" poster="{{asset('images/sliders/cusco.jpg')}}" autoplay loop muted>--}}
+                {{--<source src="{{asset('media/video6.mp4')}}" />--}}
+                {{--<source src="{{asset('media/video6.m4v')}}" type="video/mp4" />--}}
+                {{--<source src="{{asset('media/video6.webm')}}" type="video/webm" />--}}
+                {{--<source  src="{{asset('media/video6.ogv')}}" type="video/ogg" />--}}
+            {{--</video>--}}
             {{--<div id="state" class=""><span class="fa fa-pause"></span></div>--}}
             {{--<img id="hero-pic" class="d-none" src="http://www.markhillard.com/sandbox/media/polina.jpg" alt="">--}}
             {{----}}
-            <img src="{{asset('images/logos/logo-expedia2.png')}}" alt="" class="header-expedia">
-        </div>
+            {{--<img src="{{asset('images/logos/logo-expedia2.png')}}" alt="" class="header-expedia">--}}
+        {{--</div>--}}
         {{--<div class="position-absolute bottom-n-1">--}}
         {{--<img src="{{asset('images/pce.png')}}" alt="" class="img-fluid">--}}
         {{--</div>--}}
@@ -31,124 +31,182 @@
         {{--</div>--}}
         {{--</div>--}}
 
-        <div class="content-header">
-            <div class="container">
-                <div class="row content-header-row align-items-center">
-                    <div class="col col-sm-7">
-                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="row justify-content-center">
-                                        <div class="col-9">
-                                            <a href="peru-tours/machu-picchu-todo-el-dia">
-                                                <div class="banner-header rounded text-white py-2 px-4">
-                                                    <h2 class="text-center h1 text-g-yellow m-0">Machu Picchu</h2>
-                                                    <p class="m-0 h4 font-weight-normal text-center">Tours a Machu Picchu de 1 dia</p>
-                                                    <p class="m-0 text-center">desde solo <span class="h1 text-info"><sup>$</sup>290</span> p.p</p>
-                                                    <hr class="my-1">
-                                                    <small class="m-0">Incluye: Traslados, trenes, entradas, buses, guiado, asistencias.</small>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+        {{--<div class="content-header">--}}
+            {{--<div class="container">--}}
+                {{--<div class="row content-header-row align-items-center">--}}
+                    {{--<div class="col col-sm-7">--}}
+                        {{--<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">--}}
+                            {{--<div class="carousel-inner">--}}
+                                {{--<div class="carousel-item active">--}}
+                                    {{--<div class="row justify-content-center">--}}
+                                        {{--<div class="col-9">--}}
+                                            {{--<a href="peru-tours/machu-picchu-todo-el-dia">--}}
+                                                {{--<div class="banner-header rounded text-white py-2 px-4">--}}
+                                                    {{--<h2 class="text-center h1 text-g-yellow m-0">Machu Picchu</h2>--}}
+                                                    {{--<p class="m-0 h4 font-weight-normal text-center">Tours a Machu Picchu de 1 dia</p>--}}
+                                                    {{--<p class="m-0 text-center">desde solo <span class="h1 text-info"><sup>$</sup>290</span> p.p</p>--}}
+                                                    {{--<hr class="my-1">--}}
+                                                    {{--<small class="m-0">Incluye: Traslados, trenes, entradas, buses, guiado, asistencias.</small>--}}
+                                                {{--</div>--}}
+                                            {{--</a>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                                 {{--<div class="carousel-item">--}}
                                 {{--<img class="d-block w-100" src="..." alt="Second slide">--}}
                                 {{--</div>--}}
                                 {{--<div class="carousel-item">--}}
                                 {{--<img class="d-block w-100" src="..." alt="Third slide">--}}
                                 {{--</div>--}}
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col d-none d-sm-block">
-                        <div class="row justify-content-center d-none d-sm-flex">
-                            <div class="col">
-                                <div class="row no-gutters">
-                                    <div class="col">
-                                        <img src="{{asset('images/icons/include/assistances.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Assistances">
+                            {{--</div>--}}
+                            {{--<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">--}}
+                                {{--<span class="carousel-control-prev-icon" aria-hidden="true"></span>--}}
+                                {{--<span class="sr-only">Previous</span>--}}
+                            {{--</a>--}}
+                            {{--<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">--}}
+                                {{--<span class="carousel-control-next-icon" aria-hidden="true"></span>--}}
+                                {{--<span class="sr-only">Next</span>--}}
+                            {{--</a>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="col d-none d-sm-block">--}}
+                        {{--<div class="row justify-content-center d-none d-sm-flex">--}}
+                            {{--<div class="col">--}}
+                                {{--<div class="row no-gutters">--}}
+                                    {{--<div class="col">--}}
+                                        {{--<img src="{{asset('images/icons/include/assistances.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Assistances">--}}
                                         {{--<span>Assistances</span>--}}
-                                    </div>
+                                    {{--</div>--}}
 
-                                    <div class="col">
-                                        <img src="{{asset('images/icons/include/entrances.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Entrances">
+                                    {{--<div class="col">--}}
+                                        {{--<img src="{{asset('images/icons/include/entrances.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Entrances">--}}
                                         {{--<span>Entrances</span>--}}
-                                    </div>
-                                    <div class="col">
-                                        <img src="{{asset('images/icons/include/transfers.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Transfers">
+                                    {{--</div>--}}
+                                    {{--<div class="col">--}}
+                                        {{--<img src="{{asset('images/icons/include/transfers.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Transfers">--}}
                                         {{--<span>Transfers</span>--}}
-                                    </div>
+                                    {{--</div>--}}
 
-                                    <div class="col">
-                                        <img src="{{asset('images/icons/include/hotels.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Hotels">
+                                    {{--<div class="col">--}}
+                                        {{--<img src="{{asset('images/icons/include/hotels.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Hotels">--}}
                                         {{--<span>Hotels</span>--}}
-                                    </div>
-                                    <div class="col">
-                                        <img src="{{asset('images/icons/include/tours.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Tours">
+                                    {{--</div>--}}
+                                    {{--<div class="col">--}}
+                                        {{--<img src="{{asset('images/icons/include/tours.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Tours">--}}
                                         {{--<span>Tours</span>--}}
-                                    </div>
-                                    <div class="col">
-                                        <img src="{{asset('images/icons/include/trains.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Trains">
+                                    {{--</div>--}}
+                                    {{--<div class="col">--}}
+                                        {{--<img src="{{asset('images/icons/include/trains.png')}}" alt="" class="p-1 w-100" data-toggle="tooltip" data-placement="top" title="Trains">--}}
                                         {{--<span>Trains</span>--}}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--<div class="row mt-2">--}}
                         {{--<div class="col text-white text-center">--}}
                         {{--<h4 class="h5 font-weight-light text-g-yellow">Top recommended Peru Travel Company</h4>--}}
                         {{--</div>--}}
                         {{--</div>--}}
-                        <div class="row my-3 justify-content-center">
-                            <div class="col">
-                                <p class="text-white mb-3 h5"><span class="bg-g-green p-1 rounded-circle px-3 text-white">1</span> <b>Los mejores precios:</b> <small>Somos operadores locales.</small></p>
-                                <p class="text-white mb-3 h5"><span class="bg-g-yellow p-1 rounded-circle px-3 text-white">2</span> <b>Flexibles:</b> <small>Paquetes completos o solo transportes.</small></p>
-                                <p class="text-white mb-3 h5"><span class="bg-g-dark p-1 rounded-circle px-3 text-white">3</span> <b>Calidad:</b> <small>Cientos de testimonios lo comprueban.</small></p>
-                            </div>
-                        </div>
+                        {{--<div class="row my-3 justify-content-center">--}}
+                            {{--<div class="col">--}}
+                                {{--<p class="text-white mb-3 h5"><span class="bg-g-green p-1 rounded-circle px-3 text-white">1</span> <b>Los mejores precios:</b> <small>Somos operadores locales.</small></p>--}}
+                                {{--<p class="text-white mb-3 h5"><span class="bg-g-yellow p-1 rounded-circle px-3 text-white">2</span> <b>Flexibles:</b> <small>Paquetes completos o solo transportes.</small></p>--}}
+                                {{--<p class="text-white mb-3 h5"><span class="bg-g-dark p-1 rounded-circle px-3 text-white">3</span> <b>Calidad:</b> <small>Cientos de testimonios lo comprueban.</small></p>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--<div class="row justify-content-center">--}}
                         {{--<div class="col-6 text-center">--}}
                         {{--<a href="#Inquire" class="btn btn-lg btn-g-yellow">GET STARTED NOW</a>--}}
                         {{--</div>--}}
                         {{--</div>--}}
+                    {{--</div>--}}
+
+                {{--</div>--}}
+
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</header>--}}
+    <section class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 col-sm-2 position-relative">
+                    <div class="logo-goto position-absolute w-100 top-0 p-3 border rounded border-dark bg-dark">
+                        <a href="/"><img src="{{asset('images/logo-goto-b.png')}}" alt="" class="img-fluid"></a>
                     </div>
-
                 </div>
-
+                <div class="col col-sm">
+                    <div class="row justify-content-end">
+                        <div class="col-auto text-right my-2">
+                            <a href="" class="btn btn-g-green btn-sm text-white d-none d-sm-inline-block"><i class="fa fa-commenting"></i> Chat</a>
+                            <span class="mx-2">|</span>
+                            <button type="button" class="btn btn-g-yellow btn-sm text-white d-none d-sm-inline-block" data-toggle="modal" data-target="#contant_m">
+                                Pregunte Ahora
+                            </button>
+                            <a href="https://www.facebook.com/GOTOPERUcom/" class="text-white d-inline mx-1" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://twitter.com/GOTOPERUCOM" class="text-white d-inline mx-1" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/gotoperucom/" class="text-white d-inline mx-1" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/channel/UCpfUdQBRjnSEbh6Gu3Uh_Mg" class="text-white d-inline mx-1" target="_blank"><i class="fab fa-youtube-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="row d-none d-sm-block">
+                        <div class="col">
+                            <nav class="nav nav-pills nav-fill rounded-right bg-light">
+                                <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light" href="{{route('tours_path')}}">PERÚ TOURS</a>
+                                <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light" href="{{route('paquetes_path')}}">PAQUETES DE VIAJE</a>
+                                <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light" href="{{route('destinations_path')}}">DESTINOS</a>
+                                <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light d-sm-none  d-md-inline" href="{{route('hoteles_path')}}">HOTELES</a>
+                                <a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light d-sm-none  d-xl-inline" href="{{route("about_path")}}">ACERCA DE NOSOTROS</a>
+                                {{--<a class="nav-item nav-link border border-left-0 border-top-0 border-bottom-0 text-dark bg-light d-none d-lg-inline" href="{{route('social_path')}}">RESPONSABILIDAD SOCIAL</a>--}}
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <header class="position-relative">
+        <img src="{{asset('images/sliders/slider-1.jpg')}}" alt="" class="img-fluid d-none d-sm-inline">
+        <img src="{{asset('images/sliders/slider-2.jpg')}}" alt="" class="img-fluid d-sm-none">
+        <div class="position-absolute bottom-n-1">
+            <img src="{{asset('images/pce.png')}}" alt="" class="img-fluid">
+        </div>
+        <div class="position-absolute top-0 w-100 d-none d-lg-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col mt-10-p text-white">
+                        <p class="display-4 font-weight-normal m-0 mt-1">Visite Peru</p>
+                        <i class="h4 font-weight-light">Tierra de los incas</i>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
+    <section class="sticky-top bg-white d-sm-none">
+        <div class="container">
+            <div class="row no-gutters text-center">
+                <div class="col">
+                    <a href="{{route('tours_path')}}" class="btn btn-link">Tours</a>
+                </div>
+                <div class="col">
+                    <a href="{{route('destinations_path')}}" class="btn btn-link">Destinos</a>
+                </div>
+                <div class="col">
+                    <a href="{{route("about_path")}}" class="btn btn-link">Nosotros</a>
+                </div>
+                {{--<div class="col">hola1</div>--}}
+            </div>
+        </div>
+    </section>
     @include('layouts.page.menu-mobil')
 
 
     <div class="bg-white">
 
-        <ul id="menu" class="nav nav-pills nav-fill bg-light rounded d-none  d-sm-flex sticky-top nav-itinerary">
-            <li class="nav-item d-none d-sm-block">
-                <a class="nav-link text-white rounded-0 bg-g-green" href="#paquetes">Paquetes</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white rounded-0 bg-danger" href="#hotel">Paquetes sin Hoteles</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white rounded-0 bg-info" href="#tours">Solo Tours</a>
-            </li>
-            <li class="nav-item d-none d-sm-block">
-                <a class="nav-link text-white rounded-0 bg-g-yellow" href="#traslados">Solo Traslados</a>
-            </li>
-        </ul>
 
 
 
-        <section class="pt-3 bg-light">
+
+        <section class="pt-3">
             <div class="container">
                 <div class="row no-gutters">
                     <div class="col-12 col-sm text-center mb-4">
@@ -421,6 +479,20 @@
 
 
         <section class="container bg-white">
+            <ul id="menu" class="nav nav-pills nav-fill bg-light rounded d-none  d-sm-flex sticky-top nav-itinerary mb-4">
+                <li class="nav-item d-none d-sm-block">
+                    <a class="nav-link text-white rounded-0 bg-g-green" href="#paquetes">Paquetes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white rounded-0 bg-danger" href="#hotel">Paquetes sin Hoteles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white rounded-0 bg-info" href="#tours">Solo Tours</a>
+                </li>
+                <li class="nav-item d-none d-sm-block">
+                    <a class="nav-link text-white rounded-0 bg-g-yellow" href="#traslados">Solo Traslados</a>
+                </li>
+            </ul>
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-8">
                     <div class="row">
