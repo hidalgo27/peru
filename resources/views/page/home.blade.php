@@ -204,8 +204,6 @@
 
 
 
-
-
         <section class="pt-3">
             <div class="container">
                 <div class="row no-gutters">
@@ -462,6 +460,57 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="contant_m" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Contacte con nosotros</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Envié la información requerida y nos pondremos en contacto dentro de las 24 horas garantizado.</p>
+                            <form id="c_form">
+                                {{csrf_field()}}
+                                <div class="form-group">
+                                    <label for="c_nombre">Nombres</label>
+                                    <input type="text" class="form-control" id="c_nombre" placeholder="Nombre completo">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="c_email">Email</label>
+                                    <input type="email" class="form-control" id="c_email" placeholder="Email">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="c_comentario">Comentario</label>
+                                    <textarea id="c_comentario" class="form-control" cols="10" rows="3"></textarea>
+                                </div>
+
+                                <div class="alert alert-success alert-dismissible fade d-none" id="c_alert" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <strong>Muchas</strong> por contactar con GOTOPERU, un agente de viajes se pondrá en contacto con usted en las próximas 24 horas para ayudarle con la planificación de su viaje. :)
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-lg btn-block btn-g-green" id="c_send" type="button" onclick="contact()">Enviar
+                                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                            </button>
+                            <ul class="fa-ul pull-right d-none" id="loader3">
+                                <li><i class="fa-li fa fa-spinner fa-spin"></i> <i>Enviando...</i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </section>
 
         <section class="bg-white">
