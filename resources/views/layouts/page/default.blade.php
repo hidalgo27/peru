@@ -495,7 +495,7 @@
         olark.identify('8407-174-10-8084');</script>
     <!-- end olark code -->
 
-
+    <script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0027/9680.js" async="async"></script>
 
 </body>
 </html>
