@@ -123,6 +123,11 @@
                                     Consultas
                                 </a>
                             </div>
+                            <div class="">
+<!-- FareHarbor book button for item #105338 -->
+<a href="https://fareharbor.com/embeds/book/gotoperu/items/{{$codigo_fh}}/calendar/?flow=92655">Book online now!</a>
+<!-- FareHarbor book button for item #105338 -->
+</div>
                         </div>
                     </div>
 
@@ -439,6 +444,9 @@
             });
 
         </script>
+<!-- FareHarbor Lightframe API - do not remove - see: https://fareharbor.com/help/website/resources/lightframe-api/ -->
+<script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
+
     @endpush
 
 @stop

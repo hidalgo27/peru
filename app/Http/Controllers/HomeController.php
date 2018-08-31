@@ -270,11 +270,14 @@ class HomeController extends Controller
     public function itinerario_tours($titulo)
     {
         $title = str_replace('-', ' ', strtoupper($titulo));
-
+        
         $tours_a = TTour::with('tours_destinos')->get();
         $tours = TTour::with('tours_destinos')->where('titulo', $title)->get();
         $tours_destinos = TTourDestino::with('destinos')->get();
-
+        $codigo_fh='';
+        foreach($tours as $tours_){
+           $codigo_fh=$tours_->codigo_fh;
+        }
         SEOMeta::setTitle('Tours en Perú: '.str_replace('-',' ', ucwords(strtolower($titulo))).' | GotoPeru');
         SEOMeta::setDescription('Nuestro tours '.str_replace('-',' ', ucwords(strtolower($titulo))).' organizado con un auténtico operador peruano.');
 //        SEOMeta::setCanonical('http://gotoperu.com.pe/paquetes-de-viaje-peru');
@@ -292,7 +295,7 @@ class HomeController extends Controller
         \Twitter::setSite('@GOTOPERUCOM');
         \Twitter::addImage('http://gotoperu.com.pe/images/sliders/cusco.jpg');
 
-        return view('page.itinerary-tours', ['title'=>$title, 'tours'=>$tours, 'tours_destinos'=>$tours_destinos, 'tours_a'=>$tours_a]);
+        return view('page.itinerary-tours', ['title'=>$title, 'tours'=>$tours, 'tours_destinos'=>$tours_destinos, 'tours_a'=>$tours_a,'codigo_fh'=>$codigo_fh]);
     }
 
     /**
