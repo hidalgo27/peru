@@ -655,33 +655,36 @@
                                 </div>
                                 <h5 class="text-secondary py-2"><i class="fa fa-chevron-right"></i> <b>Incluye:</b> hoteles, tours, traslados, entradas, desayunos, trenes.</h5>
 
-                                @foreach($tours as $tour)
-                                    <a href="{{route('itinerario_tours_show_path', str_replace(' ','-',strtolower($tour->titulo)))}}" class="list-group-item list-group-item-action">
-                                        <div class="row no-gutters">
-                                            <div class="col-8 col-sm-5 text-primary">
-                                                <b>{{ucwords(strtolower($tour->titulo))}}</b>
-                                            </div>
+                                <!-- FareHarbor item grid of flow #92653 -->
+                                <script src="https://fareharbor.com/embeds/script/items/gotoperu/?full-items=yes&fallback=simple&flow=92653"></script>
+
+                                {{--@foreach($tours as $tour)--}}
+                                    {{--<a href="{{route('itinerario_tours_show_path', str_replace(' ','-',strtolower($tour->titulo)))}}" class="list-group-item list-group-item-action">--}}
+                                        {{--<div class="row no-gutters">--}}
+                                            {{--<div class="col-8 col-sm-5 text-primary">--}}
+                                                {{--<b>{{ucwords(strtolower($tour->titulo))}}</b>--}}
+                                            {{--</div>--}}
                                             {{--<div class="col">--}}
                                                 {{--<i class="fa fa-clock pl-2 pr-1 text-info"></i> {{$tour->duracion}}--}}
                                             {{--</div>--}}
-                                            <div class="col d-none d-sm-inline">
-                                                <i class="fa fa-map-marker-alt pl-2 pr-1 text-info"></i>
-                                                @php
-                                                    $i = 1;
-                                                    $num_des = count($tours_destinos->where('idtours',$tour->id));
-                                                @endphp
-                                                @foreach($tours_destinos->where('idtours',$tour->id) as $tour_destino)
-                                                    {{ucwords(strtolower($tour_destino->destinos->nombre))}}@if($i < $num_des),@endif
-                                                    @php $i++; @endphp
-                                                @endforeach
-                                            </div>
-                                            <div class="col col-sm-2 text-right">
-                                                <b>
-                                                    @if($tour->precio < 0)
-                                                        <span class="text-danger">Pida una cotización</span>
-                                                    @else
-                                                        <sup>$</sup>{{$tour->precio_g}}<small>USD</small>
-                                                    @endif
+                                            {{--<div class="col d-none d-sm-inline">--}}
+                                                {{--<i class="fa fa-map-marker-alt pl-2 pr-1 text-info"></i>--}}
+                                                {{--@php--}}
+                                                    {{--$i = 1;--}}
+                                                    {{--$num_des = count($tours_destinos->where('idtours',$tour->id));--}}
+                                                {{--@endphp--}}
+                                                {{--@foreach($tours_destinos->where('idtours',$tour->id) as $tour_destino)--}}
+                                                    {{--{{ucwords(strtolower($tour_destino->destinos->nombre))}}@if($i < $num_des),@endif--}}
+                                                    {{--@php $i++; @endphp--}}
+                                                {{--@endforeach--}}
+                                            {{--</div>--}}
+                                            {{--<div class="col col-sm-2 text-right">--}}
+                                                {{--<b>--}}
+                                                    {{--@if($tour->precio < 0)--}}
+                                                        {{--<span class="text-danger">Pida una cotización</span>--}}
+                                                    {{--@else--}}
+                                                        {{--<sup>$</sup>{{$tour->precio_g}}<small>USD</small>--}}
+                                                    {{--@endif--}}
                                                     {{--@if($paquetes->precio == 0 OR $paquetes->precio == NULL)--}}
                                                         {{--@foreach($paquetes->precio_paquetes as $precio)--}}
                                                             {{--@if($precio->estrellas == 2)--}}
@@ -699,11 +702,11 @@
                                                             {{--<sup>$</sup>{{$paquetes->precio}}<small>USD</small>--}}
                                                         {{--@endif--}}
                                                     {{--@endif--}}
-                                                </b>
-                                            </div>
-                                        </div>
-                                    </a>
-                                @endforeach
+                                                {{--</b>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</a>--}}
+                                {{--@endforeach--}}
 
                             </div>
                         </div>
@@ -745,6 +748,16 @@
                             </div>
                         </div>
                     </div>
+
+                    {{--<div class="row pt-5">--}}
+                        {{--<div class="col">--}}
+                            {{--<div class="alert alert-primary py-2 mb-1" role="alert">--}}
+                                {{--<h5 class="font-weight-bold m-0">Reserve Ahora</h5>--}}
+                            {{--</div>--}}
+                            {{--<!-- FareHarbor item grid of flow #92653 -->--}}
+                            {{--<script src="https://fareharbor.com/embeds/script/items/gotoperu/?full-items=yes&fallback=simple&flow=92653"></script>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
 
                     <div class="row pt-5">
                         <div class="col">

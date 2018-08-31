@@ -495,7 +495,9 @@
         olark.identify('8407-174-10-8084');</script>
     <!-- end olark code -->
 
-    <script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0027/9680.js" async="async"></script>
+
+<!-- FareHarbor Lightframe API - do not remove - see: https://fareharbor.com/help/website/resources/lightframe-api/ -->
+<script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
 
 </body>
 </html>

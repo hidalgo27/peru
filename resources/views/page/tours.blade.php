@@ -71,6 +71,8 @@
 
     <section class="pb-5 bg-white">
         <div class="container">
+
+
             <div class="row">
                 <div class="col">
                     <div id="tours" class="d-sm-block pt-5">
@@ -131,6 +133,16 @@
                         @endforeach
 
                     </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col">
+                    <div class="alert alert-primary py-2 mb-1" role="alert">
+                        <h5 class="font-weight-bold m-0">Reservar Ahora</h5>
+                    </div>
+                    <!-- FareHarbor item grid of flow #92653 -->
+                    <script src="https://fareharbor.com/embeds/script/items/gotoperu/?full-items=yes&fallback=simple&flow=92653"></script>
                 </div>
             </div>
         </div>

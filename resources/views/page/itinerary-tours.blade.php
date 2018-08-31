@@ -98,36 +98,48 @@
                 </div>
                 <div class="col-12 col-sm-4 d-none d-lg-inline-block">
 
-                    <div class="row sticky-top">
-                        <div class="col-12 col-sm">
-                            <div class="">
-                                <table class="table table-sm table-bordered m-0">
-                                    <tr>
-                                        <td><b>Inicio del Tours</b></td>
-                                        <td>{{$tour->horario}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b>Duración</b></td>
-                                        <td>{{$tour->duracion}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><b>Precio por persona (GRUPO)</b></td>
-                                        <td><sup>$</sup>{{$tour->precio_g}} <small>USD</small></td>
-                                    </tr>
-                                    <tr>
-                                        <td><b>Precio por persona (PRIVADO)</b></td>
-                                        <td><i class="text-danger">Pida Cotización</i></td>
-                                    </tr>
-                                </table>
-                                <a  href="#book-now" type="button" class="btn btn-primary btn-lg btn-avalavility btn-block">
+                    <div class="sticky-top">
+                        <div class="row">
+                            <div class="col-12 col-sm">
+
+                                    <table class="table table-sm table-bordered m-0">
+                                        <tr>
+                                            <td><b>Inicio del Tours</b></td>
+                                            <td>{{$tour->horario}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Duración</b></td>
+                                            <td>{{$tour->duracion}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Precio por persona (GRUPO)</b></td>
+                                            <td><sup>$</sup>{{$tour->precio_g}} <small>USD</small></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Precio por persona (PRIVADO)</b></td>
+                                            <td><i class="text-danger">Pida Cotización</i></td>
+                                        </tr>
+                                    </table>
+
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col">
+                                <a  href="#book-now" type="button" class="btn btn-primary btn-avalavility btn-block">
                                     Consultas
                                 </a>
                             </div>
-                            <div class="">
-<!-- FareHarbor book button for item #105338 -->
-<a href="https://fareharbor.com/embeds/book/gotoperu/items/{{$codigo_fh}}/calendar/?flow=92655">Book online now!</a>
-<!-- FareHarbor book button for item #105338 -->
-</div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col">
+                                <!-- FareHarbor book button for item #105338 -->
+                            {{--<a href="https://fareharbor.com/embeds/book/gotoperu/items/{{$tour->codigo_fh}}/?full-items=yes&flow=92655" class="btn btn-block btn-g-yellow">Reservar Ahora</a>--}}
+
+                            <!-- FareHarbor calendar of item #105338 -->
+                                <script src="https://fareharbor.com/embeds/script/calendar/gotoperu/items/{{$tour->codigo_fh}}/?fallback=simple&full-items=yes&flow=92655"></script>
+
+                            </div>
                         </div>
                     </div>
 
@@ -444,8 +456,6 @@
             });
 
         </script>
-<!-- FareHarbor Lightframe API - do not remove - see: https://fareharbor.com/help/website/resources/lightframe-api/ -->
-<script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
 
     @endpush
 
