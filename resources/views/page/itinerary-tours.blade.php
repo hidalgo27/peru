@@ -123,13 +123,13 @@
 
                             </div>
                         </div>
-                        <div class="row mt-3">
+                        <!-- <div class="row mt-3">
                             <div class="col">
                                 <a  href="#book-now" type="button" class="btn btn-primary btn-avalavility btn-block">
                                     Consultas
                                 </a>
                             </div>
-                        </div>
+                        </div> -->
                         <hr>
                         <div class="row">
                             <div class="col">
@@ -212,7 +212,7 @@
             </div>
         </div>
     </section>
-    <section class="py-5 bg-light" id="book-now">
+    <!-- <section class="py-5 bg-light" id="book-now">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-sm-9 col-md-9 col-lg-8 text-center">
@@ -354,10 +354,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     @push('scripts')
-        <script>
+        <!-- <script>
             function inquire(){
                 $.ajaxSetup({
                     headers: {
@@ -455,7 +455,7 @@
                 changeYear: true,
             });
 
-        </script>
+        </script> -->
 
     @endpush
 
