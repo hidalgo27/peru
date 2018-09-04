@@ -115,10 +115,10 @@
                                             <td><b>Precio por persona (GRUPO)</b></td>
                                             <td><sup>$</sup>{{$tour->precio_g}} <small>USD</small></td>
                                         </tr>
-                                        <tr>
+                                        <!-- <tr>
                                             <td><b>Precio por persona (PRIVADO)</b></td>
                                             <td><i class="text-danger">Pida Cotización</i></td>
-                                        </tr>
+                                        </tr> -->
                                     </table>
 
                             </div>
