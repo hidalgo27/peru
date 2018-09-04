@@ -130,8 +130,8 @@
                                 </a>
                             </div>
                         </div> -->
-                        <hr>
-                        <div class="row">
+                        
+                        <div class="row mt-3">
                             <div class="col">
                                 <!-- FareHarbor book button for item #105338 -->
                             {{--<a href="https://fareharbor.com/embeds/book/gotoperu/items/{{$tour->codigo_fh}}/?full-items=yes&flow=92655" class="btn btn-block btn-g-yellow">Reservar Ahora</a>--}}
